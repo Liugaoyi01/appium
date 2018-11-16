@@ -1,14 +1,21 @@
 # coding = utf-8
+# author = 'liugaoyi'
+
 ''' 封装公共的方法及驱动 '''
+
 from appium import webdriver
 import time, os
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 
+
 class Base:
 
     def __init__(self):
-        desired_caps = {
+
+        '''后续配置信息可以做数据分离'''
+
+        self.desired_caps = {
             'platformName': 'Android',
             'deviceName': 'emulator-5554',
             'platformVersion': '5.1.1',
@@ -18,8 +25,23 @@ class Base:
             'resetKeyboard': True  # 将键盘隐藏起来
         }
 
-        self.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
+    # 定义一个启动到首页的方法
+    def start(self):
+
+        self.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', self.desired_caps)
         self.driver.implicitly_wait(30)
+        time.sleep(6)
+        self.swipe_left(t=1000, n=5)
+        time.sleep(3)
+        self.tap(278, 750)
+        time.sleep(5)
+        try:
+            self.driver.wait_activity('com.leadeon.cmcc.view.tabs.AppTabFragment', 5)
+            print('客户端启动成功，已进入首页')
+        except TimeoutError:
+            print('检测未进入首页')
+        time.sleep(3)
+        self.get_screenshot('首页')  # 此处用来测试截图功能，后面可以忽略
 
     def get_driver(self):
         return self.driver
@@ -113,9 +135,13 @@ class Base:
             self.find_element(loc).send_keys(value)
         except AttributeError:
             print(u'页面中通过%s未能找到%s元素' % (loc))
+
     def back(self):
+        back_loc = (By.ID, id / title_back_btn)
         try:
-             
+            self.click_button(back_loc)
+        except:
+            print(u'返回失败')
 
     # 封装坐标点击方法
 
@@ -131,27 +157,21 @@ class Base:
         return time.strftime('%Y-%m-%d-%H-%M-%S', (time.localtime(time.time())))
 
     # 以当前时间+自定义名称命名保存截图
-    def get_screenshot(self):
-        tm = self.get_time()
-        file_name = '..\\result\\image\\%s.png' % tm
-        self.driver.get_screenshot_as_file(file_name)
+    def get_screenshot(self, name):
+        day = time.strftime('%Y-%m-%d', time.localtime(time.time()))
+        fp = '..\\result\\image\\' + day
+        tm = time.strftime('%Y-%m-%d-%H-%M-%S', (time.localtime(time.time())))
+        type = '.png'
 
+        if os.path.exists(fp):
+            filename = fp + '\\' + tm + '_' + name + type
+        else:
+            os.makedirs(fp)
+            filename = fp + '\\' + tm + '_' + name + type
 
-# 定义一个启动到首页的方法
-def start():
-    base = Base()
-    #ac = base.get_driver().current_activity
-    time.sleep(6)
-    base.swipe_left(t=1000, n=5)
-    time.sleep(3)
-    base.tap(278, 750)
-    time.sleep(5)
-    try:
-        base.get_driver().wait_activity('com.leadeon.cmcc.view.tabs.AppTabFragment',5)
-        print('客户端启动成功，已进入首页')
-    except TimeoutError:
-        print('检测未进入首页')
-    base.get_screenshot()
+        self.driver.get_screenshot_as_file(filename)
+
 
 if __name__ == '__main__':
-    start()
+    base = Base()
+    base.start()
