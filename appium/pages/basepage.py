@@ -4,26 +4,18 @@
 ''' 封装公共的方法及驱动 '''
 
 from appium import webdriver
-import time, os
+import time
+import os
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException
 
 
 class Base:
 
-    def __init__(self):
+    def __init__(self, driver):
+        self.driver = driver
 
-        '''后续配置信息可以做数据分离'''
-
-        self.desired_caps = {
-            'platformName': 'Android',
-            'deviceName': 'emulator-5554',
-            'platformVersion': '5.1.1',
-            'appPackage': 'com.greenpoint.android.mc10086.activity',  # apk包名
-            'appActivity': 'com.leadeon.cmcc.base.StartPageActivity',  # apk的launcherActivity
-            'unicodeKeyboard': True,  # 使用Unicode编码方式发送字符串
-            'resetKeyboard': True  # 将键盘隐藏起来
-        }
 
     # 定义一个启动到首页的方法
     def start(self):
@@ -52,7 +44,7 @@ class Base:
         try:
             WebDriverWait(self.driver, 15).until(lambda driver: driver.find_element(*loc).is_displayed())
             return self.driver.find_element(*loc)
-        except:
+        except NoSuchElementException:
             print(u'页面中通过%s未能找到%s元素' % (loc))
 
     # 封装一组元素定位方法
@@ -61,14 +53,14 @@ class Base:
         try:
             if len(self.driver.find_elements(*loc)):
                 return self.driver.find_elements(*loc)
-        except:
+        except NoSuchElementException:
             print(u'页面中通过%s未能找到%s元素' % (loc))
 
     # 重新封装点击方法
     def click_button(self, loc):
         try:
             self.find_element(*loc).click()
-        except:
+        except NoSuchElementException:
             print(u'页面中通过%s未能找到%s按钮' % (loc))
 
     # 滑动封装-向左滑动
@@ -133,14 +125,14 @@ class Base:
             if clear_first:
                 self.find_element(loc).clear()
             self.find_element(loc).send_keys(value)
-        except AttributeError:
+        except NoSuchElementException:
             print(u'页面中通过%s未能找到%s元素' % (loc))
 
     def back(self):
-        back_loc = (By.ID, id / title_back_btn)
+        back_loc = (By.ID, title_back_btn)
         try:
             self.click_button(back_loc)
-        except:
+        except NoSuchElementException:
             print(u'返回失败')
 
     # 封装坐标点击方法
