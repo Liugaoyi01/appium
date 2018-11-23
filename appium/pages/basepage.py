@@ -10,6 +10,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 
+from desired_caps import appium_desired
 
 class Base:
 
@@ -19,10 +20,7 @@ class Base:
 
     # 定义一个启动到首页的方法
     def start(self):
-
-        self.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', self.desired_caps)
-        self.driver.implicitly_wait(30)
-        time.sleep(6)
+        time.sleep(5)
         self.swipe_left(t=1000, n=5)
         time.sleep(3)
         self.tap(278, 750)
@@ -57,7 +55,7 @@ class Base:
             print(u'页面中通过%s未能找到%s元素' % (loc))
 
     # 重新封装点击方法
-    def click_button(self, loc):
+    def click_button(self, *loc):
         try:
             self.find_element(*loc).click()
         except NoSuchElementException:
@@ -165,5 +163,8 @@ class Base:
 
 
 if __name__ == '__main__':
-    base = Base()
-    base.start()
+   driver = appium_desired()
+
+   base = Base(driver)
+
+   base.start()

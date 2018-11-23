@@ -1,0 +1,9 @@
+platformName: Android
+platformVersion: 5.1.1
+deviceName: emulator-5554
+appPackage: com.greenpoint.android.mc10086.activity
+appActivity: com.leadeon.cmcc.base.StartPageActivity
+unicodeKeyboard: True
+resetKeyboard: True
+ip: 127.0.0.1
+port: 4723
