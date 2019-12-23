@@ -1,0 +1,267 @@
+My:
+    wode_loc: (By.XPATH,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.widget.LinearLayout/android.widget.RelativeLayout[5]/android.widget.ImageView")
+    imglogin_loc: (By.ID,'img_login')
+    my_zhangdan_loc: (By.XPATH,"//*[contains(@text,'账单查询')]")
+    qinmifu_loc: (By.XPATH,"//*[contains(@text,'亲密付')]")
+    yiding_loc: (By.XPATH,"//*[contains(@text,'已订业务')]")
+    balance_loc: (By.XPATH,"//*[contains(@text,'话费余额')]")
+    payhistory_loc: (By.XPATH,"//android.view.View[@content-desc='交费历史']")
+    my_order_loc: (By.XPATH,"//*[contains(@text,'我的订单')]")
+    dingyue_loc: (By.XPATH,"//*[contains(@text,'消息订阅')]")
+    guanjia_loc: (By.XPATH,"(//android.view.View[@content-desc='流量管家'])[1]")
+    my_voucher_loc: (By.XPATH,"//*[contains(@text,'卡券')]")
+    my_movie_loc: (By.XPATH,"//*[contains(@text,'电影购票')]")
+    xiangdan_loc: (By.XPATH,"//*[contains(@text,'详单查询')]")
+    login_loc: (By.XPATH,"//*[@resource-id='mine_login_btn']")
+    kefu_loc: (By.XPATH,"//*[contains(@text,'在线客服')]")
+    fapiao_loc: (By.XPATH,"//*[contains(@text,'电子发票')]")   #电子发票
+    shiming_loc: (By.XPATH,"//*[contains(@text,'实名登记')]")  #实名登记
+    heduohao_loc: (By.XPATH,"//*[contains(@text,'和多号')]")   #和多号
+    zhineng_loc: (By.XPATH,"//*[contains(@text,'智能家居')]")   #智能家居
+    chajian_loc: (By.XPATH,"//*[contains(@text,'插件中心')]") #插件中心
+    touxiang_loc: (By.ID,'imgid')
+    xjbs_loc: (By.ID,'star_user')  #星级标识
+
+#张云龙代码
+Liuliang_qianbao:
+    qianbao_loc: (By.XPATH,"//*[contains(@text,'流量钱包')]")  #流量钱包
+    qianbao_yue_loc: (By.ID,'流量钱包账户余额')  #流量钱包_余额
+    bangzhu_loc: (By.ID,'帮助中心')  #帮助中心
+    bangzhu_pan_loc: (By.ID,'什么是流量钱包？')  #帮助中心
+    hongbao_jilu_loc: (By.ID,'红包记录')  #红包记录
+    hongbao_jilu_pan_loc: (By.ID,'收到的红包')  #收到的红包
+    liuliang_mingxi_loc: (By.ID,'流量明细')  #流量明细
+    liuliang_mingxi_pan_loc: (By.ID,'收入')  #流量明细
+    chongzhi_jilu_loc: (By.ID,'充值记录')  #充值记录
+    chongzhi_jilu_pan_loc: (By.ID,'收入')  #充值记录
+    tiqu_jilu_loc: (By.ID,'提取记录')  #提取记录
+    tiqu_jilu_pan_loc: (By.ID,'支出')  #提取记录
+
+Geren:
+    bianji_loc: (By.XPATH,"//*[contains(@text,'编辑头像')]")  #编辑头像
+    touxiang_loc: (By.ID,'selectid')  #头像id
+    imgexit_loc: (By.ID,'but_exit')  #取消头像
+
+
+
+Zhangdan:
+    zhangdan_zonge_loc: (By.ID,'tv_bill_all')  #判定，账单总额
+    qu_chongzhi_loc: (By.ID,'img_go_recharge')  #去充值
+    chongzhi_zhongxin_loc: (By.ID,'立即充值')  #判定，充值中心
+    chongzhi_back_loc: (By.ID,'title_back_btn')      #充值中心的返回按钮
+    xiangdan_loc: (By.ID,'xiangdan_btn')  #详单查询
+    xiangdan_panding_loc: (By.ID,'one_key_login_tv')  #判定，详单查询
+    xiangdanback_loc: (By.ID,'login_close')  #详单查询的返回按钮
+    zhangdan_fenxiang_loc: (By.ID,'title_share_btn')  #我的账单分享
+    fenxiang_panding_loc: (By.ID,'tv_share_name')  #判定，分享
+    quxiao_fenxiang_loc: (By.ID,'btn_cancel')  #取消分享
+    zhangdanback_loc: (By.ID,'title_back_btn')  #账单的返回（我的）按钮
+
+Yiding:
+    yiding_loc: (By.XPATH,"//*[contains(@text,'已订业务')]")   #已订业务
+    taocan_pan_loc: (By.XPATH,"//*[contains(@text,'我的套餐')]")   #判定，我的套餐
+    zengzhi_pan_loc: (By.XPATH,"//*[contains(@text,'增值业务')]")   #判定，增值业务
+    jichu_pan_loc: (By.XPATH,"//*[contains(@text,'基础功能')]")   #判定，基础功能
+    qita_pan_loc: (By.XPATH,"//*[contains(@text,'其他')]")   #判定，其他
+    gengduo_loc: (By.XPATH,"//*[contains(@text,'更多业务办理')]")   #更多业务办理
+    taocan_panyiding_loc: (By.XPATH,"//*[contains(@text,'套餐订购')]")
+    tuiding_loc: (By.ID,'do_btn')    #判定，基础功能页的退订按钮
+    tuiding_quxiao_loc: (By.ID,'dialog_btn1')   #取消
+    tuiding_queding_loc: (By.ID,'dialog_btn2')   #判定，确定按钮
+    fenxiang_loc: (By.ID,'title_share_btn')   #分享
+    fenxiang_pan_loc: (By.XPATH,"//*[contains(@text,'二维码')]")   #分享的二维码
+    fenxiang_quxiao_loc: (By.XPATH,"//*[contains(@text,'二维码')]")   #取消分享
+    weixin_loc: (By.XPATH,"//*[contains(@text,'微信好友')]")   #
+
+Balance:
+    chongzhi_loc: (By.XPATH,"//*[contains(@text,'充值交费')]")   #充值交费
+    pan_chongzhi_loc: (By.ID,'立即充值')   #判定，充值交费
+    yuliang_loc: (By.XPATH,"//*[contains(@text,'套餐余量')]")   #套餐余量
+    pan_yuliang_loc: (By.XPATH,"//*[contains(@text,'已用:')]")   #判定，套餐余量
+    yuliang_back_loc: (By.ID,'title_back_btn')  #套餐余量的返回按钮
+    taocan_loc: (By.XPATH,"//*[contains(@text,'套餐办理')]")   #套餐办理
+    pan_taocan_loc: (By.XPATH,"//android.view.View[@content-desc='4G飞享套餐¥58-588.']")   #判定，套餐办理
+    zhangdan_loc: (By.XPATH,"//*[contains(@text,'我的账单')]")   #我的账单
+    pan_zhangdan_loc: (By.XPATH,"//*[contains(@text,'账单总额')]")   #判定，我的账单
+    balance_back_loc: (By.ID,'title_back_btn')
+    quchongzhi_loc: (By.ID,'txt_gopay')    #去充值
+    chongzhi_pan_loc: (By.ID,'立即充值')    #判定，充值页面
+    xiaofei_loc: (By.ID,'txt_mouth_consume_title')    #当月消费
+    keyong_loc: (By.ID,'title_back_btn')    #可用余额
+
+
+
+Payhistory:
+    jiaofei_pan_loc: (By.ID,'pay_history_btn')
+    chongzhi_pan_loc: (By.ID,'title_name_txt')   #充值中心
+    shaixuan_loc: (By.ID,'title_select_btn')
+    shouqi_loc: (By.XPATH,"//*[contains(@text,'收起')]")
+    fenxiang_loc: (By.ID,'title_share_btn')
+    pengyouquan_loc: (By.XPATH,"//*[contains(@text,'朋友圈')]")
+    quxiao_loc: (By.XPATH,"//*[contains(@text,'取消')]")
+    siyue_loc: (By.XPATH,"//*[contains(@text,'2019年4月')]")
+    erweima_loc: (By.XPATH,"//*[contains(@text,'二维码')]")
+
+Myorder:
+    fenxiang_loc: (By.ID,'title_share_btn')  #分享订单页面
+    fenxiangdao_loc: (By.XPATH,"//*[contains(@text,'二维码')]")    #二维码分享
+    fenxiang_pan_loc: (By.XPATH,"//*[contains(@text,'邀请好友扫一扫分享给TA')]")    #二维码分享判定
+    ll_order_loc: (By.XPATH,"//*[contains(@text,'流量订单')]")  #判定
+    bh_order_loc: (By.XPATH,"//*[@resource-id='订单编号：']")  #判定流量订单
+    cz_order_loc: (By.XPATH,"//*[contains(@text,'充值订单')]")
+    czxq_order_loc: (By.XPATH,"//android.webkit.WebView[@content-desc='充值订单']/android.widget.ListView[1]/android.view.View")  #判定
+    sp_order_loc: (By.XPATH,"//*[contains(@text,'商品订单')]")  #判定
+    spkf_order_loc: (By.XPATH,"//android.webkit.WebView[@content-desc=‘商品订单’]/android.widget.ListView/android.view.View[1]")
+    kefu_1_loc: (By.XPATH,"(//android.view.View[@content-desc='客服'])[1]")
+Xxdingyue:
+    no_dingyue_loc: (By.XPATH,"//*[@resource-id='暂无订阅信息']")  #没有订阅消息
+Guanjia:
+    dingdan_loc: (By.ID,'流量订单')
+    dingdan_pan_loc: (By.ID,'充值订单')
+    zhichong_loc: (By.ID,'流量商品')
+    zhichong_pan_loc: (By.ID,'通讯录')
+    shangpin_loc: (By.ID,'流量商品')
+    shangpin_pan_loc: (By.ID,'搜索')
+    xiangdan_loc: (By.ID,'流量详单')
+    xiangdan_pan_loc: (By.ID,'tv_title')  #拉起详单登录判定
+    xiangdanback_pan_loc: (By.ID,'login_close')  #详单返回按钮
+    bannian_loc: (By.XPATH,"(//android.view.View[@content-desc='流量半年包'])[1]")
+    liuliang_pan_loc: (By.ID,'立即办理')
+    jibao_loc: (By.XPATH,"//android.view.View[@content-desc='流量季包']")
+    ri_taocan_loc: (By.XPATH,"//android.view.View[@content-desc='流量日套餐']")
+    shiping_loc: (By.ID,'视频')
+    yuedu_loc: (By.ID,'阅读')
+    yinyue_loc: (By.ID,'音乐')
+My_voucher:
+    no_shiyongxuan_loc: (By.XPATH,"(//android.widget.Button[@content-desc='查看'])[1]")  #判定
+    kajuan_lishi_loc: (By.ID,'卡券历史')
+    yiguoqi_loc: (By.ID,'已过期')  #判定
+    yishiyong_loc: (By.ID,'已使用')  #判定
+    no_kajuan_loc: (By.XPATH,"//*[@resource-id='暂无卡券，更多好券敬请期待']")  #判定
+    migu_loc: (By.ID,'咪咕电影券')
+My_movie:
+    gou_piao_loc: (By.ID,'title_name_txt')  #购票判定
+    gou_piaoclose_loc: (By.ID,'title_close_btn')  #购票判定
+Xiangdan:
+    renzheng_loc: (By.XPATH,"//*[@resource-id='tv_title']")  #详单的身份认证
+    jiansuo_loc: (By.XPATH,"//*[contains(@text,'检索')]")
+    anniu_loc: (By.XPATH,"//*[@resource-id='select_timeornumber']")  #按号码的下拉按钮
+    haoma_loc: (By.XPATH,"//*[@resource-id='text_num']")  #按号码
+    riqi_loc: (By.XPATH,"//*[@resource-id='text_date']")  #按日期
+    mingcheng_loc: (By.XPATH,"//*[@resource-id='text_name']")  #按名称
+    shuru_loc: (By.XPATH,"//*[@resource-id='searedt']")  #检索的输入框
+    sousuo_loc: (By.XPATH,"//*[@resource-id='searedt']")  #搜索按钮
+    tonghua_loc: (By.XPATH,"//*[contains(@text,'通话详单')]")
+    fenxi_loc: (By.XPATH,"//*[@resource-id='toanalysis']")  #详单分析
+    pan_gaisu_loc: (By.XPATH,"//android.view.View[@content-desc='11月通话概述']")  #判定
+    pan_meiri_loc: (By.XPATH,"//android.view.View[@content-desc='每日通话']")  #判定
+    pan_time_loc: (By.XPATH,"//android.view.View[@content-desc='通话时间分布']")  #判定
+
+Taocan_xq:
+    qianbao_loc: (By.XPATH,"//*[contains(@text,'流量钱包')]")  #流量钱包
+    qianbao_pan_loc: (By.ID,'流量钱包账户余额')  #流量钱包判定
+    kajuan_loc: (By.XPATH,"//*[contains(@text,'卡券')]")  #卡劵
+    kajuan_pan_loc: (By.ID,'话费券')  #卡劵判定
+    jifen_loc: (By.XPATH,"//*[contains(@text,'积分')]")  #积分
+    jifen_pan_loc: (By.ID,'中国移动积分商城')  #积分判定
+    quanyi_loc: (By.XPATH,"//*[contains(@text,'权益')]")  #我的权益
+    quanyi_pan_loc: (By.ID,'积分')  #我的权益判定
+
+Ke_fu:
+    send_loc: (By.XPATH,"//android.widget.Button[@content-desc='发送']")  #点击登录
+
+#李纯代码
+Qinmifu:
+    qmf_dingdan_pan_loc: (By.ID,'亲密付订单')  #判定，亲密付订单
+    qmf_jilu_pan_loc: (By.ID,'添加记录')  #判定，添加记录
+    qmf_tianjia_pan_loc: (By.ID,'添加号码')  #判定，添加号码
+    liuliang_pan_loc: (By.ID,'您当前没有亲密付流量订单')  #判定，亲密付流量订单
+    chongzhi_pan_loc: (By.ID,'¥9.98删除订单再充一笔')  #判定，亲密付充值订单
+    chongzhi_loc: (By.ID,'亲密付充值订单') #亲密付充值订单
+    liuliang_loc: (By.ID,'亲密付流量订单') #亲密付流量订单
+    chongliuliang_loc: (By.ID,'充流量')  #充流量
+    chonghuafei_loc: (By.ID,'充话费')  #充话费
+    lijichong_loc: (By.ID,'立即充值')  #立即充值
+    pan_qinmifu_loc: (By.XPATH,"//*[contains(@text,'家庭成员管理')]") #判定亲密付页面
+    pan_liuliang_loc: (By.XPATH,"//*[contains(@text,'流量直充')]") #判定充流量页面
+    pan_huafei_loc: (By.XPATH,"//*[contains(@text,'充值交费')]")  #判定充话费页面
+    queren_loc: (By.XPATH,"//*[contains(@text,'确认支付 ¥5.00')]")  #确认支付
+    close_anniu_loc: (By.XPATH,"//*[contains(@text,'关闭')]")  #关闭支付页面
+    querenpay_loc: (By.XPATH,"//*[contains(@text,'确认')]")  #确认支付完成
+    close_zhifu_loc: (By.XPATH,"//*[@resource-id='title_close_btn']")  #关闭支付页面
+    tianjiajilu_loc: (By.XPATH,"//*[contains(@text,'添加记录')]")  #添加记录
+    beitianjiajilu_loc: (By.ID,'被绑定记录')  #被添加记录
+    pan_tianjiajilu_loc: (By.ID,'绑定记录')  #判定，添加记录
+    pan_beitianjiajilu_loc: (By.ID,'超时未回复你追一')  #判定，被添加记录
+    pan_chaoshijilu_loc: (By.XPATH,"//*[contains(@text,'超时未回复')]")  #判定，超时未回复
+    back_loc: (By.ID,'title_back_btn')  #返回按钮
+    chongzhijilu_loc: (By.XPATH,"//*[contains(@text,'充值记录')]") #充值记录
+    tianjiahaoma_loc: (By.ID,'添加号码') #添加号码
+    haomashurulan_loc: (By.XPATH,'//android.webkit.WebView[@content-desc="家庭成员管理"]/android.widget.EditText[1]') #号码输入栏
+    shurunicheng_loc: (By.XPATH,'//android.webkit.WebView[@content-desc="家庭成员管理"]/android.widget.EditText[2]') #输入昵称栏
+    quxiao_loc: (By.ID,'取消') #取消
+    pan_quxiao_loc: (By.ID,'添加号码') #判定取消
+    lijitianjia_loc: (By.ID,'立即添加') #立即添加
+    pan_lijitianjia_loc: (By.ID,'cheshi') #判定 立即添加
+    guanli_loc: (By.XPATH,"//*[contains(@text,'管理成员')]") #管理成员
+    pan_guanli_loc: (By.ID,'成员管理') #判定 管理成员
+
+FaPiao:
+    wode_loc: (By.XPATH,'//*[contains(@text,"我的")]')  #我的入口
+    fapiao_loc: (By.XPATH,'//*[contains(@text,"电子发票")]')   #电子发票
+    huafei_loc: (By.ID,'话费充值发票')  #话费充值发票
+    liuliang_loc: (By.ID,'流量直充发票') #流量直充发票
+    kuandai_loc: (By.ID,'宽带发票')  #宽带发票
+    yuejie_loc: (By.ID,'月结发票')  #月结发票
+    taitou_loc: (By.ID,'发票抬头')  #发票抬头
+    xinzeng_loc: (By.ID,'新增发票')  #新增发票
+    riseinput_loc: (By.XPATH,'//android.webkit.WebView[@content-desc="新增发票"]/android.widget.EditText[1]')   #发票抬头输入栏
+    shibiehao_loc: (By.XPATH,'//android.webkit.WebView[@content-desc="新增发票"]/android.widget.EditText[2]')   #纳税人识别号输入栏
+    moren_loc: (By.XPATH,'//android.webkit.WebView[@content-desc="新增发票"]/android.view.View[4]/android.widget.CheckBox')  #默认按钮
+    baocun_loc: (By.ID,'保存')   #保存按钮
+    youtui_loc: (By.ID,'邮件推送')  #邮件推送
+    mail_loc: (By.XPATH,'//android.webkit.WebView[@content-desc="推送设置"]/android.widget.EditText')  #常用邮箱输入栏
+    save_loc: (By.ID,'保存')   #保存
+    zhidaole_loc: (By.ID,'知道了')  #点击知道了
+    back_loc: (By.ID,'title_back_btn')  #返回按钮
+    close_loc: (By.ID,'title_close_btn') #关闭按钮
+    kaiju_loc: (By.ID,'开具')  #点击开具
+    tingkai_loc: (By.ID,'停止开具')  #停止开具按钮
+    quekai_loc: (By.ID,'确认开具') #确认开具按钮
+    pan_huafei_loc: (By.XPATH,'//*[contains(@text,"话费充值发票")]') #判定话费充值页面
+    pan_liuliang_loc: (By.XPATH,'//*[contains(@text,"流量直充发票")]') #判定流量充值页面
+    pan_kuandai_loc: (By.XPATH,'//*[contains(@text,"宽带发票")]') #判定宽带发票页面
+    pan_yuejie_loc: (By.XPATH,'//*[contains(@text,"月结发票")]') #判定月结发票页面
+    pan_taitou_loc: (By.XPATH,'//*[contains(@text,"发票管理")]') #判定发票抬头页面
+    pan_xinzeng_loc: (By.XPATH,'//*[contains(@text,"新增发票")]') #判定新增发票页面
+    danwei_loc: (By.ID,'单位') #确认开具成功按钮
+    pan_tuisong_loc: (By.XPATH,'//*[contains(@text,"推送设置")]') #判定邮箱推送页面
+    pan_youxiang_loc: (By.XPATH,'//android.widget.EditText[@content-desc="2418261328@qq.com"]') #判断邮箱保存
+
+ShiMing:
+    pan_shiming_loc: (By.XPATH,'//*[contains(@text,"实名补登记")]') #判定进入实名登记页面
+    back_loc: (By.ID,'title_back_btn')  #返回按钮
+
+HeDuoHao:
+    pan_heduohao_loc: (By.XPATH,'//*[contains(@text,"副号")]') #判定进入实名登记页面
+    back_loc: (By.ID,'title_back_btn')  #返回按钮
+
+ZhiNeng:
+    wangguan_loc: (By.XPATH,'//android.webkit.WebView[@content-desc="智能家居"]/android.widget.ListView[2]/android.view.View[1]') #网关管理
+    shebei_loc: (By.XPATH,'//android.webkit.WebView[@content-desc="智能家居"]/android.widget.ListView[2]/android.view.View[2]') #设备管理
+    baokuan_loc: (By.XPATH,'//android.webkit.WebView[@content-desc="智能家居"]/android.widget.ListView[4]/android.view.View[1]') #爆款商品
+    pan_zhineng_loc: (By.XPATH,'//*[contains(@text,"智能家居")]') #判定进入智能家居
+    pan_wangguan_loc: (By.XPATH,'//*[contains(@text,"网络管理")]') #判定进入网关管理
+    pan_shebei_loc: (By.XPATH,'//*[contains(@text,"添加智能设备")]') #判定进入设备管理
+    pan_baokuan_loc: (By.XPATH,'//*[contains(@text,"商品详情")]')  # 判定进入爆款商品详情页
+    back_loc: (By.ID,'title_back_btn')  #返回按钮
+    wangguan_back_loc: (By.ID,'ivBack') #网关管理页面的返回按钮
+    shebei_back_loc: (By.ID,'sm_main_back_white_iv') #设备管理页面的返回按钮
+    close_loc: (By.ID,'title_close_btn') #关闭
+
+ChaJian:
+    pan_chajian_loc: (By.XPATH,'//*[contains(@text,"插件中心")]')  #判定插件中心
+    fenxiang_loc:  (By.ID,'title_share_btn')  #分享按钮
+    pan_fenxiang_loc: (By.XPATH,'//*[contains(@text,"微信朋友圈")]') #判定分享
+    quxiao_loc: (By.XPATH,'//*[contains(@text,"取消")]')  #取消按钮
+    back_loc: (By.ID,'title_back_btn')  #返回按钮

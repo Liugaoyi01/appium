@@ -1,0 +1,141 @@
+Shouye:
+    shouye_loc: (By.XPATH,"//*[contains(@text,'首页')]")
+    dishi_loc : (By.ID,'title_city_arrow_img')
+    search_loc: (By.ID,'img_search')
+    yuyin_loc: (By.ID,'img_voice_search')  #语音搜索
+    scan_loc: (By.NAME,'扫一扫')
+    content1_loc: (By.NAME,"充值交费")
+    taocan_loc: (By.NAME,"套餐余量")
+    liuliang_loc: (By.NAME,"流量管家")
+    bill_loc: (By.NAME,"我的账单")
+    points_loc: (By.NAME,"积分商城")
+    title_loc: (By.ID,'title_name_txt')  #页面标题
+    guide_know: (By.ID,'guide_know') #蒙版ID
+    c_close_loc: (By.ID,'close_btn')
+    weiyu_loc: (By.ID,"uighur_img")
+    qinggan_loc: (By.ID,"drag_img")
+    xinyong_loc: (By.XPATH, '//android.webkit.WebView[@content-desc="中国移动手机营业厅首页"]/android.view.View[18]/android.widget.Image')
+    jingxi_loc: (By.NAME,"点击有惊喜")
+    liaojie_loc: (By.NAME,"了解信用分")
+    huanyi_loc: (By.NAME,"换一批")
+    gengduo_loc: (By.NAME,"更多")
+    beijin_loc: (By.ID,'title_city_name_txt')   #默认定位-》北京
+    upper_right_loc: (By.ID,'title_msg_center_img') #右上角更多按钮
+    xiaoxi_loc: (By.XPATH,'/hierarchy/android.widget.FrameLayout/android.view.View/android.widget.LinearLayout[2]/android.widget.TextView')
+    dingdanxi_loc: (By.ID,'img_order_notice')  #订单消息
+    denglu_loc: (By.ID,'tv_title')  #拉起登录
+    fanhui_loc: (By.ID,'login_close') #返回
+
+    goto_login: (By.NAME,"去登录")
+    login_frame: (By.ID,'com.greenpoint.android.mc10086.activity:id/tv_title')
+
+Personalized:
+    shangping1_loc: (By.XPATH,'//android.webkit.WebView[@content-desc="中国移动手机营业厅首页"]/android.widget.ListView[7]/android.view.View[1]')  #第一个商品icon
+    shangping2_loc: (By.XPATH,'//android.webkit.WebView[@content-desc="中国移动手机营业厅首页"]/android.widget.ListView[6]/android.view.View[1]/android.widget.Image')
+    kuandai_loc: (By.NAME,"宽带专区")
+    zhineng_jiaju_loc: (By.NAME,"智能家居")
+    zhengzhao_loc: (By.NAME,"证照信息")
+
+Cities:
+    c_search_loc: (By.ID,'citychoose_searchcontent_edt')
+    c_choose_loc: (By.ID,'tv_name')
+    city_loc: (By.ID,'title_city_name_txt')
+
+
+Search:
+    box_loc: (By.XPATH,'//android.webkit.WebView[@content-desc="搜索"]/android.widget.EditText')
+    t_search_loc: (By.XPATH,'//android.widget.Button[@content-desc="搜索"]')
+    s_choose_loc: (By.NAME,"增值业务")
+    resou_loc: (By.NAME,"热搜")
+    tuijian_loc: (By.NAME,"未找到相关结果")
+    neirong_loc: (By.NAME,"5G看移动")
+    lishi_loc: (By.NAME,"历史搜索")
+    yuyin_s_loc: (By.NAME,"开始语音搜索")
+    yuyin_m_loc: (By.NAME,"普通话")
+    yuyin_c_loc: (By.ID,"btn_voice_close")
+
+
+Card:
+    look_loc: (By.NAME,"登录查看")
+    tishi_loc: (By.NAME,"Hi，欢迎您，请登录")
+    liuliang_loc: (By.NAME,"通用流量已用")
+    huafei_loc: (By.NAME,"话费余额")
+    yue_loc: (By.NAME,"您的账户总余额")  #txt_total_balance_title
+    keyong_loc: (By.ID,'txt_use_balance_title')  #可用余额
+    yuyin_loc: (By.NAME,"语音剩余")
+    shengyu_loc: (By.NAME,"您的语音剩余")
+    fenxiang_loc: (By.ID,'title_share_btn')  #分享按钮
+    gobutton_loc: (By.NAME,'去充值')  #语音去充值按钮
+    gopay_loc: (By.ID,'txt_gopay')  #话费去充值按钮
+    jine_loc: (By.ID,"--元")
+    taocan_loc: (By.NAME,"套餐余量")  #套餐余量icon
+    banli_loc: (By.NAME,"套餐办理")  #套餐办理icon
+    feixiang_loc: (By.NAME,"4G飞享套餐")
+    zhangdan_loc: (By.NAME,"我的账单")  #我的账单icon
+    zonge_loc: (By.ID,"tv_bill_all")  #本期账单总额:
+
+Scan:
+    pic_loc: (By.ID,'title_share_btn')
+    tishi_loc: (By.ID,'message')
+    zhidao_loc: (By.ID,'dialog_btn2')
+
+Recharge:
+    title_name_txt: (By.ID,'title_name_txt') #页面标题
+    amount_loc: (By.NAME,"10元")
+    flow_loc: (By.XPATH,'//*[@text="流量"]')
+    flowamount_loc: (By.NAME,"2G")
+    content2_loc: (By.NAME,"立即充值")
+    text1_loc: (By.XPATH,'//*[@text="支付宝支付"]')
+    return_loc: (By.XPATH,'/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.ImageView')
+    later_loc: (By.NAME,"稍后再说")
+    immediately_loc: (By.NAME,"立即查看")
+    invoice_loc: (By.NAME,"电子发票")
+    my_invoice_loc: (By.ID,'title_name_txt')
+    title_back_btn: (By.ID,'title_back_btn')
+
+Package:
+    title_name_txt: (By.ID,'title_name_txt')
+    liulzhicong_loc: (By.NAME,"流量直充")
+    content2_loc: (By.NAME,"立即充值")
+    text1_loc: (By.XPATH,'//*[@text="支付宝支付"]')
+    Button1_loc: (By.XPATH,'//android.widget.Button')
+    zhifub_loc: (By.NAME,"登录支付宝")
+
+Bill:
+    yue_loc: (By.ID,'tv_balance')  #账户余额
+    gobutton_loc: (By.ID,'img_go_recharge')  #去充值按钮
+
+Traffic:
+    fenxiang_loc: (By.ID,'title_share_btn')  #分享按钮
+    kuaizhao_loc: (By.NAME,"微信快照")
+    quxiao_loc: (By.ID,'btn_cancel')  #分享取消
+    zhankai_loc: (By.NAME,"展开")  #流量明细展开
+    shouqi_loc: (By.NAME,"收起")  #流量明细收起
+    dingdan_loc: (By.NAME,"流量订单")  #流量订单icon
+    chongzhi_loc: (By.NAME,"充值订单")  #充值订单
+    jingwai_loc: (By.NAME,"境外流量")  #境外流量
+    shangpin_loc: (By.NAME,"流量商品")  #流量商品icon
+    xiangdan_loc: (By.NAME,"流量详单")  #流量详单icon
+    shenfen_loc: (By.NAME,"身份认证")
+    bugouyong_loc: (By.NAME,"流量不够用")  #流量不够用title
+    yongbuwan_loc: (By.NAME,"流量用不完")  #流量用不完title
+
+
+Jifen:
+    duihuan_loc: (By.NAME,"兑换排行")  #兑换排行入口
+    lishi_loc: (By.NAME,"历史排行")  #历史排行tab
+    year_loc: (By.NAME,"年排行")  #年排行tab
+    firs_loc: (By.NAME,"1")  #第一位商品
+    liji_loc: (By.NAME,"立即兑换")  #立即兑换按钮
+    sure_loc: (By.NAME,"确定兑换")  #确定兑换按钮
+    shop_loc: (By.NAME,"购物车")  #我的账户页购物车入口
+    goshop_loc: (By.NAME,"去购物")  #购物车空时去购物按钮
+    shoucang_loc: (By.NAME,"加入收藏")  #左滑加入收藏
+    delete_loc: (By.NAME,"删除")  #左滑删除
+    gift_loc: (By.NAME,"礼品分类")  #礼品分类入口
+    shuzi_loc: (By.NAME,"数字生活")  #数字生活标题栏
+    shiting_loc: (By.NAME,"视听")  #视听模块入口
+    shi_title_loc: (By.ID,'title_name_txt')
+    candui_loc: (By.NAME,"我能兑换")  #我能兑换入口
+    account_loc: (By.NAME,"我的账户")  #我的账户入口
+    jifen_loc: (By.NAME,"可用积分：")  #我的账户页登录后字段

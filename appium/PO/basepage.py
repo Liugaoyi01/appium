@@ -1,7 +1,7 @@
 # coding = utf-8
-# author = 'liugaoyi'
+# -*- coding:utf-8 -*-
 
-''' 封装公共的方法及驱动 '''
+# 封装公共的方法及驱动
 
 from appium import webdriver
 import time
@@ -9,29 +9,42 @@ import os
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
+from PO.desired_caps import appium_desired
+import logging
 
-from desired_caps import appium_desired
 
-class Base:
-
+class Base():
     def __init__(self, driver):
         self.driver = driver
 
-
     # 定义一个启动到首页的方法
     def start(self):
-        time.sleep(5)
-        self.swipe_left(t=1000, n=5)
+        X = self.driver.get_window_size()['width']
+        Y = self.driver.get_window_size()['height']
+        print(X,Y)
+        self.tap((141/1080)*X,(1487/1920)*Y)
+        logging.info('勾选隐私协议')
+        self.tap((516/1080)*X,(1666/1920)*Y)
+        logging.info('点击同意')
+        time.sleep(9)
+        self.swipe_left(t=1000, n=3)
         time.sleep(3)
-        self.tap(278, 750)
-        time.sleep(5)
+        self.tap((533/1080)*X,(1571/1920)*Y)  # 真机：(533,1380)；模拟器：(539, 1556)
+        logging.info('点击立即开启')
+        # try:
+        #     button = self.driver.find_element_by_id('app_startPage_skip')
+        # except NoSuchElementException:
+        #     logging.info("无跳过button")
+        # else:
+        #     button.click()
+        time.sleep(7)
         try:
-            self.driver.wait_activity('com.leadeon.cmcc.view.tabs.AppTabFragment', 5)
-            print('客户端启动成功，已进入首页')
-        except TimeoutError:
-            print('检测未进入首页')
-        time.sleep(3)
-        self.get_screenshot('首页')  # 此处用来测试截图功能，后面可以忽略
+            self.driver.find_element_by_xpath("//*[contains(@text,'首页')]")
+            logging.info('客户端启动成功，已进入首页')
+        except NoSuchElementException:
+            logging.error('检测未进入首页')
+        # time.sleep(3)
+        #self.get_screenshot('首页')  # 此处用来测试截图功能，后面可以忽略
 
     def get_driver(self):
         return self.driver
@@ -42,8 +55,8 @@ class Base:
         try:
             WebDriverWait(self.driver, 15).until(lambda driver: driver.find_element(*loc).is_displayed())
             return self.driver.find_element(*loc)
-        except NoSuchElementException:
-            print(u'页面中通过%s未能找到%s元素' % (loc))
+        except:
+            logging.warning(u'页面中通过%s未能找到%s元素' % (loc))
 
     # 封装一组元素定位方法
 
@@ -51,16 +64,47 @@ class Base:
         try:
             if len(self.driver.find_elements(*loc)):
                 return self.driver.find_elements(*loc)
-        except NoSuchElementException:
-            print(u'页面中通过%s未能找到%s元素' % (loc))
+        except:
+            logging.warning(u'页面中通过%s未能找到%s元素' % (loc))
 
     # 重新封装点击方法
     def click_button(self, *loc):
         try:
             self.find_element(*loc).click()
         except NoSuchElementException:
-            print(u'页面中通过%s未能找到%s按钮' % (loc))
+            logging.warning(u'页面中通过%s未能找到%s按钮' % (loc))
 
+    # 重新封装判断元素存在方法
+    def try_find(self, loc):
+
+        try:
+            self.find_element(loc).is_displayed()
+            logging.info(u'元素%s-%s存在,返回True' % (loc))
+            return True
+        except:
+            logging.info(u'元素%s-%s不存在,返回False' % (loc))
+            return False
+
+    # 获取元素文本text
+    def try_text(self, loc):
+        try:
+            text = self.find_element(loc).text
+            logging.info(u'元素%s文本为：%s ' % (loc, text))
+            return text
+        except:
+            pass
+
+    # 获取元素文本content-desc
+    def try_desc(self, loc):
+        try:
+            text = self.find_element(loc).get_attribute('name')
+            logging.info(u'元素%s文本为：%s ' % (loc, text))
+            return text
+        except:
+            pass
+
+    chongzhi_loc = (By.XPATH, '//*[@content-desc="充值交费"]')
+    title_loc = (By.ID, 'title_name_txt')
     # 滑动封装-向左滑动
     '''
         参数1：t是持续时间单位：毫秒
@@ -124,20 +168,40 @@ class Base:
                 self.find_element(loc).clear()
             self.find_element(loc).send_keys(value)
         except NoSuchElementException:
-            print(u'页面中通过%s未能找到%s元素' % (loc))
+            logging.warning(u'页面中通过%s未能找到%s元素' % (loc))
 
     def back(self):
-        back_loc = (By.ID, title_back_btn)
+        back_loc = (By.ID, 'title_back_btn')
         try:
             self.click_button(back_loc)
-        except NoSuchElementException:
-            print(u'返回失败')
+            logging.info('页面返回')
+        except:
+            pass
+
+    def close(self):
+        close_loc = (By.ID, 'title_close_btn')
+        try:
+            self.click_button(close_loc)
+            logging.info('页面关闭')
+        except:
+            pass
 
     # 封装坐标点击方法
 
     def tap(self, x, y):
         try:
             self.driver.tap([(x, y)])
+            logging.info('点击坐标')
+        except:
+            pass
+
+    # 封装忽略点击
+
+    def hulie(self):
+        hulie_loc = (By.ID, 'dialog_btn1')
+        try:
+            self.click_button(hulie_loc)
+            logging.info('点击忽略升级')
         except:
             pass
 
@@ -149,7 +213,7 @@ class Base:
     # 以当前时间+自定义名称命名保存截图
     def get_screenshot(self, name):
         day = time.strftime('%Y-%m-%d', time.localtime(time.time()))
-        fp = '..\\result\\image\\' + day
+        fp = '..\Result\image' + day
         tm = time.strftime('%Y-%m-%d-%H-%M-%S', (time.localtime(time.time())))
         type = '.png'
 
@@ -163,8 +227,7 @@ class Base:
 
 
 if __name__ == '__main__':
-   driver = appium_desired()
+    driver= appium_desired()
+    base = Base(driver)
+    base.start()
 
-   base = Base(driver)
-
-   base.start()
