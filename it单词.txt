@@ -1,0 +1,214 @@
+﻿linux命令：
+midir zhang   创建一个zhang的目录
+rmdir zhang   删除一个zhang的目录
+cp zhang zhang1  复制一个zhang的文件以及新文件的文件名zhang1
+
+
+grep常用用法
+复制代码
+复制代码
+[root@www ~]# grep [-acinv] [--color=auto] '搜寻字符串' filename
+选项与参数：
+-a ：将 binary 文件以 text 文件的方式搜寻数据
+-c ：计算找到 '搜寻字符串' 的次数
+-i ：忽略大小写的不同，所以大小写视为相同
+-n ：顺便输出行号
+-v ：反向选择，亦即显示出没有 '搜寻字符串' 内容的那一行！
+
+Python语言必备单词：
+
+and	
+not
+assert	
+finally	
+or
+break	
+for	
+pass
+class
+from	
+print
+continue 持续
+global  全球的
+raise [reɪz] 提升,举起
+def	
+if	
+return
+del	
+import	
+try
+elif	
+in	
+while  [waɪl] 虽然
+else [els] 其他的，别的
+is	
+with
+yield  出产(作物);产生(收益、效益等);提供;
+
+true 真实   
+false  假
+if   
+refresh  刷新
+driver  驾驶员;驱动程序;
+get  收到; 接到
+sleep  睡觉
+forward  向前; 进展; 前进
+size [saɪz]尺码; 号
+maxsize  最大号
+screenshot   [ˈskriːnʃɒt]  屏幕截图
+file  文件; 档案
+close  关闭
+quit  离开
+input  输入
+implicitly  暗中地；不明显地；含蓄地
+wait  等待; 等候
+
+element  要素; 基本部分
+click  点击，单击
+if  如果
+else  其他的; 别的; 另外的; 不同的;
+selector  (运动队队员的) 选拔人; 选择器; 转换器; 换挡器;
+main  主要的; 最重要的
+random [ˈrændəm]随机数
+submit  提交
+common  [ˈkɑːmən] 常见的，普通的
+action  行动
+chains   锁链; 一系列，一连串(人或事)
+move  (使) 改变位置，移动
+double   两倍的; 加倍的; 双的
+handle   把手; 拉手; 柄; 把; 提梁,句柄
+current   [ˈkʌrənt]现时发生的; 当前的; 现在的; 通用的; 流通的; 流行的;
+frame  构架，支架，骨架;
+value  价值; (与价格相比的) 值，划算程度; 用途
+alert  警戒; 戒备; 警惕; 警报;
+accept   接受; 同意; 认可;
+dismiss  不予考虑; 摒弃; 对…不屑一提; 去除，消除
+prompt  立即; 迅速的; 及时的; 敏捷的; 准时的
+hidden  难以看见(或发现)的; 隐藏的; (地方) 隐秘的;
+all processes  所有的(为达到某一目标的) 过程; 进程
+remote  远程
+protocol  (数据传递的) 协议，规程，规约
+Request  (正式或礼貌地) 请求，要求;
+Response  回答，答复; 反应; 响应;
+Execute  实行; 执行; 实施; 成功地完成(技巧或动作)
+history  发展史，历史;
+params  参数
+sort  排序
+
+
+route   路线;路途;(公共汽车和列车等的)常规路线，固定线路;途径;渠道
+v.
+按某路线发送
+
+methods  方法;办法;措施;条理;有条不紊
+info  信息，情报，新闻
+
+code  密码，编码，为...编码
+
+process    过程
+exit   退出
+fail   失败
+cursor [ˈkɜːsə(r)] 光标
+openid  开放式认证系统
+logger 记录器
+logo   标识，标记，图标
+list    列表
+employee  [ɪmˈplɔɪiː]雇员
+connect 连接
+except [ɪkˈsept] 除了
+exception 例外
+execute  (尤指依法)处决，处死;实行;执行;实施;成功地完成(技巧或动作)
+commit    做出(错或非法的事);犯(罪或错等);自杀;承诺，保证(做某事、遵守协议或遵从安排等)
+edit   编辑
+type    类型
+roll     卷，滚动
+check [tʃek]   检查
+force   武力，暴力，力量
+trip    旅游
+seat [siːt]座位
+vehicle [ˈviːəkl]车辆
+color   颜色
+status [ˈsteɪtəs] 职位，地位，身份
+memo  [ˈmemoʊ] 备忘录
+
+logging  记录
+button    纽扣，扣子，按钮
+start   开始，开头，开端
+warning    警告
+perform     执行
+tag    tæɡ    标签; 标牌; 称呼; 诨名; 附加语
+Label  [ˈleɪbl] 标签
+Samples  [ˈsɑːmplz] 例子
+Average   [ˈævərɪdʒ] 平均数
+Median [ˈmiːdiən] 中间值
+line [laɪn] 线
+Max  [mæks]  最高的;最多的;
+Error  [ˈerə(r)]  错误;差错;谬误
+Throughput   [ˈθruːpʊt 吞吐量;吞吐率;
+Exception [ɪkˈsepʃn] 例外; 规则的例外; 例外的事物;
+iframe      框架
+
+platform    平台
+device    设备，仪器，装置
+version [ˈvɜːʃn] 版本
+Package   包，盒
+Native [ˈneɪtɪv] 出生地的; 儿时居住地的; 本地的; 当地的; 土著的; 土著人的
+client [ˈklaɪənt] 客户机
+
+Remote [rɪˈməʊt] 远程
+skip [skɪp] 跳过
+such [sʌtʃ] 这样的，那样的，类似的;   例如：捕捉NoSuchElementException异常
+node [nəʊd] 茎节;(根或枝上的)瘤，节，结;结点;节点
+Message [ˈmesɪdʒ] (书面或口头的)信息，消息，音信;电邮(或手机)信息;
+until [ənˈtɪl] 到…时;直到…为止
+ignored  [ɪɡˈnɔːd] 忽视;对…不予理会;佯装未见;不予理睬 例子：ignored_exceptions=None)
+forum  [ˈfɔːrəm] 公共讨论场所;论坛;讨论会;(古罗马)公共集会场所
+Toast  [təʊst] 是一种简易的消息提示框
+Dialog [ˈdaɪəlɒɡ] 对话框;对话;对白;對話框;窗口
+as   [æz , əz] 像;如同;作为;当作
+login  [ˈlɒɡɪn] 注册，登录(通过键入名称或词进入计算机系统的操作);登录名
+context [ˈkɑːntekst] (事情发生的)背景，环境，来龙去脉;上下文;语境
+capability  [ˌkeɪpəˈbɪləti] 能力;才能;(国家的)军事力量，军事武器
+width  [wɪdθ] 宽度;广度;某一宽度的材料;(游泳池两长边之间的)池宽
+height [haɪt] (人或物的)身高;高;高度
+left             左边
+right     右边
+up           上
+down       下
+range        一系列;(变动或浮动的)范围，界限，区间;类;种
+
+press [pres]   (被)压，挤
+longPress     对屏幕..长按
+tap         轻敲，点击
+release [rɪˈliːs] 释放;放出;放走;放开;松开
+
+DEBUG     调试信息，也是最详细的日志信息
+INFO     证明事情按预期工作。
+WARNING    表明发生了一些意外，或者不久的将来会发生问题（如‘磁盘满了’）。软件还是在正常工作
+ERROR  由于更严重的问题，软件已不能执行一些功能了
+critical ˈkrɪtɪkl]; 关键的; 至关紧要的; 严重的; 不稳定的; 严重错误，表明软件已不能继续运行了
+Logger     记录器，用于设置日志采集。
+Handler   处理器，将日志记录发送至合适的路径。
+Filter  过滤器，提供了更好的粒度控制，它可以决定输出哪些日志记录。
+Formatter 格式化器，指明了最终输出中日志的格式。
+format	[ˈfɔːmæt]计划; 设计; (出版物的) 版式，开本; 格式
+level [ˈlevl]品级; 层次; 级别;
+link  [lɪŋk]联系; 连接; 关系; 纽带; 交通路线; 通讯手段;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
