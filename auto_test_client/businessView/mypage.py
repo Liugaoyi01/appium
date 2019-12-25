@@ -4,16 +4,19 @@ from appium import webdriver
 import time, os
 from selenium.common.exceptions import NoSuchElementException  #捕捉NoSuchElementException异常
 from selenium.webdriver.common.by import By
-from PO.desired_caps import appium_desired
-from PO import basepage
-from PO.basepage import Base
+from auto_test_client.public.desired_caps import appium_desired
 import yaml
 import logging
-from PO.loginpage import Login
-# with open("C://ClientTest/Yaml/My.yaml", "r", encoding='utf-8') as file:
-#     data = yaml.load(file)
-with open('..\Yaml\My.yaml', 'r', encoding='utf-8') as file:
-    data = yaml.load(file,Loader=yaml.FullLoader)
+from auto_test_client.baseView.basepage import Base
+from auto_test_client.utils import getLoger, openYaml
+from auto_test_client.businessView.loginpage import Login
+
+
+my_path = "../../data/login.yaml"
+data = openYaml.get_yaml_data(my_path)
+
+
+
 class My(Base):
     wode_loc = eval(data['My']['wode_loc'])
     imglogin_loc = eval(data['My']['imglogin_loc'])  #个人信息图标

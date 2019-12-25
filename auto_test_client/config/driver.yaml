@@ -1,6 +1,6 @@
 platformName: Android
 platformVersion: '5.1.1'
-deviceName: e11   #APU0216515008346  emulator-5554
+deviceName: HB6CE1RPL002YU   #APU0216515008346  emulator-5554 a50a6522
 deviceName2: em212
 appPackage: com.greenpoint.android.mc10086.activity
 appActivity: com.leadeon.cmcc.base.StartPageActivity
@@ -9,6 +9,6 @@ resetKeyboard: True
 ip: 127.0.0.1
 port: 4723
 port2: 4725
-udid: emulator-5554
+udid: HB6CE1RPL002YU
 udid2: emulator-5556
 

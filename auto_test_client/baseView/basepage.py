@@ -9,42 +9,13 @@ import os
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
-from PO.desired_caps import appium_desired
+from auto_test_client.public.desired_caps import appium_desired
 import logging
 
 
 class Base():
     def __init__(self, driver):
         self.driver = driver
-
-    # 定义一个启动到首页的方法
-    def start(self):
-        X = self.driver.get_window_size()['width']
-        Y = self.driver.get_window_size()['height']
-        print(X,Y)
-        self.tap((141/1080)*X,(1487/1920)*Y)
-        logging.info('勾选隐私协议')
-        self.tap((516/1080)*X,(1666/1920)*Y)
-        logging.info('点击同意')
-        time.sleep(9)
-        self.swipe_left(t=1000, n=3)
-        time.sleep(3)
-        self.tap((533/1080)*X,(1571/1920)*Y)  # 真机：(533,1380)；模拟器：(539, 1556)
-        logging.info('点击立即开启')
-        # try:
-        #     button = self.driver.find_element_by_id('app_startPage_skip')
-        # except NoSuchElementException:
-        #     logging.info("无跳过button")
-        # else:
-        #     button.click()
-        time.sleep(7)
-        try:
-            self.driver.find_element_by_xpath("//*[contains(@text,'首页')]")
-            logging.info('客户端启动成功，已进入首页')
-        except NoSuchElementException:
-            logging.error('检测未进入首页')
-        # time.sleep(3)
-        #self.get_screenshot('首页')  # 此处用来测试截图功能，后面可以忽略
 
     def get_driver(self):
         return self.driver
