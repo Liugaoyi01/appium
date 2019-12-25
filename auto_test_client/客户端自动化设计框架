@@ -1,0 +1,25 @@
+appium框架介绍
+-config配置信息
+	-log.config
+	-driver.yaml
+-data 放页面的一些数据或者数据驱动的数据
+	-login.yaml
+-baseView基本操作方法	
+-businessView页面封装
+	-页面的一些业务方法，跟之前差不多
+-public存放一些公共的业务方法，比如启动到首页，退出等	
+-utils工具类的方法
+	-logger日志封装
+	-appium服务自动化启动
+	-yaml数据读取
+	主要放一些公共的工具包以供调用
+-results
+	存放测试结果
+-testlog
+	存放运行的日志
+-testcase
+	测试用例
+-screenshots
+	截图相关
+-run
+	启动测试用
