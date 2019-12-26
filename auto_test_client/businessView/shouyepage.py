@@ -80,10 +80,10 @@ class Shouye(Base):  # 首页元素
         try:
             element = self.driver.find_element(*self.guide_know)
         except NoSuchElementException:
-            logging.info('adBtn element is not found!')
+            logging.info('guide_know element is not found!')
         else:
             element.click()
-            logging.info('click adBtn')
+            logging.info('click guide_know')
 
     # 浮窗广告点击关闭
     def check_adBtn(self):
@@ -602,4 +602,6 @@ class Jifen(Shouye):  # 积分商城
 
 if __name__ == '__main__':
     driver = appium_desired()
+    logging.info('=====首页启动===')
     start_index(driver)
+    logging.info('====index到首页===')

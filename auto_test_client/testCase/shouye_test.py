@@ -4,10 +4,9 @@ import sys, os
 
 sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))))
 
-from PO import basepage
-from PO import shouyepage
-from PO import loginpage
-from PO.desired_caps import appium_desired
+from auto_test_client.baseView import basepage
+from auto_test_client.businessView import shouyepage,loginpage
+from auto_test_client.public.desired_caps import appium_desired
 from selenium.webdriver.common.by import By
 import time
 import logging

@@ -85,9 +85,9 @@ class Base():
     def swipe_left(self, t=500, n=1):
 
         l = self.driver.get_window_size()
-        x1 = l['width'] * 0.75  # 起点横坐标
+        x1 = l['width'] * 0.9  # 起点横坐标
         y = l['height'] * 0.5  # 纵坐标
-        x2 = l['width'] * 0.25  # 终点横坐标
+        x2 = l['width'] * 0.1  # 终点横坐标
 
         for i in range(n):
             self.driver.swipe(x1, y, x2, y, t)

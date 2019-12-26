@@ -6,13 +6,11 @@ import sys, os
 sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))))
 import io
 import time
-from PO import mypage
-from PO import shouyepage
-from PO.mypage import My
+from auto_test_client.businessView import shouyepage,mypage,loginpage
+from auto_test_client.businessView.mypage import My
 import yaml
-from PO import loginpage
-from PO.loginpage import Login
-from PO.desired_caps import appium_desired
+from auto_test_client.businessView.loginpage import Login
+from auto_test_client.public.desired_caps import appium_desired
 import logging
 
 driver = appium_desired()

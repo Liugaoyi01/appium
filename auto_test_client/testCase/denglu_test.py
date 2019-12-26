@@ -4,9 +4,9 @@ import os
 
 sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))))
 import yaml
-from PO import loginpage
-from PO import basepage
-from PO.desired_caps import appium_desired
+from auto_test_client.businessView import loginpage
+from auto_test_client.baseView import basepage
+from auto_test_client.public.desired_caps import appium_desired
 import time
 import logging
 

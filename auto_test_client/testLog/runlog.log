@@ -1854,3 +1854,96 @@
 2019-12-25 10:51:11,679 basepage.py[line:165] INFO 点击坐标
 2019-12-25 10:51:11,679 start.py[line:21] INFO 点击立即开启
 2019-12-25 10:51:48,863 start.py[line:33] ERROR 检测未进入首页
+2019-12-25 15:01:33,864 desired_caps.py[line:25] INFO =====准备启动=====
+2019-12-25 15:02:10,253 shouyepage.py[line:605] INFO =====首页启动===
+2019-12-25 15:02:10,674 basepage.py[line:165] INFO 点击坐标
+2019-12-25 15:02:10,674 start.py[line:14] INFO 勾选隐私协议
+2019-12-25 15:02:10,801 basepage.py[line:165] INFO 点击坐标
+2019-12-25 15:02:10,801 start.py[line:16] INFO 点击同意
+2019-12-25 16:08:13,920 desired_caps.py[line:26] INFO appium port:4725 start run HB6CE1RPL002YU at Wed Dec 25 16:08:13 2019
+2019-12-25 16:09:06,320 desired_caps.py[line:26] INFO appium port:4725 start run HB6CE1RPL002YU at Wed Dec 25 16:09:06 2019
+2019-12-25 16:09:25,086 desired_caps.py[line:26] INFO appium port:4725 start run HB6CE1RPL002YU at Wed Dec 25 16:09:25 2019
+2019-12-25 16:09:32,069 desired_caps.py[line:26] INFO appium port:4725 start run HB6CE1RPL002YU at Wed Dec 25 16:09:32 2019
+2019-12-25 16:11:25,768 desired_caps.py[line:26] INFO appium port:4725 start run HB6CE1RPL002YU at Wed Dec 25 16:11:25 2019
+2019-12-25 17:28:39,785 desired_caps.py[line:26] INFO appium port:4725 start run HB6CE1RPL002YU at Wed Dec 25 17:28:39 2019
+2019-12-25 17:29:48,350 desired_caps.py[line:26] INFO appium port:4725 start run HB6CE1RPL002YU at Wed Dec 25 17:29:48 2019
+2019-12-25 17:30:49,318 desired_caps.py[line:26] INFO appium port:4723 start run HB6CE1RPL002YU at Wed Dec 25 17:30:49 2019
+2019-12-25 17:48:30,616 start.py[line:61] INFO 没有出现授权阶段，无需授权
+2019-12-25 18:04:42,599 desired_caps.py[line:26] INFO appium port:4723 start run HB6CE1RPL002YU at Wed Dec 25 18:04:42 2019
+2019-12-25 18:05:26,566 start.py[line:47] INFO 勾选隐私协议
+2019-12-25 18:05:28,340 start.py[line:52] INFO 点击同意开启按钮
+2019-12-25 18:05:59,307 basepage.py[line:30] WARNING 页面中通过id未能找到dialog_container元素
+2019-12-25 18:11:58,524 desired_caps.py[line:26] INFO appium port:4723 start run HB6CE1RPL002YU at Wed Dec 25 18:11:58 2019
+2019-12-25 18:12:33,558 start.py[line:47] INFO 勾选隐私协议
+2019-12-25 18:12:34,939 start.py[line:52] INFO 点击同意开启按钮
+2019-12-25 18:12:34,939 start.py[line:53] INFO 检查是否出现授权弹框
+2019-12-25 18:13:05,511 basepage.py[line:30] WARNING 页面中通过id未能找到permission_allow_button元素
+2019-12-25 18:21:13,554 desired_caps.py[line:26] INFO appium port:4723 start run HB6CE1RPL002YU at Wed Dec 25 18:21:13 2019
+2019-12-25 18:21:47,540 start.py[line:47] INFO 勾选隐私协议
+2019-12-25 18:21:48,960 start.py[line:52] INFO 点击同意开启按钮
+2019-12-25 18:22:19,942 basepage.py[line:30] WARNING 页面中通过id未能找到dialog_container元素
+2019-12-25 18:22:19,942 start.py[line:55] INFO 检查是否出现授权弹框
+2019-12-25 18:54:52,603 desired_caps.py[line:26] INFO appium port:4723 start run HB6CE1RPL002YU at Wed Dec 25 18:54:52 2019
+2019-12-25 18:55:37,454 start.py[line:47] INFO 勾选隐私协议
+2019-12-25 18:55:38,883 start.py[line:52] INFO 点击同意开启按钮
+2019-12-25 18:55:39,394 start.py[line:71] INFO 没有出现授权阶段，无需授权
+2019-12-25 19:18:03,825 desired_caps.py[line:26] INFO appium port:4723 start run HB6CE1RPL002YU at Wed Dec 25 19:18:03 2019
+2019-12-25 19:18:57,696 start.py[line:47] INFO 勾选隐私协议
+2019-12-25 19:18:59,131 start.py[line:52] INFO 点击同意开启按钮
+2019-12-25 19:18:59,909 start.py[line:72] INFO 没有出现授权阶段，无需授权
+2019-12-25 19:24:27,067 desired_caps.py[line:26] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Wed Dec 25 19:24:27 2019
+2019-12-25 19:25:06,675 start.py[line:47] INFO 勾选隐私协议
+2019-12-25 19:25:08,902 start.py[line:52] INFO 点击同意开启按钮
+2019-12-25 19:25:35,598 start.py[line:81] INFO 点击立即开启进入首页
+2019-12-25 19:26:39,068 desired_caps.py[line:26] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Wed Dec 25 19:26:39 2019
+2019-12-25 19:27:15,372 start.py[line:47] INFO 勾选隐私协议
+2019-12-25 19:27:17,447 start.py[line:52] INFO 点击同意开启按钮
+2019-12-25 19:27:26,134 start.py[line:81] INFO 点击立即开启进入首页
+2019-12-26 09:58:51,628 desired_caps.py[line:26] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Thu Dec 26 09:58:51 2019
+2019-12-26 09:59:38,724 desired_caps.py[line:26] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Thu Dec 26 09:59:38 2019
+2019-12-26 10:05:15,083 desired_caps.py[line:26] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Thu Dec 26 10:05:15 2019
+2019-12-26 10:07:52,967 desired_caps.py[line:26] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Thu Dec 26 10:07:52 2019
+2019-12-26 10:08:26,975 start.py[line:47] INFO 勾选隐私协议
+2019-12-26 10:08:29,236 start.py[line:52] INFO 点击同意开启按钮
+2019-12-26 10:08:29,740 start.py[line:77] INFO 进入引导页面
+2019-12-26 10:08:31,869 start.py[line:79] INFO 左滑到开启页面
+2019-12-26 10:08:43,872 start.py[line:84] INFO 点击立即开启进入首页
+2019-12-26 10:10:51,576 desired_caps.py[line:26] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Thu Dec 26 10:10:51 2019
+2019-12-26 10:14:43,622 desired_caps.py[line:26] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Thu Dec 26 10:14:43 2019
+2019-12-26 10:15:17,810 start.py[line:47] INFO 勾选隐私协议
+2019-12-26 10:15:20,217 start.py[line:52] INFO 点击同意开启按钮
+2019-12-26 10:15:51,271 basepage.py[line:30] WARNING 页面中通过id未能找到dialog_container元素
+2019-12-26 10:15:51,271 start.py[line:61] INFO 检查是否出现授权弹框
+2019-12-26 10:15:51,300 start.py[line:77] INFO 进入引导页面
+2019-12-26 10:15:54,398 start.py[line:79] INFO 左滑到开启页面
+2019-12-26 10:16:01,849 start.py[line:84] INFO 点击立即开启进入首页
+2019-12-26 10:24:04,074 desired_caps.py[line:26] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Thu Dec 26 10:24:04 2019
+2019-12-26 10:24:46,941 start.py[line:48] INFO 勾选隐私协议
+2019-12-26 10:24:49,302 start.py[line:53] INFO 点击同意开启按钮
+2019-12-26 10:24:49,302 start.py[line:62] INFO 检查是否出现授权弹框
+2019-12-26 10:25:19,812 basepage.py[line:30] WARNING 页面中通过id未能找到dialog_container元素
+2019-12-26 10:25:19,840 start.py[line:79] INFO 进入引导页面
+2019-12-26 10:25:23,031 start.py[line:81] INFO 左滑到开启页面
+2019-12-26 10:25:26,104 start.py[line:86] INFO 点击立即开启进入首页
+2019-12-26 10:25:59,485 start.py[line:102] ERROR 检测未进入首页
+2019-12-26 10:29:11,861 desired_caps.py[line:26] INFO appium port:4723 start run HB6CE1RPL002YU at Thu Dec 26 10:29:11 2019
+2019-12-26 10:29:45,891 start.py[line:48] INFO 勾选隐私协议
+2019-12-26 10:29:48,017 start.py[line:53] INFO 点击同意开启按钮
+2019-12-26 10:29:48,017 start.py[line:62] INFO 检查是否出现授权弹框
+2019-12-26 10:30:18,943 basepage.py[line:30] WARNING 页面中通过id未能找到dialog_container元素
+2019-12-26 10:30:19,163 start.py[line:79] INFO 进入引导页面
+2019-12-26 10:30:23,128 start.py[line:81] INFO 左滑到开启页面
+2019-12-26 10:30:27,678 start.py[line:86] INFO 点击立即开启进入首页
+2019-12-26 10:37:08,099 desired_caps.py[line:26] INFO appium port:4723 start run HB6CE1RPL002YU at Thu Dec 26 10:37:08 2019
+2019-12-26 10:37:51,313 start.py[line:48] INFO 勾选隐私协议
+2019-12-26 10:37:52,840 start.py[line:53] INFO 点击同意开启按钮
+2019-12-26 10:38:01,635 start.py[line:81] INFO 进入引导页面
+2019-12-26 10:38:04,591 start.py[line:83] INFO 左滑到开启页面
+2019-12-26 10:38:08,102 start.py[line:88] INFO 点击立即开启进入首页
+2019-12-26 10:44:56,828 desired_caps.py[line:26] INFO appium port:4723 start run HB6CE1RPL002YU at Thu Dec 26 10:44:56 2019
+2019-12-26 10:45:38,286 start.py[line:48] INFO 勾选隐私协议
+2019-12-26 10:45:39,800 start.py[line:53] INFO 点击同意开启按钮
+2019-12-26 10:47:16,761 start.py[line:81] INFO 进入引导页面
+2019-12-26 10:47:19,872 start.py[line:83] INFO 左滑到开启页面
+2019-12-26 10:47:23,441 start.py[line:88] INFO 点击立即开启进入首页
+2019-12-26 10:47:54,780 start.py[line:104] ERROR 检测未进入首页

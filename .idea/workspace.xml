@@ -26,7 +26,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -45,7 +45,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.shouyepage (1)">
+  <component name="RunManager" selected="Python.start">
+    <configuration name="appiumServer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="appium" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/auto_test_client/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/auto_test_client/utils/appiumServer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="desired_caps" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="appium" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -112,7 +134,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="shouyepage" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="start" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="appium" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -120,12 +142,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/appium/businessView" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/auto_test_client/public" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/appium/businessView/shouyepage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/auto_test_client/public/start.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -136,10 +158,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.shouyepage (1)" />
+        <item itemvalue="Python.start" />
+        <item itemvalue="Python.appiumServer" />
         <item itemvalue="Python.desired_caps" />
+        <item itemvalue="Python.shouyepage (1)" />
         <item itemvalue="Python.getLoger" />
-        <item itemvalue="Python.shouyepage" />
       </list>
     </recent_temporary>
   </component>
@@ -156,7 +179,8 @@
       <workItem from="1577172724101" duration="9167000" />
       <workItem from="1577236877665" duration="531000" />
       <workItem from="1577237701123" duration="4983000" />
-      <workItem from="1577243961058" duration="1696000" />
+      <workItem from="1577243961058" duration="14655000" />
+      <workItem from="1577324105861" duration="7097000" />
     </task>
     <servers />
   </component>
@@ -194,8 +218,10 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/autoclient$getLoger.coverage" NAME="getLoger Coverage Results" MODIFIED="1577239777441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test_client/utils" />
-    <SUITE FILE_PATH="coverage/autoclient$desired_caps.coverage" NAME="desired_caps Coverage Results" MODIFIED="1577241987028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test_client/public" />
-    <SUITE FILE_PATH="coverage/autoclient$shouyepage__1_.coverage" NAME="shouyepage (1) Coverage Results" MODIFIED="1577242230748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test_client/businessView" />
+    <SUITE FILE_PATH="coverage/autoclient$shouyepage__1_.coverage" NAME="shouyepage (1) Coverage Results" MODIFIED="1577257292776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test_client/businessView" />
+    <SUITE FILE_PATH="coverage/autoclient$desired_caps.coverage" NAME="desired_caps Coverage Results" MODIFIED="1577261484752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test_client/public" />
     <SUITE FILE_PATH="coverage/appium$shouyepage.coverage" NAME="shouyepage Coverage Results" MODIFIED="1577237262891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/appium/businessView" />
+    <SUITE FILE_PATH="coverage/autoclient$appiumServer.coverage" NAME="appiumServer Coverage Results" MODIFIED="1577325465752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test_client/utils" />
+    <SUITE FILE_PATH="coverage/autoclient$start.coverage" NAME="start Coverage Results" MODIFIED="1577328295981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test_client/public" />
   </component>
 </project>
