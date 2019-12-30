@@ -9,14 +9,16 @@ from auto_test_client.baseView import basepage
 from auto_test_client.public.desired_caps import appium_desired
 import time
 import logging
-
-driver = appium_desired()
+from auto_test_client.public.startFunction import start_index
 import pytest
 
 
+driver = appium_desired("a50a6522",4723)
+
+
 def setup_module():
-    base = loginpage.Login(driver)
-    base.start()
+    # base = loginpage.Login(driver)
+    start_index(driver)
 
 
 def teardown_module():

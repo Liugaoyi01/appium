@@ -12,8 +12,8 @@ import yaml
 from auto_test_client.businessView.loginpage import Login
 from auto_test_client.public.desired_caps import appium_desired
 import logging
-
-driver = appium_desired()
+from auto_test_client.testCase.denglu_test import driver
+# driver = appium_desired()
 
 def setup_module():  # 整个.py模块启动一次客户端,进入我的页面
     base = Login(driver)

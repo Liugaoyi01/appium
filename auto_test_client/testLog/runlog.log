@@ -1947,3 +1947,229 @@
 2019-12-26 10:47:19,872 start.py[line:83] INFO 左滑到开启页面
 2019-12-26 10:47:23,441 start.py[line:88] INFO 点击立即开启进入首页
 2019-12-26 10:47:54,780 start.py[line:104] ERROR 检测未进入首页
+2019-12-26 14:57:15,067 desired_caps.py[line:26] INFO appium port:4723 start run HB6CE1RPL002YU at Thu Dec 26 14:57:15 2019
+2019-12-26 14:59:12,646 desired_caps.py[line:26] INFO appium port:4723 start run HB6CE1RPL002YU at Thu Dec 26 14:59:12 2019
+2019-12-26 14:59:46,287 start.py[line:48] INFO 勾选隐私协议
+2019-12-26 14:59:49,451 start.py[line:53] INFO 点击同意开启按钮
+2019-12-26 15:02:27,742 desired_caps.py[line:26] INFO appium port:4723 start run HB6CE1RPL002YU at Thu Dec 26 15:02:27 2019
+2019-12-26 15:03:29,204 desired_caps.py[line:26] INFO appium port:4723 start run HB6CE1RPL002YU at Thu Dec 26 15:03:29 2019
+2019-12-26 15:04:20,485 start.py[line:48] INFO 勾选隐私协议
+2019-12-26 15:04:22,437 start.py[line:53] INFO 点击同意开启按钮
+2019-12-26 15:04:37,069 start.py[line:76] INFO 进入引导页面
+2019-12-26 15:04:41,814 start.py[line:78] INFO 左滑到开启页面
+2019-12-26 15:04:46,163 start.py[line:83] INFO 点击立即开启进入首页
+2019-12-26 15:05:17,635 start.py[line:100] ERROR 检测未进入首页
+2019-12-26 15:05:50,335 basepage.py[line:30] WARNING 页面中通过xpath未能找到/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.widget.LinearLayout/android.widget.RelativeLayout[5]/android.widget.ImageView元素
+2019-12-26 15:06:22,014 basepage.py[line:30] WARNING 页面中通过id未能找到login_close元素
+2019-12-26 15:06:53,645 basepage.py[line:30] WARNING 页面中通过id未能找到mine_login_btn元素
+2019-12-26 15:07:25,171 basepage.py[line:30] WARNING 页面中通过id未能找到login_close元素
+2019-12-26 15:07:58,947 basepage.py[line:30] WARNING 页面中通过id未能找到mine_login_btn元素
+2019-12-26 15:08:31,855 basepage.py[line:30] WARNING 页面中通过id未能找到login_close元素
+2019-12-26 15:20:38,293 desired_caps.py[line:26] INFO appium port:4723 start run a50a6522 at Thu Dec 26 15:20:38 2019
+2019-12-26 15:21:02,143 start.py[line:50] INFO 勾选隐私协议
+2019-12-26 15:21:02,853 start.py[line:55] INFO 点击同意开启按钮
+2019-12-26 15:22:57,355 start.py[line:78] INFO 进入引导页面
+2019-12-26 15:23:00,641 start.py[line:80] INFO 左滑到开启页面
+2019-12-26 15:38:11,997 desired_caps.py[line:26] INFO appium port:4723 start run a50a6522 at Thu Dec 26 15:38:11 2019
+2019-12-26 15:38:28,309 start.py[line:107] INFO 勾选隐私协议
+2019-12-26 15:38:29,017 start.py[line:112] INFO 点击同意开启按钮
+2019-12-26 15:40:01,267 start.py[line:144] INFO 无需更新
+2019-12-26 15:40:16,280 start.py[line:99] ERROR 检测未进入首页
+2019-12-26 15:44:42,663 desired_caps.py[line:26] INFO appium port:4723 start run a50a6522 at Thu Dec 26 15:44:42 2019
+2019-12-26 15:44:57,080 start.py[line:107] INFO 勾选隐私协议
+2019-12-26 15:44:57,782 start.py[line:112] INFO 点击同意开启按钮
+2019-12-26 15:46:06,190 desired_caps.py[line:26] INFO appium port:4723 start run a50a6522 at Thu Dec 26 15:46:06 2019
+2019-12-26 15:46:54,630 start.py[line:114] INFO 无需同意隐私协议
+2019-12-26 15:47:24,709 desired_caps.py[line:26] INFO appium port:4723 start run a50a6522 at Thu Dec 26 15:47:24 2019
+2019-12-26 15:49:16,898 desired_caps.py[line:26] INFO appium port:4723 start run a50a6522 at Thu Dec 26 15:49:16 2019
+2019-12-26 15:49:28,644 start.py[line:107] INFO 勾选隐私协议
+2019-12-26 15:49:29,318 start.py[line:112] INFO 点击同意开启按钮
+2019-12-26 15:52:03,968 desired_caps.py[line:26] INFO appium port:4723 start run a50a6522 at Thu Dec 26 15:52:03 2019
+2019-12-26 15:52:17,101 start.py[line:109] INFO 勾选隐私协议
+2019-12-26 15:52:17,812 start.py[line:114] INFO 点击同意开启按钮
+2019-12-26 15:52:21,164 start.py[line:72] INFO 进入引导页面
+2019-12-26 15:52:24,045 start.py[line:74] INFO 左滑到开启页面
+2019-12-26 15:53:25,670 start.py[line:147] INFO 无需更新
+2019-12-26 15:53:40,678 start.py[line:101] ERROR 检测未进入首页
+2019-12-26 15:57:11,806 desired_caps.py[line:26] INFO appium port:4723 start run a50a6522 at Thu Dec 26 15:57:11 2019
+2019-12-26 15:58:01,527 desired_caps.py[line:26] INFO appium port:4723 start run a50a6522 at Thu Dec 26 15:58:01 2019
+2019-12-26 15:58:14,894 start.py[line:109] INFO 勾选隐私协议
+2019-12-26 15:58:15,996 start.py[line:114] INFO 点击同意开启按钮
+2019-12-26 15:58:25,015 start.py[line:72] INFO 进入引导页面
+2019-12-26 15:58:27,916 start.py[line:74] INFO 左滑到开启页面
+2019-12-26 15:58:29,359 start.py[line:82] INFO 点击立即开启进入首页
+2019-12-26 15:59:00,332 start.py[line:147] INFO 无需更新
+2019-12-26 15:59:15,791 start.py[line:101] ERROR 检测未进入首页
+2019-12-26 16:10:39,449 desired_caps.py[line:26] INFO appium port:4723 start run a50a6522 at Thu Dec 26 16:10:39 2019
+2019-12-26 16:10:52,819 start.py[line:108] INFO 勾选隐私协议
+2019-12-26 16:10:53,517 start.py[line:113] INFO 点击同意开启按钮
+2019-12-26 16:11:24,487 start.py[line:72] INFO 进入引导页面
+2019-12-26 16:11:27,434 start.py[line:74] INFO 左滑到开启页面
+2019-12-26 16:11:29,259 start.py[line:82] INFO 点击立即开启进入首页
+2019-12-26 16:12:02,038 start.py[line:146] INFO 无需更新
+2019-12-26 16:12:02,063 start.py[line:98] INFO 客户端启动成功，已进入首页
+2019-12-26 16:12:27,966 desired_caps.py[line:26] INFO appium port:4723 start run HB6CE1RPL002YU at Thu Dec 26 16:12:27 2019
+2019-12-26 16:12:48,342 desired_caps.py[line:26] INFO appium port:4723 start run HB6CE1RPL002YU at Thu Dec 26 16:12:48 2019
+2019-12-26 16:13:29,446 desired_caps.py[line:26] INFO appium port:4723 start run a50a6522 at Thu Dec 26 16:13:29 2019
+2019-12-26 16:13:40,377 start.py[line:108] INFO 勾选隐私协议
+2019-12-26 16:13:41,475 start.py[line:113] INFO 点击同意开启按钮
+2019-12-26 16:14:12,022 start.py[line:72] INFO 进入引导页面
+2019-12-26 16:14:14,926 start.py[line:74] INFO 左滑到开启页面
+2019-12-26 16:14:16,367 start.py[line:82] INFO 点击立即开启进入首页
+2019-12-26 16:14:47,136 start.py[line:146] INFO 无需更新
+2019-12-26 16:14:47,161 start.py[line:98] INFO 客户端启动成功，已进入首页
+2019-12-26 16:15:17,871 basepage.py[line:30] WARNING 页面中通过xpath未能找到/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.widget.LinearLayout/android.widget.RelativeLayout[5]/android.widget.ImageView元素
+2019-12-26 16:15:48,711 basepage.py[line:30] WARNING 页面中通过id未能找到login_close元素
+2019-12-26 16:21:49,266 desired_caps.py[line:26] INFO appium port:4723 start run a50a6522 at Thu Dec 26 16:21:49 2019
+2019-12-26 16:22:02,408 start.py[line:108] INFO 勾选隐私协议
+2019-12-26 16:22:03,515 start.py[line:113] INFO 点击同意开启按钮
+2019-12-26 16:22:34,041 start.py[line:134] INFO 没有出现授权阶段，无需授权,跳出循环
+2019-12-26 16:23:04,740 start.py[line:134] INFO 没有出现授权阶段，无需授权,跳出循环
+2019-12-26 16:23:35,678 start.py[line:134] INFO 没有出现授权阶段，无需授权,跳出循环
+2019-12-26 16:24:04,638 start.py[line:72] INFO 进入引导页面
+2019-12-26 16:24:07,558 start.py[line:74] INFO 左滑到开启页面
+2019-12-26 16:24:08,439 start.py[line:82] INFO 点击立即开启进入首页
+2019-12-26 16:24:39,243 start.py[line:145] INFO 无需更新
+2019-12-26 16:24:39,345 start.py[line:98] INFO 客户端启动成功，已进入首页
+2019-12-26 16:36:03,433 desired_caps.py[line:26] INFO appium port:4723 start run a50a6522 at Thu Dec 26 16:36:03 2019
+2019-12-26 16:36:14,745 start.py[line:108] INFO 勾选隐私协议
+2019-12-26 16:36:15,375 start.py[line:113] INFO 点击同意开启按钮
+2019-12-26 16:36:45,998 start.py[line:134] INFO 没有出现授权阶段，无需授权,跳出循环
+2019-12-26 16:36:46,022 start.py[line:72] INFO 进入引导页面
+2019-12-26 16:36:48,883 start.py[line:74] INFO 左滑到开启页面
+2019-12-26 16:36:50,168 start.py[line:82] INFO 点击立即开启进入首页
+2019-12-26 16:37:21,470 start.py[line:146] INFO 无需更新
+2019-12-26 16:37:21,661 start.py[line:98] INFO 客户端启动成功，已进入首页
+2019-12-26 16:47:02,290 desired_caps.py[line:26] INFO appium port:4723 start run a50a6522 at Thu Dec 26 16:47:02 2019
+2019-12-26 16:47:14,862 start.py[line:103] INFO 勾选隐私协议
+2019-12-26 16:47:15,511 start.py[line:108] INFO 点击同意开启按钮
+2019-12-26 16:47:46,530 start.py[line:129] INFO 没有出现授权阶段，无需授权,跳出循环
+2019-12-26 16:47:46,942 start.py[line:72] INFO 进入引导页面
+2019-12-26 16:47:49,824 start.py[line:74] INFO 左滑到开启页面
+2019-12-26 16:47:50,782 start.py[line:82] INFO 点击立即开启进入首页
+2019-12-26 16:48:21,922 start.py[line:143] INFO 无需更新
+2019-12-26 16:59:08,928 desired_caps.py[line:26] INFO appium port:4723 start run a50a6522 at Thu Dec 26 16:59:08 2019
+2019-12-26 16:59:22,989 start.py[line:67] INFO 勾选隐私协议
+2019-12-26 16:59:24,154 start.py[line:72] INFO 点击同意开启按钮
+2019-12-26 16:59:54,738 start.py[line:93] INFO 没有出现授权阶段，无需授权,跳出循环
+2019-12-26 16:59:54,760 start.py[line:104] INFO 进入引导页面
+2019-12-26 16:59:57,667 start.py[line:106] INFO 左滑到开启页面
+2019-12-26 16:59:59,751 start.py[line:114] INFO 点击立即开启进入首页
+2019-12-26 17:00:30,566 start.py[line:127] INFO 无需更新
+2019-12-26 17:00:30,586 start.py[line:136] INFO 客户端启动成功，已进入首页
+2019-12-26 17:05:48,125 desired_caps.py[line:26] INFO appium port:4723 start run a50a6522 at Thu Dec 26 17:05:48 2019
+2019-12-26 17:07:08,526 desired_caps.py[line:26] INFO appium port:4723 start run a50a6522 at Thu Dec 26 17:07:08 2019
+2019-12-26 17:07:20,746 start.py[line:67] INFO 勾选隐私协议
+2019-12-26 17:07:21,381 start.py[line:72] INFO 点击同意开启按钮
+2019-12-26 17:07:29,583 start.py[line:104] INFO 进入引导页面
+2019-12-26 17:07:32,451 start.py[line:106] INFO 左滑到开启页面
+2019-12-26 17:07:33,520 start.py[line:114] INFO 点击立即开启进入首页
+2019-12-26 17:08:04,771 start.py[line:127] INFO 无需更新
+2019-12-26 17:08:06,151 start.py[line:136] INFO 客户端启动成功，已进入首页
+2019-12-26 17:11:52,364 desired_caps.py[line:26] INFO appium port:4723 start run a50a6522 at Thu Dec 26 17:11:52 2019
+2019-12-26 17:12:39,285 desired_caps.py[line:26] INFO appium port:4723 start run a50a6522 at Thu Dec 26 17:12:39 2019
+2019-12-26 17:12:53,215 start.py[line:67] INFO 勾选隐私协议
+2019-12-26 17:12:53,873 start.py[line:72] INFO 点击同意开启按钮
+2019-12-26 17:13:24,559 start.py[line:93] INFO 没有出现授权阶段，无需授权,跳出循环
+2019-12-26 17:13:24,579 start.py[line:104] INFO 进入引导页面
+2019-12-26 17:13:27,469 start.py[line:106] INFO 左滑到开启页面
+2019-12-26 17:13:28,555 start.py[line:114] INFO 点击立即开启进入首页
+2019-12-26 17:13:59,684 start.py[line:124] INFO 无需更新
+2019-12-26 17:13:59,708 start.py[line:140] INFO 客户端启动成功，已进入首页
+2019-12-26 17:29:10,682 desired_caps.py[line:26] INFO appium port:4723 start run a50a6522 at Thu Dec 26 17:29:10 2019
+2019-12-26 17:29:56,768 start.py[line:74] INFO 无需同意隐私协议
+2019-12-26 17:30:27,365 start.py[line:93] INFO 没有出现授权阶段，无需授权,跳出循环
+2019-12-26 18:10:42,774 desired_caps.py[line:26] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Thu Dec 26 18:10:42 2019
+2019-12-26 18:11:15,670 start.py[line:67] INFO 勾选隐私协议
+2019-12-26 18:11:17,732 start.py[line:72] INFO 点击同意开启按钮
+2019-12-26 18:11:49,184 start.py[line:93] INFO 没有出现授权阶段，无需授权,跳出循环
+2019-12-26 18:11:49,208 start.py[line:104] INFO 进入引导页面
+2019-12-26 18:11:52,283 start.py[line:106] INFO 左滑到开启页面
+2019-12-26 18:11:55,593 start.py[line:114] INFO 点击立即开启进入首页
+2019-12-26 18:14:35,965 desired_caps.py[line:26] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Thu Dec 26 18:14:35 2019
+2019-12-26 18:36:30,173 desired_caps.py[line:26] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Thu Dec 26 18:36:30 2019
+2019-12-26 18:37:03,160 start.py[line:67] INFO 勾选隐私协议
+2019-12-26 18:37:06,444 start.py[line:72] INFO 点击同意开启按钮
+2019-12-26 18:37:37,619 start.py[line:93] INFO 没有出现授权阶段，无需授权,跳出循环
+2019-12-26 18:37:37,643 start.py[line:104] INFO 进入引导页面
+2019-12-26 18:37:40,751 start.py[line:106] INFO 左滑到开启页面
+2019-12-26 18:37:44,187 start.py[line:114] INFO 点击立即开启进入首页
+2019-12-26 18:39:14,715 desired_caps.py[line:26] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Thu Dec 26 18:39:14 2019
+2019-12-26 18:39:50,734 start.py[line:67] INFO 勾选隐私协议
+2019-12-26 18:39:54,380 start.py[line:72] INFO 点击同意开启按钮
+2019-12-26 18:40:25,488 start.py[line:93] INFO 没有出现授权阶段，无需授权,跳出循环
+2019-12-26 18:40:25,519 start.py[line:104] INFO 进入引导页面
+2019-12-26 18:40:28,624 start.py[line:106] INFO 左滑到开启页面
+2019-12-26 18:40:31,993 start.py[line:114] INFO 点击立即开启进入首页
+2019-12-26 18:41:04,222 start.py[line:128] INFO 无需更新
+2019-12-26 18:41:04,267 start.py[line:137] INFO 客户端启动成功，已进入首页
+2019-12-27 09:50:11,612 desired_caps.py[line:26] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 09:50:11 2019
+2019-12-27 09:56:05,564 desired_caps.py[line:26] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 09:56:05 2019
+2019-12-27 09:56:49,772 start.py[line:67] INFO 勾选隐私协议
+2019-12-27 09:56:53,693 start.py[line:72] INFO 点击同意开启按钮
+2019-12-27 09:57:24,708 start.py[line:93] INFO 没有出现授权阶段，无需授权,跳出循环
+2019-12-27 09:57:25,053 start.py[line:104] INFO 进入引导页面
+2019-12-27 09:57:28,132 start.py[line:106] INFO 左滑到开启页面
+2019-12-27 09:57:31,517 start.py[line:114] INFO 点击立即开启进入首页
+2019-12-27 09:58:02,230 start.py[line:128] INFO 无需更新
+2019-12-27 09:58:02,283 start.py[line:137] INFO 客户端启动成功，已进入首页
+2019-12-27 15:02:34,714 desired_caps.py[line:26] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 15:02:34 2019
+2019-12-27 15:35:27,176 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 15:35:27 2019
+2019-12-27 15:36:33,954 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 15:36:33 2019
+2019-12-27 15:37:38,119 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 15:37:38 2019
+2019-12-27 15:38:44,876 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 15:38:44 2019
+2019-12-27 15:40:08,845 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 15:40:08 2019
+2019-12-27 15:41:01,918 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 15:41:01 2019
+2019-12-27 15:42:29,395 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 15:42:29 2019
+2019-12-27 15:43:13,520 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 15:43:13 2019
+2019-12-27 15:44:41,831 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 15:44:41 2019
+2019-12-27 15:45:20,011 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 15:45:20 2019
+2019-12-27 15:48:43,986 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 15:48:43 2019
+2019-12-27 15:55:55,434 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 15:55:55 2019
+2019-12-27 16:00:58,865 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 16:00:58 2019
+2019-12-27 16:04:52,648 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 16:04:52 2019
+2019-12-27 16:06:57,576 desired_caps.py[line:28] INFO appium port:4725 start run P79LPJUO9DM7PZF6 at Fri Dec 27 16:06:57 2019
+2019-12-27 16:14:11,495 desired_caps.py[line:28] INFO appium port:4725 start run P79LPJUO9DM7PZF6 at Fri Dec 27 16:14:11 2019
+2019-12-27 16:15:00,314 desired_caps.py[line:28] INFO appium port:4725 start run P79LPJUO9DM7PZF6 at Fri Dec 27 16:15:00 2019
+2019-12-27 16:15:20,228 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 16:15:20 2019
+2019-12-27 16:22:08,330 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 16:22:08 2019
+2019-12-27 16:30:20,936 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 16:30:20 2019
+2019-12-27 16:30:20,957 desired_caps.py[line:28] INFO appium port:4726 start run HB6CE1RPL002YU at Fri Dec 27 16:30:20 2019
+2019-12-27 16:31:45,170 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 16:31:45 2019
+2019-12-27 16:31:45,232 desired_caps.py[line:28] INFO appium port:4726 start run HB6CE1RPL002YU at Fri Dec 27 16:31:45 2019
+2019-12-27 16:34:22,333 desired_caps.py[line:27] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 16:34:22 2019
+2019-12-27 16:34:22,366 desired_caps.py[line:27] INFO appium port:4725 start run HB6CE1RPL002YU at Fri Dec 27 16:34:22 2019
+2019-12-27 16:38:30,000 desired_caps.py[line:27] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 16:38:30 2019
+2019-12-27 16:38:30,011 desired_caps.py[line:27] INFO appium port:4726 start run HB6CE1RPL002YU at Fri Dec 27 16:38:30 2019
+2019-12-27 16:46:18,927 start.py[line:71] INFO 无需同意隐私协议
+2019-12-27 16:46:18,927 start.py[line:90] INFO 没有出现授权阶段，无需授权,跳出循环
+2019-12-27 16:46:18,928 start.py[line:125] INFO 无需更新
+2019-12-27 16:46:18,928 start.py[line:136] ERROR 检测未进入首页
+2019-12-27 16:46:18,953 start.py[line:71] INFO 无需同意隐私协议
+2019-12-27 16:46:18,953 start.py[line:90] INFO 没有出现授权阶段，无需授权,跳出循环
+2019-12-27 16:46:18,954 start.py[line:125] INFO 无需更新
+2019-12-27 16:46:18,954 start.py[line:136] ERROR 检测未进入首页
+2019-12-27 16:46:19,770 desired_caps.py[line:27] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 16:46:19 2019
+2019-12-27 16:46:19,794 desired_caps.py[line:27] INFO appium port:4726 start run HB6CE1RPL002YU at Fri Dec 27 16:46:19 2019
+2019-12-27 16:47:26,896 desired_caps.py[line:27] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 16:47:26 2019
+2019-12-27 17:11:37,531 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 17:11:37 2019
+2019-12-27 17:11:37,586 desired_caps.py[line:28] INFO appium port:4726 start run HB6CE1RPL002YU at Fri Dec 27 17:11:37 2019
+2019-12-27 17:16:10,782 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 17:16:10 2019
+2019-12-27 17:16:10,807 desired_caps.py[line:28] INFO appium port:4726 start run HB6CE1RPL002YU at Fri Dec 27 17:16:10 2019
+2019-12-27 17:16:47,733 startFunction.py[line:71] INFO 无需同意隐私协议
+2019-12-27 17:16:47,743 startFunction.py[line:90] INFO 没有出现授权阶段，无需授权,跳出循环
+2019-12-27 17:16:47,765 startFunction.py[line:125] INFO 无需更新
+2019-12-27 17:16:47,775 startFunction.py[line:136] ERROR 检测未进入首页
+2019-12-27 17:16:56,362 startFunction.py[line:64] INFO 勾选隐私协议
+2019-12-27 17:16:59,850 startFunction.py[line:69] INFO 点击同意开启按钮
+2019-12-27 17:17:30,857 startFunction.py[line:90] INFO 没有出现授权阶段，无需授权,跳出循环
+2019-12-27 17:17:30,883 startFunction.py[line:101] INFO 进入引导页面
+2019-12-27 17:17:34,083 startFunction.py[line:103] INFO 左滑到开启页面
+2019-12-27 17:25:06,090 desired_caps.py[line:28] INFO appium port:4723 start run P79LPJUO9DM7PZF6 at Fri Dec 27 17:25:06 2019
+2019-12-27 17:25:06,106 desired_caps.py[line:28] INFO appium port:4726 start run HB6CE1RPL002YU at Fri Dec 27 17:25:06 2019
+2019-12-27 17:25:51,602 startFunction.py[line:71] INFO 无需同意隐私协议
+2019-12-27 17:25:51,609 startFunction.py[line:90] INFO 没有出现授权阶段，无需授权,跳出循环
+2019-12-27 17:25:51,625 startFunction.py[line:125] INFO 无需更新
+2019-12-27 17:25:51,637 startFunction.py[line:136] ERROR 检测未进入首页
+2019-12-27 17:26:25,818 startFunction.py[line:71] INFO 无需同意隐私协议
+2019-12-27 17:26:56,338 startFunction.py[line:90] INFO 没有出现授权阶段，无需授权,跳出循环

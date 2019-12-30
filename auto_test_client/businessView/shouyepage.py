@@ -11,7 +11,7 @@ from auto_test_client.public.desired_caps import appium_desired
 from auto_test_client.baseView.basepage import Base
 from auto_test_client.businessView.loginpage import Login
 from auto_test_client.utils import openYaml
-from auto_test_client.public.start import start_index
+from auto_test_client.public.startFunction import start_index
 
 path = os.path.dirname(os.getcwd())
 index_path = path + "/data/shouye.yaml"
@@ -69,7 +69,7 @@ class Shouye(Base):  # 首页元素
     def jingxi(self):
         self.click_button(self.jingxi_loc)
         logging.info("点击和信用分入口")
-
+    # 建议：最好使用try-except提高及健壮性，参考check_guide_know
     def huan(self):
         self.click_button(self.huanyi_loc)
         logging.info("点击换一批")
@@ -104,7 +104,7 @@ class Shouye(Base):  # 首页元素
     def gengduo(self):  # 更多
         self.click_button(self.gengduo_loc)
 
-    def goto_login_Btn(self):  # 验证用户有没有登录(登录弹框)  新增
+    def goto_login_Btn(self):  # 验证用户有没有登录(登录弹框)  新增，
         try:
             element = self.driver.find_element(*self.goto_login)
         except NoSuchElementException:

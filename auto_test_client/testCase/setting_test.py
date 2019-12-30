@@ -9,8 +9,9 @@ from auto_test_client.baseView import basepage
 from auto_test_client.public.desired_caps import appium_desired
 import time
 import logging
+from auto_test_client.testCase.denglu_test import driver
 
-driver = appium_desired()
+# driver = appium_desired()
 import pytest
 
 

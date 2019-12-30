@@ -10,8 +10,9 @@ from auto_test_client.public.desired_caps import appium_desired
 from selenium.webdriver.common.by import By
 import time
 import logging
+from auto_test_client.testCase.denglu_test import driver
 
-driver = appium_desired()
+# driver = appium_desired()
 
 
 def setup_module():  # 整个.py模块启动一次客户端

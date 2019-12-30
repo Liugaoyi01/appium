@@ -9,8 +9,10 @@ import os
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
-from auto_test_client.public.desired_caps import appium_desired
 import logging
+
+# from auto_test_client.public.desired_caps import appium_desired
+
 
 
 class Base():
@@ -24,9 +26,10 @@ class Base():
 
     def find_element(self, loc):
         try:
-            WebDriverWait(self.driver, 15).until(lambda driver: driver.find_element(*loc).is_displayed())
-            return self.driver.find_element(*loc)
-        except:
+            ele = WebDriverWait(self.driver, 10).until(lambda driver: driver.find_element(*loc).is_displayed())
+            logging.debug(u"页面中通过%s查找%s元素" % (loc))
+            return ele
+        except NoSuchElementException:
             logging.warning(u'页面中通过%s未能找到%s元素' % (loc))
 
     # 封装一组元素定位方法
@@ -35,7 +38,7 @@ class Base():
         try:
             if len(self.driver.find_elements(*loc)):
                 return self.driver.find_elements(*loc)
-        except:
+        except NoSuchElementException:
             logging.warning(u'页面中通过%s未能找到%s元素' % (loc))
 
     # 重新封装点击方法
@@ -45,7 +48,7 @@ class Base():
         except NoSuchElementException:
             logging.warning(u'页面中通过%s未能找到%s按钮' % (loc))
 
-    # 重新封装判断元素存在方法
+    # 重新封装判断元素存在方法，这个方法可以跟find_element合并，建议删除
     def try_find(self, loc):
 
         try:
@@ -60,19 +63,19 @@ class Base():
     def try_text(self, loc):
         try:
             text = self.find_element(loc).text
-            logging.info(u'元素%s文本为：%s ' % (loc, text))
+            logging.info(u'元素%s text为：%s ' % (loc, text))
             return text
         except:
-            pass
+            logging.info(u'元素%s获取text失败' % (loc))
 
     # 获取元素文本content-desc
     def try_desc(self, loc):
         try:
             text = self.find_element(loc).get_attribute('name')
-            logging.info(u'元素%s文本为：%s ' % (loc, text))
+            logging.info(u'元素%s content-desc 为：%s ' % (loc, text))
             return text
         except:
-            pass
+            logging.info(u'元素%s content-desc 获取失败 ' % (loc))
 
     chongzhi_loc = (By.XPATH, '//*[@content-desc="充值交费"]')
     title_loc = (By.ID, 'title_name_txt')
@@ -97,9 +100,9 @@ class Base():
     def swipe_right(self, t=500, n=1):
 
         l = self.driver.get_window_size()
-        x1 = l['width'] * 0.25  # 起点横坐标
+        x1 = l['width'] * 0.1  # 起点横坐标
         y = l['height'] * 0.5  # 纵坐标
-        x2 = l['width'] * 0.75  # 终点横坐标
+        x2 = l['width'] * 0.9  # 终点横坐标
 
         for i in range(n):
             self.driver.swipe(x1, y, x2, y, t)
@@ -164,9 +167,9 @@ class Base():
             self.driver.tap([(x, y)])
             logging.info('点击坐标')
         except:
-            pass
+            logging.error('点击坐标%s'%((x,y)))
 
-    # 封装忽略点击
+    # 封装忽略点击,该业务已在start实现，后续删除
 
     def hulie(self):
         hulie_loc = (By.ID, 'dialog_btn1')
@@ -184,7 +187,7 @@ class Base():
     # 以当前时间+自定义名称命名保存截图
     def get_screenshot(self, name):
         day = time.strftime('%Y-%m-%d', time.localtime(time.time()))
-        fp = '..\Result\image' + day
+        fp = '..\..\screenshots' + day
         tm = time.strftime('%Y-%m-%d-%H-%M-%S', (time.localtime(time.time())))
         type = '.png'
 
