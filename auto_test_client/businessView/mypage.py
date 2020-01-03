@@ -13,264 +13,223 @@ from auto_test_client.businessView.loginpage import Login
 
 my_path = "../../data/login.yaml"
 data = openYaml.get_yaml_data(my_path)
-
-
 class My(Base):
-    wode_loc = eval(data['My']['wode_loc'])
-    imglogin_loc = eval(data['My']['imglogin_loc'])  # 个人信息图标
-    touxiang_loc = eval(data['My']['touxiang_loc'])  # 头像
-    xjbs_loc = eval(data['My']['xjbs_loc'])  # 星级标识
-    my_zhangdan_loc = eval(data['My']['my_zhangdan_loc'])  # 我的账单
-    qinmifu_loc = eval(data['My']['qinmifu_loc'])  # 亲密付
-    yiding_loc = eval(data['My']['yiding_loc'])  # 已订业务
-    balance_loc = eval(data['My']['balance_loc'])  # 话费余额
-    payhistory_loc = eval(data['My']['payhistory_loc'])
-    my_order_loc = eval(data['My']['my_order_loc'])
-    dingyue_loc = eval(data['My']['dingyue_loc'])
-    guanjia_loc = eval(data['My']['guanjia_loc'])
-    my_voucher_loc = eval(data['My']['my_voucher_loc'])
-    my_movie_loc = eval(data['My']['my_movie_loc'])
-    xiangdan_loc = eval(data['My']['xiangdan_loc'])
-    login_loc = eval(data['My']['login_loc'])  # 点击登录
-    kefu_loc = eval(data['My']['kefu_loc'])
-    fapiao_loc = eval(data['My']['fapiao_loc'])  # 电子发票
-    shiming_loc = eval(data['My']['shiming_loc'])  # 实名登记
-    heduohao_loc = eval(data['My']['heduohao_loc'])  # 和多号
-    zhineng_loc = eval(data['My']['zhineng_loc'])  # 智能家居
-    chajian_loc = eval(data['My']['chajian_loc'])  # 插件中心
+    mine_loc = (By.XPATH,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.widget.LinearLayout/android.widget.RelativeLayout[5]/android.widget.ImageView")
+    my_bill_loc = (By.XPATH, "//*[contains(@text,'账单查询')]")
+    qinmifu_loc = (By.XPATH, "//*[contains(@text,'亲密付')]")
+    yiDing_loc = (By.XPATH, "//*[contains(@text,'已订业务')]")
+    balance_loc = (By.XPATH, "//*[contains(@text,'话费余额')]")
+    payhistory_loc = (By.XPATH, "//android.view.View[@content-desc='交费历史']")
+    my_order_loc = (By.XPATH, "//*[contains(@text,'我的订单')]")
+    dingyue_loc = (By.XPATH, "//*[contains(@text,'消息订阅')]")
+    guanjia_loc = (By.XPATH, "(//android.view.View[@content-desc='流量管家'])[1]")
+    my_voucher_loc = (By.XPATH, "//*[contains(@text,'卡券')]")
+    my_movie_loc = (By.XPATH, "//*[contains(@text,'电影购票')]")
+    xiangdan_loc = (By.XPATH, "//*[contains(@text,'详单查询')]")
+    login_loc = (By.XPATH, "//*[@resource-id='mine_login_btn']")
+    kefu_loc = (By.XPATH, "//*[contains(@text,'在线客服')]")
+    fapiao_loc = (By.XPATH, "//*[contains(@text,'电子发票')]")  # 电子发票
+    shiming_loc = (By.XPATH, "//*[contains(@text,'实名登记')]")  # 实名登记
+    heduohao_loc = (By.XPATH, "//*[contains(@text,'和多号')]")  # 和多号
+    zhineng_loc = (By.XPATH, "//*[contains(@text,'智能家居')]")  # 智能家居
+    chajian_loc = (By.XPATH, "//*[contains(@text,'插件中心')]")  # 插件中心
+    myInfo_loc = (By.ID, 'img_login')   # 个人信息
+    xjbs_loc = (By.ID, 'star_user')  # 星级标识
+
 
     def wode(self):
-        self.click_button(self.wode_loc)
+        self.click_button(self.mine_loc)
         logging.info('进入我的页面')
-
-    def imglogin(self):  # 个人信息图标
-        self.click_button(self.imglogin_loc)
-        logging.info('进入个人信息页面')
-
-    def xjbs(self):  # 进入星级标识
+    def xjbs(self):       #进入星级标识
         self.click_button(self.xjbs_loc)
         logging.info('进入星际标识页面')
-
-    def my_zhangdan(self):  # 我的账单
-        self.click_button(self.my_zhangdan_loc)
+    def my_bill(self):  #我的账单
+        self.click_button(self.my_bill_loc)
         logging.info('进入我的账单页面')
-
-    def qinmifu(self):  # 亲密付
+    def qinmifu(self):  #亲密付
         self.click_button(self.qinmifu_loc)
         logging.info('进入亲密付页面')
-
-    def yiding(self):  # 已订业务
-        self.click_button(self.yiding_loc)
+    def yiDing(self):   #已订业务
+        self.click_button(self.yiDing_loc)
         logging.info('进入已订业务页面')
-
-    def balance(self):  # 话费余额
+    def balance(self):  #话费余额
         self.click_button(self.balance_loc)
         logging.info('进入话费余额页面')
-
-    def payhistory(self):  # 交费历史
+    def payhistory(self):   #交费历史
         self.click_button(self.payhistory_loc)
         logging.info('进入交费历史页面')
-
-    def my_order(self):  # 我的订单
+    def my_order(self): #我的订单
         self.click_button(self.my_order_loc)
         logging.info('进入我的订单页面')
-
-    def dingyue(self):  # 消息订阅
+    def dingyue(self):  #消息订阅
         self.click_button(self.dingyue_loc)
         logging.info('进入消息订阅页面')
-
-    def guanjia(self):  # 流量管家
+    def guanjia(self):  #流量管家
         self.click_button(self.guanjia_loc)
         logging.info('进入流量管家页面')
-
-    def my_voucher(self):  # 我的卡券
+    def my_voucher(self):   #我的卡券
         self.click_button(self.my_voucher_loc)
         logging.info('进入我的卡劵页面')
-
-    def my_movie(self):  # 我的电影
+    def my_movie(self):   #我的电影
         self.click_button(self.my_movie_loc)
         logging.info('进入我的电影页面')
-
-    def xiangdan(self):  # 详单查询
+    def xiangdan(self): #详单查询
         self.click_button(self.xiangdan_loc)
         logging.info('进入详单查询页面')
-
-    def login(self):  # 点击登录
+    def login(self):  #点击登录
         self.click_button(self.login_loc)
         logging.info('进入登录页面')
-
-    def kefu(self):  # 在线客服
+    def kefu(self):   #在线客服
         self.click_button(self.kefu_loc)
         logging.info('进入在线客服页面')
-
     def my(self):
         self.wode()
         logging.info("进入我的页面")
-
-    def fapiao(self):  # 电子发票
+    def fapiao(self):   #电子发票
         self.click_button(self.fapiao_loc)
         logging.info('进入电子发票页面')
-
-    def shiming(self):  # 实名登记
+    def shiming(self):   #实名登记
         self.click_button(self.shiming_loc)
         logging.info('进入实名登记页面')
-
-    def heduohao(self):  # 和多号
+    def heduohao(self):   #和多号
         self.click_button(self.heduohao_loc)
         logging.info('进入和多号页面')
-
-    def zhineng(self):  # 智能家居
+    def zhineng(self):   #智能家居
         self.click_button(self.zhineng_loc)
         logging.info('进入智能家居页面')
-
-    def chajian(self):  # 插件
+    def chajian(self):   #插件
         self.click_button(self.chajian_loc)
         logging.info('进入我的插件页面')
-
-
-# OK
-# 张云龙代码
-
-class Liuliang_qianbao(My):
-    qianbao_loc = eval(data['Liuliang_qianbao']['qianbao_loc'])  # 流量钱包
-    qianbao_yue_loc = eval(data['Liuliang_qianbao']['qianbao_yue_loc'])  # 流量钱包_余额
-    bangzhu_loc = eval(data['Liuliang_qianbao']['bangzhu_loc'])  # 帮助中心
-    bangzhu_pan_loc = eval(data['Liuliang_qianbao']['bangzhu_pan_loc'])  # 帮助中心
-    hongbao_jilu_loc = eval(data['Liuliang_qianbao']['hongbao_jilu_loc'])  # 红包记录
-    hongbao_jilu_pan_loc = eval(data['Liuliang_qianbao']['hongbao_jilu_pan_loc'])  # 收到的红包
-    liuliang_mingxi_loc = eval(data['Liuliang_qianbao']['liuliang_mingxi_loc'])  # 流量明细
-    liuliang_mingxi_pan_loc = eval(data['Liuliang_qianbao']['liuliang_mingxi_pan_loc'])  # 流量明细
-    chongzhi_jilu_loc = eval(data['Liuliang_qianbao']['chongzhi_jilu_loc'])  # 充值记录
-    chongzhi_jilu_pan_loc = eval(data['Liuliang_qianbao']['chongzhi_jilu_pan_loc'])  # 充值记录
-    tiqu_jilu_loc = eval(data['Liuliang_qianbao']['tiqu_jilu_loc'])  # 提取记录
-    tiqu_jilu_pan_loc = eval(data['Liuliang_qianbao']['tiqu_jilu_pan_loc'])  # 提取记录
-
-    def qianbao(self):
-        self.click_button(self.qianbao_loc)
+    def myInfo(self):   #个人信息
+        self.click_button(self.chajian_loc)
+        logging.info('进入个人信息')
+#OK
+#张云龙代码
+#ok
+class Flow_wallet(My):
+  #  wallet_loc = (By.XPATH, "//*[contains(@text,'流量钱包')]")  # 流量钱包
+    wallet_loc = (By.ID, 'flow_wallet_name_txt')  # 流量钱包
+    accountBalance_loc = (By.ID, '账户余额')  # 流量钱包_余额
+    activityRules_loc = (By.ID, '活动规则')  # 活动规则
+    activityRules_pan_loc = (By.ID, '什么是流量钱包？')  # 活动规则
+    redPacketRecords_loc = (By.ID, '红包记录')  # 红包记录
+    redPacketRecords_pan_loc = (By.ID, '收到的红包')  # 收到的红包
+    flowDetails_loc = (By.ID, '流量明细')  # 流量明细
+    flowDetails_pan_loc = (By.ID, '收入')  # 流量明细
+    rechargeRecord_loc = (By.ID, '充值记录')  # 充值记录
+    rechargeRecord_pan_loc = (By.ID, '收入')  # 充值记录
+    tiQu_jiLu_loc = (By.ID, '提取记录')  # 提取记录
+    tiQu_jiLu_pan_loc = (By.ID, '支出')  # 提取记录
+    def wallet(self):
+        self.click_button(self.wallet_loc)
         logging.info('点击流量钱包')
-
-    def bangzhu(self):
-        self.click_button(self.bangzhu_loc)
-        logging.info('点击帮助中心')
-
-    def hongbao_jilu(self):
-        self.click_button(self.hongbao_jilu_loc)
+    def activityRules(self):
+        self.click_button(self.activityRules_loc)
+        logging.info('点击活动规则')
+    def redPacketRecords(self):
+        self.click_button(self.redPacketRecords_loc)
         logging.info('点击红包记录')
-
-    def liuliang_mingxi(self):
-        self.click_button(self.liuliang_mingxi_loc)
+    def flowDetails(self):
+        self.click_button(self.flowDetails_loc)
         logging.info('点击流量明细')
-
-    def chongzhi_jilu(self):
-        self.click_button(self.chongzhi_jilu_loc)
+    def rechargeRecord(self):
+        self.click_button(self.rechargeRecord_loc)
         logging.info('点击充值记录')
-
-    def tiqu_jilu(self):
-        self.click_button(self.tiqu_jilu_loc)
+    def tiQu_jiLu(self):
+        self.click_button(self.tiQu_jiLu_loc)
         logging.info('点击提取记录')
-
-
-# OK
-class Yiding(My):
-    yiding_loc = eval(data['Yiding']['yiding_loc'])  # 已订业务
-    taocan_pan_loc = eval(data['Yiding']['taocan_pan_loc'])  # 判定，我的套餐
-    zengzhi_pan_loc = eval(data['Yiding']['zengzhi_pan_loc'])  # 判定，增值业务
-    jichu_pan_loc = eval(data['Yiding']['jichu_pan_loc'])  # 判定，基础功能
-    qita_pan_loc = eval(data['Yiding']['qita_pan_loc'])  # 判定，其他
-    gengduo_loc = eval(data['Yiding']['gengduo_loc'])  # 更多业务办理
-    taocan_panyiding_loc = eval(data['Yiding']['taocan_panyiding_loc'])  # 更多业务办理
-    tuiding_loc = eval(data['Yiding']['tuiding_loc'])  # 判定，基础功能页的退订按钮
-    tuiding_quxiao_loc = eval(data['Yiding']['tuiding_quxiao_loc'])  # 取消
-    tuiding_queding_loc = eval(data['Yiding']['tuiding_queding_loc'])  # 判定，退订提示语
-    fenxiang_loc = eval(data['Yiding']['fenxiang_loc'])  # 分享
-    fenxiang_pan_loc = eval(data['Yiding']['fenxiang_pan_loc'])  # 分享的二维码
-    fenxiang_quxiao_loc = eval(data['Yiding']['fenxiang_quxiao_loc'])  # 取消分享
-    weixin_loc = eval(data['Yiding']['weixin_loc'])  # 微信
-
-    def gengduo(self):
-        self.click_button(self.gengduo_loc)
+#ok
+class YiDing(My):
+    setMeal_pan_loc = (By.XPATH, "//*[contains(@text,'我的套餐')]")   #判定，我的套餐
+#    setMeal_pan_loc = (By.NAME,'我的套餐')   #判定，我的套餐
+    increment_pan_loc = (By.XPATH, "//*[contains(@text,'增值业务')]")
+#    increment_pan_loc = (By.NAME,'增值业务')   #判定，增值业务
+    basics_pan_loc = (By.XPATH, "//*[contains(@text,'基础功能')]")   #判定，基础功能
+#    basics_pan_loc = (By.NAME,'基础功能')   #判定，基础功能
+    other_pan_loc = (By.XPATH, "//*[contains(@text,'其他')]")   #判定，其他
+#    other_pan_loc = (By.NAME,'其他')   #判定，其他
+    moreBusiness_loc = (By.ID,'moreBusiness')   #更多业务办理
+    order_pan_loc = (By.XPATH, "//*[contains(@text,'套餐订购')]")
+ #   order_pan_loc = (By.NAME,'套餐订购')
+    tuiDing_loc = (By.ID,'do_btn')    #判定，基础功能页的退订按钮
+    cancel_loc = (By.ID,'dialog_btn1')   #取消
+    tuiding_confirm_loc = (By.ID,'dialog_btn2')   #判定，确定按钮
+    share_loc = (By.ID,'title_share_btn')   #分享
+    share_pan_loc = (By.XPATH, "//*[contains(@text,'二维码')]")   #分享的二维码
+#    share_pan_loc = (By.NAME,'二维码')   #分享的二维码
+    share_cancel_loc = (By.ID,'btn_cancel')   #取消分享
+    weiXin_loc = (By.XPATH, "//*[contains(@text,'微信好友')]")
+#    weiXin_loc = (By.NAME,'微信好友')
+    def moreBusiness(self):
+        self.click_button(self.moreBusiness_loc)
         logging.info('点击更多')
-
-    def jichu_pan(self):
-        self.click_button(self.jichu_pan_loc)
+    def basics_pan(self):
+        self.click_button(self.basics_pan_loc)
         logging.info('点击基础功能')
-
-    def tuiding(self):
-        self.click_button(self.tuiding_loc)
+    def tuiDing(self):
+        self.click_button(self.tuiDing_loc)
         logging.info('点击退订')
-
-    def tuiding_quxiao(self):
-        self.click_button(self.tuiding_quxiao_loc)
+    def cancel(self):
+        self.click_button(self.cancel_loc)
         logging.info('点击取消')
-
-    def fenxiang(self):
-        self.click_button(self.fenxiang_loc)
+    def share(self):
+        self.click_button(self.share_loc)
         logging.info('点击分享')
-
-    def fenxiang_quxiao(self):
-        self.click_button(self.fenxiang_quxiao_loc)
+    def share_cancel(self):
+        self.click_button(self.share_cancel_loc)
         logging.info('点击分享的取消按钮')
-
-    def weixin(self):
-        self.click_button(self.weixin_loc)
+    def weiXin(self):
+        self.click_button(self.weiXin_loc)
         logging.info('点击微信')
 
-    def yiding_lc(self):
-        self.yiding()
+    def yiDing_lc(self):
+        self.yiDing()
         logging.info("进入已订业务")
-        self.gengduo()
+        self.moreBusiness()
         logging.info("点击更多")
         self.back()
         logging.info("点击返回")
-        self.jichu_pan()
+        self.basics_pan()
         logging.info("点击基础业务")
-        self.tuiding()
+        self.tuiDing()
         logging.info("点击退订按钮")
-        self.tuiding_quxiao()
+        self.cancel()
         logging.info("点击取消退订")
-
-
-# OK
+#
 class Balance(My):
-    chongzhi_loc = eval(data['Balance']['chongzhi_loc'])  # 充值交费
-    pan_chongzhi_loc = eval(data['Balance']['pan_chongzhi_loc'])  # 判定，充值交费
-    yuliang_loc = eval(data['Balance']['yuliang_loc'])  # 套餐余量
-    pan_yuliang_loc = eval(data['Balance']['pan_yuliang_loc'])  # 判定，套餐余量
-    yuliang_back_loc = eval(data['Balance']['yuliang_back_loc'])  # 套餐余量的返回按钮
-    taocan_loc = eval(data['Balance']['taocan_loc'])  # 套餐办理
-    pan_taocan_loc = eval(data['Balance']['pan_taocan_loc'])  # 判定，套餐办理
-    zhangdan_loc = eval(data['Balance']['zhangdan_loc'])  # 我的账单
-    pan_zhangdan_loc = eval(data['Balance']['pan_zhangdan_loc'])  # 判定，我的账单
-    balance_back_loc = eval(data['Balance']['balance_back_loc'])  # 话费余额的返回按钮
-    quchongzhi_loc = eval(data['Balance']['quchongzhi_loc'])  # 去充值
-    chongzhi_pan_loc = eval(data['Balance']['chongzhi_pan_loc'])  # 判定，充值页面
-    xiaofei_loc = eval(data['Balance']['xiaofei_loc'])  # 当月消费
-    keyong_loc = eval(data['Balance']['keyong_loc'])  # 可用余额
+    chongzhi_loc = (By.XPATH,"//*[contains(@text,'充值交费')]")   #充值交费
+    pan_chongzhi_loc = (By.ID,'立即充值')   #判定，充值交费
+    yuliang_loc = (By.XPATH,"//*[contains(@text,'套餐余量')]")   #套餐余量
+    pan_yuliang_loc = (By.XPATH,"//*[contains(@text,'已用:')]")   #判定，套餐余量
+    yuliang_back_loc = (By.ID,'title_back_btn')  #套餐余量的返回按钮
+    taocan_loc = (By.XPATH,"//*[contains(@text,'套餐办理')]")   #套餐办理
+    pan_taocan_loc = (By.XPATH,"//android.view.View[@content-desc='4G飞享套餐¥58-588.']")   #判定，套餐办理
+    zhangdan_loc = (By.XPATH,"//*[contains(@text,'我的账单')]")   #我的账单
+    pan_zhangdan_loc = (By.XPATH,"//*[contains(@text,'账单总额')]")   #判定，我的账单
+    balance_back_loc = (By.ID,'title_back_btn')
+    quchongzhi_loc = (By.ID,'txt_gopay')    #去充值
+    chongzhi_pan_loc = (By.ID,'立即充值')    #判定，充值页面
+    xiaofei_loc = (By.ID,'txt_mouth_consume_title')    #当月消费
+    keyong_loc = (By.ID,'title_back_btn')    #可用余额
 
     def chongzhi(self):
         self.click_button(self.chongzhi_loc)
         logging.info('点击充值交费')
-
     def yuliang(self):
         self.click_button(self.yuliang_loc)
         logging.info('点击套餐余量')
-
     def taocan(self):
         self.click_button(self.taocan_loc)
         logging.info('点击他女安办理')
-
     def zhangdan(self):
         self.click_button(self.zhangdan_loc)
         logging.info('点击我的账单')
-
     def balance_back(self):
         self.click_button(self.balance_back_loc)
         logging.info('点击话费余额的返回按钮')
-
     def yuliang_back(self):
         self.click_button(self.yuliang_back_loc)
         logging.info('点击套餐余量的返回按钮')
-
     def quchongzhi(self):
         self.click_button(self.quchongzhi_loc)
         logging.info('点击去充值')
@@ -289,48 +248,47 @@ class Balance(My):
         self.back()
         self.zhangdan()
         logging.info("点击套餐办理")
-
-
-# OK
-class Myorder(My):
-    fenxiang_loc = eval(data['Myorder']['fenxiang_loc'])  # 分享订单页面
-    fenxiangdao_loc = eval(data['Myorder']['fenxiangdao_loc'])  # 分享到
-    fenxiang_pan_loc = eval(data['Myorder']['fenxiang_pan_loc'])  # 分享到
-    ll_order_loc = eval(data['Myorder']['ll_order_loc'])  # 判定
-    bh_order_loc = eval(data['Myorder']['bh_order_loc'])  # 判定流量订单
-    cz_order_loc = eval(data['Myorder']['cz_order_loc'])
-    czxq_order_loc = eval(data['Myorder']['czxq_order_loc'])  # 判定
-    sp_order_loc = eval(data['Myorder']['sp_order_loc'])  # 判定
-    spkf_order_loc = eval(data['Myorder']['spkf_order_loc'])
-    kefu_1_loc = eval(data['Myorder']['kefu_1_loc'])
-
-    def fenxiang(self):
-        self.click_button(self.fenxiang_loc)
+#ok
+class MyOrder(My):
+    share_loc = (By.ID,'title_share_btn')  #分享订单页面
+    share_to_loc = (By.XPATH,"//*[contains(@text,'二维码')]")    #二维码分享
+    share_pan_loc = (By.XPATH,"//*[contains(@text,'邀请好友扫一扫分享给TA')]")    #二维码分享判定
+    flowOrder_loc = (By.XPATH,"//*[contains(@text,'流量订单')]")  #判定
+    orderNumber_loc = (By.XPATH,"//*[@resource-id='订单编号：']")  #判定流量订单
+    cz_order_loc = (By.XPATH,"//*[contains(@text,'充值订单')]")
+    cz_order_pan_loc = (By.XPATH,"//android.webkit.WebView[@content-desc='充值订单']/android.widget.ListView[1]/android.view.View")  #判定
+    sp_order_loc = (By.XPATH,"//*[contains(@text,'商品订单')]")  #判定
+    sp_order_pan_loc = (By.XPATH,"//android.webkit.WebView[@content-desc=‘商品订单’]/android.widget.ListView/android.view.View[1]")
+    keFu_1_loc = (By.XPATH,"(//android.view.View[@content-desc='客服'])[1]")
+    def share(self):
+        self.click_button(self.share_loc)
         logging.info('点击分享订单')
-
-    def fenxiangdao(self):
-        self.click_button(self.fenxiangdao_loc)
+    def share_to(self):
+        self.click_button(self.share_to_loc)
         logging.info('点击分享到')
-
-    def sporder(self):
+    def sp_order(self):
         self.click_button(self.sp_order_loc)
         logging.info('点击商品订单')
-
-    def spkf_order(self):
-        self.click_button(self.spkf_order_loc)
+    def sp_order_pan(self):
+        self.click_button(self.sp_order_pan_loc)
         logging.info('点击商品订单的第一个订单，进入到订单详情')
-
-    def kefu_1(self):
-        self.click_button(self.kefu_1_loc)
+    def keFu_1(self):
+        self.click_button(self.keFu_1_loc)
         logging.info('点击点击商品订单的第一个订单的客服')
-
     def cz_order(self):
         self.click_button(self.cz_order_loc)
         logging.info('点击充值订单')
-
-    def ll_order(self):
-        self.click_button(self.ll_order_loc)
+    def flowOrder(self):
+        self.click_button(self.flowOrder_loc)
         logging.info('点击流量订单')
+
+
+
+
+
+
+
+
 
     def Myorder_lc(self):
         self.my_order()
@@ -341,71 +299,54 @@ class Myorder(My):
         logging.info("点击流量订单")
         self.sporder()
         logging.info("点击商品订单")
-
-
-# OK
+#
 class Xxdingyue(My):
-    no_dingyue_loc = eval(data['Xxdingyue']['no_dingyue_loc'])  # 没有订阅消息
-
+    no_dingyue_loc = (By.XPATH,"//*[@resource-id='暂无订阅信息']")  #没有订阅消息
     def Xxdingyue_lc(self):
         self.swipe_up()
         logging.info("向下滑动")
         self.dingyue()
         logging.info("进入消息订阅")
-
-
-# OK---------
+#
 class Guanjia(My):
-    dingdan_loc = eval(data['Guanjia']['dingdan_loc'])
-    dingdan_pan_loc = eval(data['Guanjia']['dingdan_pan_loc'])
-    zhichong_loc = eval(data['Guanjia']['zhichong_loc'])
-    zhichong_pan_loc = eval(data['Guanjia']['zhichong_pan_loc'])
-    shangpin_loc = eval(data['Guanjia']['shangpin_loc'])
-    shangpin_pan_loc = eval(data['Guanjia']['shangpin_pan_loc'])
-    xiangdan_loc = eval(data['Guanjia']['xiangdan_loc'])
-    xiangdan_pan_loc = eval(data['Guanjia']['xiangdan_pan_loc'])
-    xiangdanback_pan_loc = eval(data['Guanjia']['xiangdanback_pan_loc'])
-    bannian_loc = eval(data['Guanjia']['bannian_loc'])
-    liuliang_pan_loc = eval(data['Guanjia']['liuliang_pan_loc'])
-    jibao_loc = eval(data['Guanjia']['jibao_loc'])
-    ri_taocan_loc = eval(data['Guanjia']['ri_taocan_loc'])
-    shiping_loc = eval(data['Guanjia']['shiping_loc'])
-    yuedu_loc = eval(data['Guanjia']['yuedu_loc'])
-    yinyue_loc = eval(data['Guanjia']['yinyue_loc'])
-
+    dingdan_loc = (By.ID,'流量订单')
+    dingdan_pan_loc = (By.ID,'充值订单')
+    zhichong_loc = (By.ID,'流量商品')
+    zhichong_pan_loc = (By.ID,'通讯录')
+    shangpin_loc = (By.ID,'流量商品')
+    shangpin_pan_loc = (By.ID,'搜索')
+    xiangdan_loc = (By.ID,'流量详单')
+    xiangdan_pan_loc = (By.ID,'tv_title')  #拉起详单登录判定
+    xiangdanback_pan_loc = (By.ID,'login_close')  #详单返回按钮
+    bannian_loc = (By.XPATH,"(//android.view.View[@content-desc='流量半年包'])[1]")
+    liuliang_pan_loc = (By.ID,'立即办理')
+    jibao_loc = (By.XPATH,"//android.view.View[@content-desc='流量季包']")
+    ri_taocan_loc = (By.XPATH,"//android.view.View[@content-desc='流量日套餐']")
+    shiping_loc = (By.ID,'视频')
+    yuedu_loc = (By.ID,'阅读')
+    yinyue_loc = (By.ID,'音乐')
     def dingdan(self):
         self.click_button(self.dingdan_loc)
-
     def zhichong(self):
         self.click_button(self.zhichong_loc)
-
     def shangpin(self):
         self.click_button(self.shangpin_loc)
-
     def xiangdan(self):
         self.click_button(self.xiangdan_loc)
-
     def bannian(self):
-        self.click_button(self.bannian_loc)  # 流量半年包
-
+        self.click_button(self.bannian_loc)   #流量半年包
     def jibao(self):
-        self.click_button(self.jibao_loc)  # 流量季包
-
+        self.click_button(self.jibao_loc) #流量季包
     def ri_taocan(self):
-        self.click_button(self.ri_taocan_loc)  # 流量日套餐
-
+        self.click_button(self.ri_taocan_loc)  #流量日套餐
     def shiping(self):
         self.click_button(self.shiping_loc)
-
     def yuedu(self):
         self.click_button(self.yuedu_loc)
-
     def yinyue(self):
         self.click_button(self.yinyue_loc)
-
     def xiangdanback_pan(self):
         self.click_button(self.xiangdanback_pan_loc)
-
     def Guanjia_lc(self):
         self.guanjia()
         logging.info("进入流量管家")
@@ -441,50 +382,39 @@ class Guanjia(My):
         logging.info("点击阅读")
         self.yinyue()
         logging.info("点击音乐")
-
-
-# OK
+#
 class My_voucher(My):
-    no_shiyongxuan_loc = eval(data['My_voucher']['no_shiyongxuan_loc'])  # 判定
-    kajuan_lishi_loc = eval(data['My_voucher']['kajuan_lishi_loc'])  # 判定
-    yiguoqi_loc = eval(data['My_voucher']['yiguoqi_loc'])  # 判定
-    yishiyong_loc = eval(data['My_voucher']['yishiyong_loc'])  # 判定
-    no_kajuan_loc = eval(data['My_voucher']['no_kajuan_loc'])  # 判定
-    migu_loc = eval(data['My_voucher']['migu_loc'])
-
-    def kajuan_lishi(self):
-        self.click_button(self.kajuan_lishi_loc)
-
-    def yiguoqi(self):
-        self.click_button(self.yiguoqi_loc)
-
-    def yishiyong(self):
-        self.click_button(self.yishiyong_loc)
-
-    def migu(self):
-        self.click_button(self.migu_loc)
-
+    notUsed_loc = (By.XPATH,"(//android.widget.Button[@content-desc='查看'])[1]")  #判定“未使用”标签
+    cardHistory_loc = (By.ID,'卡券历史')
+    guoQi_loc = (By.ID,'已过期')  #判定
+    alreadyUsed_loc = (By.ID,'已使用')  #判定
+    no_voucher_loc = (By.XPATH,"//*[@resource-id='暂无卡券，更多好券敬请期待']")  #判定
+    miGu_loc = (By.ID,'咪咕电影券')
+    def cardHistory(self):
+        self.click_button(self.cardHistory_loc)
+    def guoQi(self):
+        self.click_button(self.guoQi_loc)
+    def alreadyUsed(self):
+        self.click_button(self.alreadyUsed_loc)
+    def miGu(self):
+        self.click_button(self.miGu_loc)
     def ka_juan(self):
         self.my_voucher()
         logging.info("进入我的卡劵")
-        self.yiguoqi()
+        self.guoQi()
         logging.info("点击已过期")
-        self.yishiyong()
+        self.alreadyUsed()
         logging.info("点击已使用")
-        self.migu()
+        self.miGu()
         logging.info("点击咪咕电影劵")
         self.back()
         logging.info("点击返回")
-
-
-# OK
+#
 class My_movie(My):
-    gou_piao_loc = eval(data['My_movie']['gou_piao_loc'])  # 判定
-    gou_piaoclose_loc = eval(data['My_movie']['gou_piaoclose_loc'])  # 判定
-
+    gou_piao_loc = (By.ID,'title_name_txt')  #购票判定
+    gou_piaoclose_loc = (By.ID,'title_close_btn')  #购票判定
     def gou_piao(self):
         self.click_button(self.gou_piao_loc)
-
     def gou_piaoclose(self):
         self.click_button(self.gou_piaoclose_loc)
 
@@ -492,201 +422,150 @@ class My_movie(My):
         self.my_movie()
         logging.info("进入我的电影")
 
-
 class Xiangdan(My):
-    renzheng_loc = eval(data['Xiangdan']['renzheng_loc'])  # 详单的身份认证
-    jiansuo_loc = eval(data['Xiangdan']['jiansuo_loc'])
-    anniu_loc = eval(data['Xiangdan']['anniu_loc'])  # 按号码的下拉按钮
-    haoma_loc = eval(data['Xiangdan']['haoma_loc'])  # 按号码
-    riqi_loc = eval(data['Xiangdan']['riqi_loc'])  # 按日期
-    mingcheng_loc = eval(data['Xiangdan']['mingcheng_loc'])  # 按名称
-    shuru_loc = eval(data['Xiangdan']['shuru_loc'])  # 检索的输入框
-    sousuo_loc = eval(data['Xiangdan']['sousuo_loc'])  # 搜索按钮
-    tonghua_loc = eval(data['Xiangdan']['tonghua_loc'])
-    fenxi_loc = eval(data['Xiangdan']['fenxi_loc'])  # 详单分析
-    pan_gaisu_loc = eval(data['Xiangdan']['pan_gaisu_loc'])  # 判定
-    pan_meiri_loc = eval(data['Xiangdan']['pan_meiri_loc'])  # 判定
-    pan_time_loc = eval(data['Xiangdan']['pan_time_loc'])  # 判定
-
+    renzheng_loc = (By.XPATH,"//*[@resource-id='tv_title']")  #详单的身份认证
+    jiansuo_loc = (By.XPATH,"//*[contains(@text,'检索')]")
+    anniu_loc = (By.XPATH,"//*[@resource-id='select_timeornumber']")  #按号码的下拉按钮
+    haoma_loc = (By.XPATH,"//*[@resource-id='text_num']")  #按号码
+    riqi_loc = (By.XPATH,"//*[@resource-id='text_date']")  #按日期
+    mingcheng_loc = (By.XPATH,"//*[@resource-id='text_name']")  #按名称
+    shuru_loc = (By.XPATH,"//*[@resource-id='searedt']")  #检索的输入框
+    sousuo_loc = (By.XPATH,"//*[@resource-id='searedt']")  #搜索按钮
+    tonghua_loc = (By.XPATH,"//*[contains(@text,'通话详单')]")
+    fenxi_loc = (By.XPATH,"//*[@resource-id='toanalysis']")  #详单分析
+    pan_gaisu_loc = (By.XPATH,"//android.view.View[@content-desc='11月通话概述']")  #判定
+    pan_meiri_loc = (By.XPATH,"//android.view.View[@content-desc='每日通话']")  #判定
+    pan_time_loc = (By.XPATH,"//android.view.View[@content-desc='通话时间分布']")  #判定
     def jiansuo(self):
         self.click_button(self.jiansuo_loc)
-
     def anniu(self):
         self.click_button(self.anniu_loc)
-
     def haoma(self):
         self.click_button(self.haoma_loc)
-
     def riqi(self):
         self.click_button(self.riqi_loc)
-
     def mingcheng(self):
         self.click_button(self.mingcheng_loc)
-
     def shuru(self):
         self.click_button(self.shuru_loc)
-
     def sousuo(self):
         self.click_button(self.sousuo_loc)
-
     def tonghua(self):
         self.click_button(self.tonghua_loc)
-
     def fenxi(self):
         self.click_button(self.fenxi_loc)
-
-
-# OK
+#
 class Taocan_xq(My):
-    qianbao_loc = eval(data['Taocan_xq']['qianbao_loc'])  # 余额
-    qianbao_pan_loc = eval(data['Taocan_xq']['qianbao_pan_loc'])  # 余额  #流量钱包判定
-    kajuan_loc = eval(data['Taocan_xq']['kajuan_loc'])  # 卡劵
-    kajuan_pan_loc = eval(data['Taocan_xq']['kajuan_pan_loc'])  # 卡劵判定
-    jifen_loc = eval(data['Taocan_xq']['jifen_loc'])  # 积分
-    jifen_pan_loc = eval(data['Taocan_xq']['jifen_pan_loc'])  # 积分判定
-    quanyi_loc = eval(data['Taocan_xq']['quanyi_loc'])  # 我的权益
-    quanyi_pan_loc = eval(data['Taocan_xq']['quanyi_pan_loc'])  # 我的权益判定
+    qianbao_loc = (By.XPATH,"//*[contains(@text,'流量钱包')]")  #流量钱包
+    qianbao_pan_loc = (By.ID,'流量钱包账户余额')  #流量钱包判定
+    kajuan_loc = (By.XPATH,"//*[contains(@text,'卡券')]")  #卡劵
+    kajuan_pan_loc = (By.ID,'话费券')  #卡劵判定
+    jifen_loc = (By.XPATH,"//*[contains(@text,'积分')]")  #积分
+    jifen_pan_loc = (By.ID,'中国移动积分商城')  #积分判定
+    quanyi_loc = (By.XPATH,"//*[contains(@text,'权益')]")  #我的权益
+    quanyi_pan_loc = (By.ID,'积分')  #我的权益判定
 
     def qianbao(self):
         self.click_button(self.qianbao_loc)
-
     def kajuan(self):
         self.click_button(self.kajuan_loc)
-
     def jifen(self):
         self.click_button(self.jifen_loc)
-
     def quanyi(self):
         self.click_button(self.quanyi_loc)
-
-
-# OK
+#
 class Ke_fu(My):
-    send_loc = eval(data['Ke_fu']['send_loc'])  # 点击登录
-
+    send_loc = (By.XPATH,"//android.widget.Button[@content-desc='发送']")  #点击登录
     def send(self):
         self.click_button(self.send_loc)
-
     def Kefu_lc(self):
         self.swipe_up()
         logging.info("向下滑动")
         self.kefu()
         logging.info("进入在线客服")
+#
+class MyInfo(My):    #个人信息
+    #权限元素
+    edit_loc = (By.XPATH,"//*[contains(@text,'编辑头像')]")  #编辑头像
+    headImg_loc = (By.ID,'selectid')  #头像id
+    imgExit_loc = (By.ID,'but_exit')  #取消头像
+
+    def edit(self):  #编辑头像
+        self.click_button(self.edit_loc)
+    def imgExit(self):  #取消头像
+        self.click_button(self.imgExit_loc)
+    def headImg(self):  #点击头像
+        self.click_button(self.headImg_loc)
 
 
-# OK
-class Geren(My):  # 个人信息
-    # 权限元素
-    bianji_loc = eval(data['Geren']['bianji_loc'])
-    imgexit_loc = eval(data['Geren']['imgexit_loc'])
-    touxiang_loc = eval(data['Geren']['touxiang_loc'])
-
-    def bianji(self):  # 编辑头像
-        self.click_button(self.bianji_loc)
-
-    def imgexit(self):  # 取消头像
-        self.click_button(self.imgexit_loc)
-
-    def touxiang(self):  # 取消头像
-        self.click_button(self.touxiang_loc)
-
-    def geren_lc(self):
-        self.imglogin()
-        logging.info("进入个人信息")
-        self.bianji()
-        logging.info("点击编辑")
-        self.imgexit()
-        logging.info("点击取消")
-        self.back()
-        logging.info("点击返回")
-
-
-# OK
-class Zhangdan(My):  # 我的账单
-    # 权限元素
-    zhangdan_zonge_loc = eval(data['Zhangdan']['zhangdan_zonge_loc'])  # 判定，账单总额
-    qu_chongzhi_loc = eval(data['Zhangdan']['qu_chongzhi_loc'])  # 去充值
-    chongzhi_zhongxin_loc = eval(data['Zhangdan']['chongzhi_zhongxin_loc'])  # 判定，充值中心
-    chongzhi_back_loc = eval(data['Zhangdan']['chongzhi_back_loc'])  # 充值中心的返回按钮
-    xiangdan_loc = eval(data['Zhangdan']['xiangdan_loc'])  # 详单查询
-    xiangdan_panding_loc = eval(data['Zhangdan']['xiangdan_panding_loc'])  # 判定，详单查询
-    xiangdanback_loc = eval(data['Zhangdan']['xiangdanback_loc'])  # 详单查询的返回按钮
-    zhangdan_fenxiang_loc = eval(data['Zhangdan']['zhangdan_fenxiang_loc'])  # 我的账单分享
-    fenxiang_panding_loc = eval(data['Zhangdan']['fenxiang_panding_loc'])  # 判定，分享
-    quxiao_fenxiang_loc = eval(data['Zhangdan']['quxiao_fenxiang_loc'])  # 取消分享
-    zhangdanback_loc = eval(data['Zhangdan']['zhangdanback_loc'])  # 账单的返回（我的）按钮
-
-    def qu_chongzhi(self):  # 去充值
-        self.click_button(self.qu_chongzhi_loc)
-
-    def chongzhiback(self):  # 充值中心的返回按钮
-        self.click_button(self.chongzhi_back_loc)
-
-    def xiangdan(self):  # 详单查询
-        self.click_button(self.xiangdan_loc)
-
-    def xiangdanback(self):  # 详单查询的返回按钮
-        self.click_button(self.xiangdanback_loc)
-
-    def zhanndan_fenxiang(self):  # 我的账单分享
-        self.click_button(self.zhangdan_fenxiang_loc)
-
-    def quxiao(self):  # 取消分享
-        self.click_button(self.quxiao_fenxiang_loc)
-
-    def zhangdanback(self):  # 账单的返回（我的）按钮
-        self.click_button(self.zhangdanback_loc)
-
+#ok
+class MyBill(My):    #我的账单
+    #权限元素
+    totalBill_loc = (By.ID,'tv_bill_all')  #判定，账单总额
+    toRecharge_loc = (By.ID,'img_go_recharge')  #去充值
+    voucherCenter_loc = (By.ID,'立即充值')  #判定，充值中心
+    voucherCenter_back_loc = (By.ID,'title_back_btn')      #充值中心的返回按钮
+    xiangDan_loc = (By.ID,'xiangdan_btn')  #详单查询
+    xiangDan_pan_loc = (By.ID,'one_key_login_tv')  #判定，详单查询
+    xiangDan_Back_loc = (By.ID,'login_close')  #详单查询的返回按钮
+    shareBill_loc = (By.ID,'title_share_btn')  #我的账单分享
+    share_pan_loc = (By.ID,'tv_share_name')  #判定，分享
+    cancelShare_loc = (By.ID,'btn_cancel')  #取消分享
+    billBack_loc = (By.ID,'title_back_btn')  #账单的返回（我的）按钮
+    def toRecharge(self):      #去充值
+        self.click_button(self.toRecharge_loc)
+    def voucherCenter_back(self):      #充值中心的返回按钮
+        self.click_button(self.voucherCenter_back_loc)
+    def xiangDan(self):  #详单查询
+        self.click_button(self.xiangDan_loc)
+    def xiangDan_Back(self):  #详单查询的返回按钮
+        self.click_button(self.xiangDan_Back_loc)
+    def shareBill(self):  #我的账单分享
+        self.click_button(self.shareBill_loc)
+    def cancelShare(self):  #取消分享
+        self.click_button(self.cancelShare_loc)
+    def billBack(self):  #账单的返回（我的）按钮
+        self.click_button(self.billBack_loc)
     def zhangdan_lc(self):
         self.my_zhangdan()
         logging.info("进入我的账单")
-        self.qu_chongzhi()
+        self.toRecharge()
         logging.info("点击去充值")
-        self.chongzhiback()
+        self.voucherCenter_back()
         logging.info("返回")
-        #    self.yuliang()
+    #    self.yuliang()
         logging.info("点击套餐余量")
-        #  self.yuliang_back()
+      #  self.yuliang_back()
         logging.info("点击套餐余量的返回按钮")
-        self.xiangdan()
+        self.xiangDan()
         logging.info("点击详单查询")
-        self.xiangdanback()
+        self.xiangDan_Back()
         logging.info("点击详单查询的返回按钮")
-
-
-# 一半
+#
 class Payhistory(My):
-    jiaofei_pan_loc = eval(data['Payhistory']['jiaofei_pan_loc'])
-    chongzhi_pan_loc = eval(data['Payhistory']['chongzhi_pan_loc'])  # 充值中心
-    shaixuan_loc = eval(data['Payhistory']['shaixuan_loc'])
-    shouqi_loc = eval(data['Payhistory']['shouqi_loc'])
-    fenxiang_loc = eval(data['Payhistory']['fenxiang_loc'])
-    pengyouquan_loc = eval(data['Payhistory']['pengyouquan_loc'])
-    quxiao_loc = eval(data['Payhistory']['fenxiang_loc'])
-    siyue_loc = eval(data['Payhistory']['siyue_loc'])
-    erweima_loc = eval(data['Payhistory']['erweima_loc'])
-
+    jiaofei_pan_loc = (By.ID,'pay_history_btn')
+    chongzhi_pan_loc = (By.ID,'title_name_txt')   #充值中心
+    shaixuan_loc = (By.ID,'title_select_btn')
+    shouqi_loc = (By.XPATH,"//*[contains(@text,'收起')]")
+    fenxiang_loc = (By.ID,'title_share_btn')
+    pengyouquan_loc = (By.XPATH,"//*[contains(@text,'朋友圈')]")
+    quxiao_loc = (By.XPATH,"//*[contains(@text,'取消')]")
+    siyue_loc = (By.XPATH,"//*[contains(@text,'2019年4月')]")
+    erweima_loc = (By.XPATH,"//*[contains(@text,'二维码')]")
     def shaixuan(self):
         self.click_button(self.shaixuan_loc)
-
     def jiaofei(self):
         self.click_button(self.jiaofei_pan_loc)
-
     def shouqi(self):
         self.click_button(self.shouqi_loc)
-
     def fenxiang(self):
         self.click_button(self.fenxiang_loc)
-
     def quxiao(self):
         self.click_button(self.quxiao_loc)
-
     def siyue(self):
         self.click_button(self.siyue_loc)
-
     def erweima(self):
         self.click_button(self.erweima_loc)
-
     def payhistory_lc(self):
         self.payhistory()
         logging.info("进入交费历史")
@@ -697,117 +576,98 @@ class Payhistory(My):
         self.shaixuan()
         logging.info("点击筛选")
 
-
-# 李纯代码
-# 李纯代码
-class Qinmifu(My):  # 亲密付
-    # 权限元素
-    qmf_dingdan_pan_loc = eval(data['Qinmifu']['qmf_dingdan_pan_loc'])  # 判定，亲密付订单
-    qmf_jilu_pan_loc = eval(data['Qinmifu']['qmf_jilu_pan_loc'])  # 判定，添加记录
-    qmf_tianjia_pan_loc = eval(data['Qinmifu']['qmf_tianjia_pan_loc'])  # 判定，添加号码
-    liuliang_pan_loc = eval(data['Qinmifu']['liuliang_pan_loc'])  # 判定，亲密付流量订单
-    chongzhi_pan_loc = eval(data['Qinmifu']['chongzhi_pan_loc'])  # 判定，亲密付充值订单
-    chongzhi_loc = eval(data['Qinmifu']['chongzhi_loc'])  # 充值订单
-    liuliang_loc = eval(data['Qinmifu']['liuliang_loc'])  # 流量订单
-    chongliuliang_loc = eval(data['Qinmifu']['chongliuliang_loc'])  # 冲流量
-    chonghuafei_loc = eval(data['Qinmifu']['chonghuafei_loc'])  # 充话费
-    lijichong_loc = eval(data['Qinmifu']['lijichong_loc'])  # 立即充值
-    queren_loc = eval(data['Qinmifu']['queren_loc'])  # 确认支付
-    close_anniu_loc = eval(data['Qinmifu']['close_anniu_loc'])  # 关闭支付页面
-    querenpay_loc = eval(data['Qinmifu']['querenpay_loc'])  # 确认支付完成
-    close_zhifu_loc = eval(data['Qinmifu']['close_zhifu_loc'])  # 关闭支付页面
-    tianjiajilu_loc = eval(data['Qinmifu']['tianjiajilu_loc'])  # 添加记录
-    beitianjiajilu_loc = eval(data['Qinmifu']['beitianjiajilu_loc'])  # 被添加记录
-    pan_tianjiajilu_loc = eval(data['Qinmifu']['pan_tianjiajilu_loc'])  # 判定，添加记录
-    pan_beitianjiajilu_loc = eval(data['Qinmifu']['pan_beitianjiajilu_loc'])  # 判定，被添加记录
-    pan_chaoshijilu_loc = eval(data['Qinmifu']['pan_chaoshijilu_loc'])  # 判定，超时未回复
-    pan_qinmifu_loc = eval(data['Qinmifu']['pan_qinmifu_loc'])  # 判定亲密付
-    pan_liuliang_loc = eval(data['Qinmifu']['pan_liuliang_loc'])  # 判定充流量页面
-    pan_huafei_loc = eval(data['Qinmifu']['pan_huafei_loc'])  # 判定充话费页面
-    back_loc = eval(data['Qinmifu']['back_loc'])  # 返回_
-    chongzhijilu_loc = eval(data['Qinmifu']['chongzhijilu_loc'])  # 充值记录
-    tianjiahaoma_loc = eval(data['Qinmifu']['tianjiahaoma_loc'])  # 添加号码
+#李纯代码
+class Qinmifu(My):    #亲密付
+    #权限元素
+    qmf_dingdan_pan_loc = eval(data['Qinmifu']['qmf_dingdan_pan_loc'])  #判定，亲密付订单
+    qmf_jilu_pan_loc = eval(data['Qinmifu']['qmf_jilu_pan_loc'])  #判定，添加记录
+    qmf_tianjia_pan_loc = eval(data['Qinmifu']['qmf_tianjia_pan_loc'])  #判定，添加号码
+    liuliang_pan_loc = eval(data['Qinmifu']['liuliang_pan_loc'])  #判定，亲密付流量订单
+    chongzhi_pan_loc = eval(data['Qinmifu']['chongzhi_pan_loc'])  #判定，亲密付充值订单
+    chongzhi_loc = eval(data['Qinmifu']['chongzhi_loc'])  #充值订单
+    liuliang_loc = eval(data['Qinmifu']['liuliang_loc'])   #流量订单
+    chongliuliang_loc = eval(data['Qinmifu']['chongliuliang_loc'])  #冲流量
+    chonghuafei_loc = eval(data['Qinmifu']['chonghuafei_loc'])  #充话费
+    lijichong_loc = eval(data['Qinmifu']['lijichong_loc'])  #立即充值
+    queren_loc = eval(data['Qinmifu']['queren_loc'])  #确认支付
+    close_anniu_loc = eval(data['Qinmifu']['close_anniu_loc'])  #关闭支付页面
+    querenpay_loc = eval(data['Qinmifu']['querenpay_loc'])  #确认支付完成
+    close_zhifu_loc = eval(data['Qinmifu']['close_zhifu_loc'])  #关闭支付页面
+    tianjiajilu_loc = eval(data['Qinmifu']['tianjiajilu_loc'])  #添加记录
+    beitianjiajilu_loc = eval(data['Qinmifu']['beitianjiajilu_loc'])  #被添加记录
+    pan_tianjiajilu_loc = eval(data['Qinmifu']['pan_tianjiajilu_loc'])  #判定，添加记录
+    pan_beitianjiajilu_loc = eval(data['Qinmifu']['pan_beitianjiajilu_loc'])  #判定，被添加记录
+    pan_chaoshijilu_loc = eval(data['Qinmifu']['pan_chaoshijilu_loc'])  #判定，超时未回复
+    pan_qinmifu_loc = eval(data['Qinmifu']['pan_qinmifu_loc'])  #判定亲密付
+    pan_liuliang_loc =  eval(data['Qinmifu']['pan_liuliang_loc'])  #判定充流量页面
+    pan_huafei_loc =  eval(data['Qinmifu']['pan_huafei_loc'])  #判定充话费页面
+    back_loc = eval(data['Qinmifu']['back_loc'])  #返回_
+    chongzhijilu_loc = eval(data['Qinmifu']['chongzhijilu_loc'])  #充值记录
+    tianjiahaoma_loc = eval(data['Qinmifu']['tianjiahaoma_loc']) # 添加号码
     haomashurulan_loc = eval(data['Qinmifu']['haomashurulan_loc'])  # 号码输入栏
     shurunicheng_loc = eval(data['Qinmifu']['shurunicheng_loc'])  # 输入昵称栏
-    quxiao_loc = eval(data['Qinmifu']['quxiao_loc'])  # 取消
-    pan_quxiao_loc = eval(data['Qinmifu']['pan_quxiao_loc'])  # 判定取消
-    lijitianjia_loc = eval(data['Qinmifu']['lijitianjia_loc'])  # 立即添加
-    pan_lijitianjia_loc = eval(data['Qinmifu']['pan_lijitianjia_loc'])  # 判定 立即添加
+    quxiao_loc = eval(data['Qinmifu']['quxiao_loc']) # 取消
+    pan_quxiao_loc = eval(data['Qinmifu']['pan_quxiao_loc']) # 判定取消
+    lijitianjia_loc = eval(data['Qinmifu']['lijitianjia_loc']) # 立即添加
+    pan_lijitianjia_loc = eval(data['Qinmifu']['pan_lijitianjia_loc']) # 判定 立即添加
     guanli_loc = eval(data['Qinmifu']['guanli_loc'])  # 管理成员
     pan_guanli_loc = eval(data['Qinmifu']['pan_guanli_loc'])  # 判定 管理成员
-
-    def tianjiahaoma(self):  # 添加号码
+    def tianjiahaoma(self):  #添加号码
         self.click_button(self.tianjiahaoma_loc)
         logging.info("添加号码")
-
-    def haomashurulan(self, value1):  # 号码输入栏
-        self.send_keys(self.haomashurulan_loc, value1)
+    def haomashurulan(self,value1):   #号码输入栏
+        self.send_keys(self.haomashurulan_loc,value1)
         logging.info("号码输入栏")
-
-    def shurunicheng(self, value2):  # 昵称输入栏
+    def shurunicheng(self,value2):  #昵称输入栏
         self.send_keys(self.shurunicheng_loc, value2)
         logging.info("昵称输入")
-
-    def quxiao(self):  # 取消
+    def quxiao(self):  #取消
         self.click_button(self.quxiao_loc)
         logging.info("取消")
-
-    def lijitianjia(self):  # 立即添加
+    def lijitianjia(self):   #立即添加
         self.click_button(self.lijitianjia_loc)
         logging.info("立即添加")
-
-    def guanli(self):  # 管理成员
+    def guanli(self):   #管理成员
         self.tap(635.7, 237.1)
         self.click_button(self.guanli_loc)
         logging.info("管理成员")
-
-    def chongzhi(self):  # 亲密付充值订单
+    def chongzhi(self):  #亲密付充值订单
         self.click_button(self.chongzhi_loc)
         logging.info("点击亲密付充值订单")
-
-    def liuliang(self):  # 亲密付流量订单
+    def liuliang(self):  #亲密付流量订单
         self.click_button(self.liuliang_loc)
         logging.info("点击亲密付流量订单")
-
-    def chongliuliang(self):  # 冲流量
+    def chongliuliang(self):  #冲流量
         self.click_button(self.chongliuliang_loc)
         logging.info("点击充流量")
-
-    def chonghuafei(self):  # 充话费
+    def chonghuafei(self):  #充话费
         self.click_button(self.chonghuafei_loc)
         logging.info("点击充话费")
-
-    def lijichong(self):  # 立即充值
+    def lijichong(self):  #立即充值
         self.click_button(self.lijichong_loc)
         logging.info("点击立即充值")
-
-    def queren(self):  # 确认支付
+    def queren(self):  #确认支付
         self.click_button(self.queren_loc)
         logging.info("点击确认支付")
-
-    def close_zhifu(self):  # 关闭支付页面
+    def close_zhifu(self):  #关闭支付页面
         self.click_button(self.close_zhifu_loc)
         logging.info("点击关闭支付")
-
-    def tianjiajilu(self):  # 添加记录
+    def tianjiajilu(self):  #添加记录
         self.tap(635.7, 237.1)
         self.click_button(self.tianjiajilu_loc)
         logging.info("点击添加记录")
-
-    def beitianjiajilu(self):  # 被添加记录
+    def beitianjiajilu(self):  #被添加记录
         self.click_button(self.beitianjiajilu_loc)
         logging.info("点击被添加记录")
-
     def chongzhijilu(self):
         self.tap(635.7, 237.1)
         self.click_button(self.chongzhijilu_loc)
         logging.info("点击充值记录")
-
-    def back(self):  # 返回
+    def back(self):  #返回
         self.click_button(self.back_loc)
         logging.info("点击返回")
 
-    def tianhaoquxiao(self):  # 添加号码时取消
+    def tianhaoquxiao(self): #添加号码时取消
         self.tianjiahaoma()
         logging.info("点击添加号码")
         self.haomashurulan("18723240750")
@@ -816,8 +676,7 @@ class Qinmifu(My):  # 亲密付
         logging.info("点击昵称输入栏")
         self.quxiao()
         logging.info("点击取消")
-
-    def tianhao(self):  # 添加号码
+    def tianhao(self):  #添加号码
         self.tianjiahaoma()
         logging.info("点击添加号码")
         self.haomashurulan("18723240750")
@@ -826,6 +685,8 @@ class Qinmifu(My):  # 亲密付
         logging.info("点击昵称输入栏")
         self.lijitianjia()
         logging.info("点击立即添加")
+
+
 
 
 class FaPiao(My):
@@ -845,17 +706,17 @@ class FaPiao(My):
     riseinput_loc = eval(data['FaPiao']['riseinput_loc'])
     # 点击纳税人识别号输入栏
     shibiehao_loc = eval(data['FaPiao']['shibiehao_loc'])
-    # 设为默认按钮
+    #设为默认按钮
     moren_loc = eval(data['FaPiao']['moren_loc'])
-    # 点击保存按钮
+    #点击保存按钮
     baocun_loc = eval(data['FaPiao']['baocun_loc'])
-    # 邮件推送入口
+    #邮件推送入口
     youtui_loc = eval(data['FaPiao']['youtui_loc'])
-    # 点击常用邮箱输入栏
+    #点击常用邮箱输入栏
     mail_loc = eval(data['FaPiao']['mail_loc'])
-    # 点击保存按钮
+    #点击保存按钮
     save_loc = eval(data['FaPiao']['save_loc'])
-    # 知道了按钮
+    #知道了按钮
     zhidaole_loc = eval(data['FaPiao']['zhidaole_loc'])
     # 返回按钮
     back_loc = eval(data['FaPiao']['back_loc'])
@@ -885,104 +746,88 @@ class FaPiao(My):
     pan_tuisong_loc = eval(data['FaPiao']['pan_tuisong_loc'])
     # 判定邮箱保存
     pan_youxiang_loc = eval(data['FaPiao']['pan_youxiang_loc'])
-
     # 判定停止开具
 
-    # 点击话费充值发票
+
+
+        #点击话费充值发票
     def huafei(self):
         self.click_button(self.huafei_loc)
         logging.info("点击话费充值发票")
-        # 点击流量直充发票
-
+        #点击流量直充发票
     def liuliang(self):
         self.click_button(self.liuliang_loc)
         logging.info("点击流量直充发票")
-        # 点击宽带发票
-
+        #点击宽带发票
     def kuandai(self):
         self.click_button(self.kuandai_loc)
         logging.info("点击宽带发票")
-        # 点击月结发票
-
+        #点击月结发票
     def yuejie(self):
         self.click_button(self.yuejie_loc)
         logging.info("点击月结发票")
-        # 点击发票抬头
-
+        #点击发票抬头
     def taitou(self):
         self.click_button(self.taitou_loc)
         logging.info("点击发票抬头")
         # 点击新增发票
-
     def xinzeng(self):
         self.click_button(self.xinzeng_loc)
         logging.info("点击新增发票")
         # 点击抬头输入栏
-
-    def riseinput(self, value1):
+    def riseinput(self,value1):
         self.send_keys(self.riseinput_loc, value1)
         logging.info("点击发票抬头输入栏")
-        # 点击识别号输入栏
-
-    def shibiehao(self, value2):
+        #点击识别号输入栏
+    def shibiehao(self,value2):
         self.send_keys(self.shibiehao_loc, value2)
         logging.info("点击纳税人识别号输入栏")
         # 点击默认
-
     def moren(self):
         self.click_button(self.moren_loc)
         logging.info("点击默认")
         # 点击保存
-
     def baocun(self):
         self.click_button(self.baocun_loc)
         logging.info("点击保存")
         # 点击返回
-
     def back(self):
         self.click_button(self.back_loc)
         logging.info("点击返回")
         # 点击关闭
-
     def close(self):
         self.click_button(self.close_loc)
         logging.info("点击关闭")
         # 点击开具
-
     def kaiju(self):
         self.click_button(self.kaiju_loc)
         logging.info("点击开具")
 
         #  点击停止开具
-
     def tingkai(self):
         self.click_button(self.tingkai_loc)
         logging.info("点击停止开具")
         # 点击确认开具
-
     def quekai(self):
         self.click_button(self.quekai_loc)
         logging.info("点击确认开具")
         # 点击邮箱推送
-
     def youtui(self):
         self.click_button(self.youtui_loc)
         logging.info("点击邮箱推送")
-        # 输入邮箱号
-
-    def mail(self, value3):
-        self.send_keys(self.mail_loc, value3)
-        # self.send_keys(self.mail_loc, value1)
+        #输入邮箱号
+    def mail(self,value3):
+        self.send_keys(self.mail_loc,value3)
+        #self.send_keys(self.mail_loc, value1)
         logging.info("点击邮箱号")
-        # self.find_element(self.mail_loc).clear()
+        #self.find_element(self.mail_loc).clear()
 
-        # 点击保存
-
+        #点击保存
     def save(self):
         self.click_button(self.save_loc)
         logging.info("点击保存")
 
-    def xinfapiao(self, value1, value2):  # 新增一个发票
+    def xinfapiao(self,value1,value2):   #新增一个发票
         self.fapiao()
         logging.info("进入电子发票")
         self.taitou()
@@ -991,105 +836,92 @@ class FaPiao(My):
         logging.info("新增发票")
         self.riseinput(value1)
         logging.info("抬头栏输入")
-        # 点击纳税人识别号输入栏输入内容
+        #点击纳税人识别号输入栏输入内容
         self.shibiehao(value2)
         logging.info("识别栏输入")
-        # 点击默认，点击保存
+        #点击默认，点击保存
         self.moren()
         self.baocun()
         self.back()
 
-
 class ShiMing(My):
-    pan_shiming_loc = eval(data['ShiMing']['pan_shiming_loc'])  # 判实名登记
-    back_loc = eval(data['ShiMing']['back_loc'])  # 返回
+    pan_shiming_loc = eval(data['ShiMing']['pan_shiming_loc'])  #判实名登记
+    back_loc = eval(data['ShiMing']['back_loc'])  #返回
 
-    # 返回
+    #返回
     def back(self):
         self.click_button(self.back_loc)
         logging.info("点击返回")
-
 
 class HeDuoHao(My):
-    pan_heduohao_loc = eval(data['HeDuoHao']['pan_heduohao_loc'])  # 判和多号
+    pan_heduohao_loc = eval(data['HeDuoHao']['pan_heduohao_loc']) #判和多号
     back_loc = eval(data['ShiMing']['back_loc'])  # 返回
-
-    # 点击返回
+    #点击返回
     def back(self):
         self.click_button(self.back_loc)
         logging.info("点击返回")
 
-
 class ZhiNeng(My):
-    wangguan_loc = eval(data['ZhiNeng']['wangguan_loc'])  # 网关管理
-    shebei_loc = eval(data['ZhiNeng']['shebei_loc'])  # 设备管理
-    baokuan_loc = eval(data['ZhiNeng']['baokuan_loc'])  # 爆款商品
-    pan_zhineng_loc = eval(data['ZhiNeng']['pan_zhineng_loc'])  # 判定智能家居
-    pan_wangguan_loc = eval(data['ZhiNeng']['pan_wangguan_loc'])  # 判定网关管理
-    pan_shebei_loc = eval(data['ZhiNeng']['pan_shebei_loc'])  # 判定设备管理
-    pan_baokuan_loc = eval(data['ZhiNeng']['pan_baokuan_loc'])  # 判定爆款商品
-    back_loc = eval(data['ZhiNeng']['back_loc'])  # 返回
-    wangguan_back_loc = eval(data['ZhiNeng']['wangguan_back_loc'])  # 网关管理页面返回
+    wangguan_loc = eval(data['ZhiNeng']['wangguan_loc'])   #网关管理
+    shebei_loc = eval(data['ZhiNeng']['shebei_loc'])   #设备管理
+    baokuan_loc = eval(data['ZhiNeng']['baokuan_loc'])  #爆款商品
+    pan_zhineng_loc = eval(data['ZhiNeng']['pan_zhineng_loc'])  #判定智能家居
+    pan_wangguan_loc = eval(data['ZhiNeng']['pan_wangguan_loc'])  #判定网关管理
+    pan_shebei_loc = eval(data['ZhiNeng']['pan_shebei_loc'])  #判定设备管理
+    pan_baokuan_loc = eval(data['ZhiNeng']['pan_baokuan_loc'])  #判定爆款商品
+    back_loc = eval(data['ZhiNeng']['back_loc']) #返回
+    wangguan_back_loc = eval(data['ZhiNeng']['wangguan_back_loc']) #网关管理页面返回
     shebei_back_loc = eval(data['ZhiNeng']['shebei_back_loc'])  # 设备管理页面返
-    close_loc = eval(data['ZhiNeng']['close_loc'])  # 关闭
-
-    # 点击网关管理
+    close_loc = eval(data['ZhiNeng']['close_loc'])  #关闭
+    #点击网关管理
     def wangguan(self):
         self.click_button(self.wangguan_loc)
         logging.info("点击网关管理")
-
-    # 点击设备管理
+    #点击设备管理
     def shebei(self):
         self.click_button(self.shebei_loc)
         logging.info("点击设备管理")
-
-    # 点击爆款商品
+    #点击爆款商品
     def baokuan(self):
         self.click_button(self.baokuan_loc)
         logging.info("点击爆款商品")
-
-    # 点击返回
+    #点击返回
     def back(self):
         self.click_button(self.back_loc)
         logging.info("点击返回")
-
-    # 点击网关管理返回
+    #点击网关管理返回
     def wangguan_back(self):
         self.click_button(self.wangguan_back_loc)
         logging.info("点击网关管理返回")
-
-    # 点击设备管理返回
+    #点击设备管理返回
     def shebei_back(self):
         self.click_button(self.shebei_back_loc)
         logging.info("点击设备管理返回")
-
-    # 点击关闭
+    #点击关闭
     def close(self):
         self.click_button(self.close_loc)
         logging.info("点击关闭")
 
-
 class ChaJian(My):
-    pan_chajian_loc = eval(data['ChaJian']['pan_chajian_loc'])  # 判定插件中心
+    pan_chajian_loc = eval(data['ChaJian']['pan_chajian_loc']) # 判定插件中心
     fenxiang_loc = eval(data['ChaJian']['fenxiang_loc'])  # 分享按钮
-    pan_fenxiang_loc = eval(data['ChaJian']['pan_fenxiang_loc'])  # 判定分享
-    quxiao_loc = eval(data['ChaJian']['quxiao_loc'])  # 取消按钮
+    pan_fenxiang_loc = eval(data['ChaJian']['pan_fenxiang_loc']) # 判定分享
+    quxiao_loc = eval(data['ChaJian']['quxiao_loc']) # 取消按钮
     back_loc = eval(data['ChaJian']['back_loc'])  # 返回
-
-    # 点击分享
+    #点击分享
     def fenxiang(self):
         self.click_button(self.fenxiang_loc)
         logging.info("点击进入分享")
-
-    # 点击取消
+    #点击取消
     def quxiao(self):
         self.click_button(self.quxiao_loc)
         logging.info("点击取消")
-
-    # 点击返回
+    #点击返回
     def back(self):
         self.click_button(self.back_loc)
         logging.info("点击返回")
+
+
 
 
 if __name__ == '__main__':
@@ -1101,6 +933,8 @@ if __name__ == '__main__':
     ba.login('13501585305')
     zhang = Geren(driver)
     zhang.geren_lc()
+
+
 
     '''
    driver = appium_desired()
@@ -1122,3 +956,13 @@ if __name__ == '__main__':
 #   base.start()
   # base.my()
 '''
+
+
+
+
+
+
+
+
+
+

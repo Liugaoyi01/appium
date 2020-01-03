@@ -30,97 +30,111 @@ def teardown_module():  # 整个.py模块退出客户端
 
 
 #曾威代码
-class TestMY():
-    def test_xingji(self):  # 是否有星级标识
-        biaoshi = mypage.My(driver)
-        biaoshi.xjbs()
-        try:
-            assert biaoshi.try_find(mypage.My.touxiang_loc) is True
-            logging.info("星级标识")
-        except:
-            logging.warning("找不到标识")
-            biaoshi.get_screenshot("星级标识")
-            raise
-        finally:
-            biaoshi.back()
+# class TestMY():
+#     def test_xingji(self):  # 是否有星级标识
+#         biaoshi = mypage.My(driver)
+#         biaoshi.xjbs()
+#         try:
+#             assert biaoshi.try_find(mypage.My.touxiang_loc) is True
+#             logging.info("星级标识")
+#         except:
+#             logging.warning("找不到标识")
+#             biaoshi.get_screenshot("星级标识")
+#             raise
+#         finally:
+#             biaoshi.back()
 
 #张云龙代码
 
-class TestLl_qianbao():
+#此模块的返回按钮暂时定位不到，模块无法测试
+class TestFlow_wallet():
     def setup(self):  # ，每次进入流量钱包
-        qianbao = mypage.Liuliang_qianbao(driver)
-        qianbao.qianbao()
+        qianBao = mypage.Flow_wallet(driver)
+        qianBao.wallet()
         logging.info("进入流量钱包")
 
     def teardown(self):  # 每次返回
-        qianbao = mypage.Liuliang_qianbao(driver)
-        qianbao.back()
+        qianBao = mypage.Flow_wallet(driver)
+        qianBao.back()
         logging.info("返回")
 
-    def test_balance(self):  # 能否显示流量钱包的余额
-        qianbao = mypage.Liuliang_qianbao(driver)
+    def test_ActivityRules(self):  # 能否进入活动规则
+        qianBao = mypage.Flow_wallet(driver)
+        qianBao.activityRules()
         try:
-            assert qianbao.try_find(mypage.Liuliang_qianbao.qianbao_yue_loc) is True
-            logging.info('显示流量钱包的余额')
+            assert qianBao.try_find(mypage.Flow_wallet.activityRules_pan_loc) is True
+            logging.info('进入活动规则')
         except:
-            logging.warning("找不到流量钱包的余额")
-            qianbao.get_screenshot("找不到流量钱包的余额")
+            logging.warning("找不到活动规则的信息")
+            qianBao.get_screenshot("找不到活动规则的信息")
             raise
-    def test_mingxi(self):     #能否进入到流量明细页面
-        qianbao = mypage.Liuliang_qianbao(driver)
-        qianbao.liuliang_mingxi()
+        finally:
+            qianBao.back()
+
+    def test_balance(self):  # 能否显示流量钱包的账户余额
+        qianBao = mypage.Flow_wallet(driver)
         try:
-            assert qianbao.try_find(mypage.Liuliang_qianbao.liuliang_mingxi_pan_loc) is True
+            assert qianBao.try_find(mypage.Flow_wallet.accountBalance_loc) is True
+            logging.info('显示流量钱包的账户余额')
+        except:
+            logging.warning("找不到流量钱包的账户余额")
+            qianBao.get_screenshot("找不到流量钱包的账户余额")
+            raise
+    def test_mingXi(self):     #能否进入到流量明细页面
+        qianBao = mypage.Flow_wallet(driver)
+        qianBao.flowDetails()
+        try:
+            assert qianBao.try_find(mypage.Flow_wallet.flowDetails_pan_loc) is True
             logging.info('进入到流量明细页面')
         except:
             logging.warning("找不到流量明细页面")
-            qianbao.get_screenshot("找不到流量明细页面")
+            qianBao.get_screenshot("找不到流量明细页面")
             raise
         finally:
-            qianbao.back()
-    def test_chongzhi_jilu(self):     #能否进入到充值记录页面
-        qianbao = mypage.Liuliang_qianbao(driver)
-        qianbao.chongzhi_jilu()
+            qianBao.back()
+    def test_rechargeRecord(self):     #能否进入到充值记录页面
+        qianBao = mypage.Flow_wallet(driver)
+        qianBao.rechargeRecord()
         try:
-            assert qianbao.try_find(mypage.Liuliang_qianbao.chongzhi_jilu_pan_loc) is True
+            assert qianBao.try_find(mypage.Flow_wallet.rechargeRecord_pan_loc) is True
             logging.info('进入到充值记录页面')
         except:
             logging.warning("找不到充值记录页面")
-            qianbao.get_screenshot("找不到充值记录页面")
+            qianBao.get_screenshot("找不到充值记录页面")
             raise
         finally:
-            qianbao.back()
-    def test_tiqu_jilu(self):     #能否进入到提取记录页面
-        qianbao = mypage.Liuliang_qianbao(driver)
-        qianbao.tiqu_jilu()
+            qianBao.back()
+    def test_tiQu_jiLu(self):     #能否进入到提取记录页面
+        qianBao = mypage.Flow_wallet(driver)
+        qianBao.tiQu_jiLu()
         try:
-            assert qianbao.try_find(mypage.Liuliang_qianbao.tiqu_jilu_pan_loc) is True
+            assert qianBao.try_find(mypage.Flow_wallet.tiQu_jiLu_pan_loc) is True
             logging.info('进入到提取记录页面')
         except:
             logging.warning("找不到提取记录页面")
-            qianbao.get_screenshot("找不到提取记录页面")
+            qianBao.get_screenshot("找不到提取记录页面")
             raise
         finally:
-            qianbao.back()
-    def test_hongbao_jilu(self):     #能否进入到红包记录页面
-        qianbao = mypage.Liuliang_qianbao(driver)
-        qianbao.hongbao_jilu()
+            qianBao.back()
+    def test_redPacketRecords(self):     #能否进入到红包记录页面
+        qianBao = mypage.Flow_wallet(driver)
+        qianBao.redPacketRecords()
         try:
-            assert qianbao.try_find(mypage.Liuliang_qianbao.hongbao_jilu_pan_loc) is True
+            assert qianBao.try_find(mypage.Flow_wallet.redPacketRecords_pan_loc) is True
             logging.info('进入到红包记录页面')
         except:
             logging.warning("找不到红包记录页面")
-            qianbao.get_screenshot("找不到红包记录页面")
+            qianBao.get_screenshot("找不到红包记录页面")
             raise
         finally:
-            qianbao.back()
+            qianBao.back()
 
 class TestTaocan_xq():
-    def test_liuliang_qianbao(self):  # 是否进入流量钱包页面
+    def test_Flow_wallet(self):  # 是否进入流量钱包页面
         taocan = mypage.Taocan_xq(driver)
-        taocan.qianbao()
+        taocan.qianBao()
         try:
-            assert taocan.try_find(mypage.Taocan_xq.qianbao_pan_loc) is True
+            assert taocan.try_find(mypage.Taocan_xq.qianBao_pan_loc) is True
             logging.info("进入流量钱包页面")
         except:
             logging.warning("无法进入流量钱包页面")
@@ -262,197 +276,195 @@ class TestBalance():
             raise
         finally:
             yue.back()
-
-class TestYiding():
+#此模块已通
+class TestYiDing():
     def setup(self):  # 每次进入已订业务
-        yiding = mypage.Yiding(driver)
+        yi_ding = mypage.YiDing(driver)
         time.sleep(2)
-        yiding.yiding()
+        yi_ding.yiDing()
         logging.info('进入已订业务')
 
     def teardown(self):  # 每次返回
-        yiding = mypage.Yiding(driver)
-        yiding.back()
+        yi_ding = mypage.YiDing(driver)
+        yi_ding.back()
         logging.info('返回')
 
     def test_taocan(self):  # 是否存在套餐业务
-        yiding = mypage.Yiding(driver)
+        yi_ding = mypage.YiDing(driver)
         try:
-            assert yiding.try_find(mypage.Yiding.taocan_pan_loc) is True
+            assert yi_ding.try_find(mypage.YiDing.setMeal_pan_loc) is True
             logging.info('找到套餐业务')
         except:
             logging.warning("找不到套餐业务")
-            yiding.get_screenshot("找不到套餐业务")
+            yi_ding.get_screenshot("找不到套餐业务")
             raise
 
     def test_zengzhi(self):  # 是否存在增值业务
-        yiding = mypage.Yiding(driver)
+        yi_ding = mypage.YiDing(driver)
         try:
-            assert yiding.try_find(mypage.Yiding.zengzhi_pan_loc) is True
+            assert yi_ding.try_find(mypage.YiDing.increment_pan_loc) is True
             logging.info('找到增值业务')
         except:
             logging.warning("找不到增值业务")
-            yiding.get_screenshot("找不到增值业务")
+            yi_ding.get_screenshot("找不到增值业务")
             raise
 
     def test_jichu(self):  # 是否存在基础业务
-        yiding = mypage.Yiding(driver)
+        yi_ding = mypage.YiDing(driver)
         try:
-            assert yiding.try_find(mypage.Yiding.jichu_pan_loc) is True
+            assert yi_ding.try_find(mypage.YiDing.basics_pan_loc) is True
             logging.info('找到基础业务')
         except:
             logging.warning("找不到基础业务")
-            yiding.get_screenshot("找不到基础业务")
+            yi_ding.get_screenshot("找不到基础业务")
             raise
 
     def test_taocan_dinggou(self):  # 能否进入套餐订购页面
-        yiding = mypage.Yiding(driver)
-        yiding.gengduo()
+        yi_ding = mypage.YiDing(driver)
+        yi_ding.moreBusiness()
         logging.info("点击更多")
         try:
-            assert yiding.try_find(mypage.Yiding.taocan_panyiding_loc) is True
+            assert yi_ding.try_find(mypage.YiDing.order_pan_loc) is True
             logging.info('点击更多跳到套餐订购页面')
         except:
             logging.warning("点击更多无法跳到套餐订购页面")
-            yiding.get_screenshot("点击更多无法跳到套餐订购页面")
+            yi_ding.get_screenshot("点击更多无法跳到套餐订购页面")
             raise
         finally:
-            yiding.back()
+            yi_ding.back()
 
     def test_tuiding(self):  # 是否存在退订按钮
-        yiding = mypage.Yiding(driver)
-        yiding.jichu_pan()
+        yi_ding = mypage.YiDing(driver)
+        yi_ding.basics_pan()
         logging.info("点击基础功能")
         try:
-            assert yiding.try_find(mypage.Yiding.tuiding_loc) is True
+            assert yi_ding.try_find(mypage.YiDing.tuiDing_loc) is True
             logging.info('找到退订的按钮')
         except:
             logging.warning("找不到退订的按钮")
-            yiding.get_screenshot("找不到退订的按钮")
+            yi_ding.get_screenshot("找不到退订的按钮")
             raise
 
     def test_fenxiang(self):  # 验证分享按钮是否可用
-        yiding = mypage.Yiding(driver)
-        yiding.fenxiang()
+        yi_ding = mypage.YiDing(driver)
+        yi_ding.share()
         logging.info("点击分享按钮")
         try:
-            assert yiding.try_find(yiding.fenxiang_pan_loc) is True
+            assert yi_ding.try_find(yi_ding.share_pan_loc) is True
             logging.info('找到要分享的二维码')
         except:
             logging.warning("找不到要分享的二维码")
-            yiding.get_screenshot("找不到要分享的二维码")
+            yi_ding.get_screenshot("找不到要分享的二维码")
             raise
         finally:
-            yiding.fenxiang_quxiao()
+            yi_ding.share_cancel()
             logging.info("取消分享")
     def test_tuiding_anniu(self):  # 验证退订按钮是否可用
-        yiding = mypage.Yiding(driver)
-        yiding.jichu_pan()
+        yi_ding = mypage.YiDing(driver)
+        yi_ding.basics_pan()
         logging.info("点击基础功能")
-        yiding.tuiding()
+        yi_ding.tuiDing()
         logging.info("点击退订")
         try:
-            assert yiding.try_find(mypage.Yiding.tuiding_queding_loc) is True
+            assert yi_ding.try_find(mypage.YiDing.tuiding_confirm_loc) is True
             logging.info('找到退订的确定按钮')
         except:
             logging.warning("找不到退订的确定按钮")
-            yiding.get_screenshot("找不到退订的确定按钮")
+            yi_ding.get_screenshot("找不到退订的确定按钮")
             raise
         finally:
-            yiding.tuiding_quxiao()
+            yi_ding.cancel()
             logging.info("点击取消")
 
-class TestMyorder():
+class TestMyOrder():
     def setup(self):  # 每次进入我的订单
-        myoder = mypage.Myorder(driver)
-        myoder.my_order()
+        my_oder = mypage.MyOrder(driver)
+        my_oder.my_order()
         logging.info('进入我的订单')
-        #       logging.info("进入我的订单")
 
     def teardown(self):  # 每次返回
-        myoder = mypage.Myorder(driver)
-        myoder.back()
+        my_oder = mypage.MyOrder(driver)
+        my_oder.back()
         logging.info('返回')
-        #       logging.info("返回")
 
-    def test_liuliang(self):  # 能否找到流量订单
-        myoder = mypage.Myorder(driver)
+    def test_flowOrder(self):  # 能否找到流量订单
+        my_oder = mypage.MyOrder(driver)
         try:
-            assert myoder.try_find(mypage.Myorder.ll_order_loc) is True
+            assert my_oder.try_find(mypage.MyOrder.flowOrder_loc) is True
             logging.info('找到流量订单')
         except:
             logging.warning("找不到流量订单")
-            myoder.get_screenshot("找不到流量订单")
+            my_oder.get_screenshot("找不到流量订单")
             raise
 
-    def test_chongzhi(self):  # 能否找到充值订单
-        myoder = mypage.Myorder(driver)
+    def test_cz_order(self):  # 能否找到充值订单
+        my_oder = mypage.MyOrder(driver)
         try:
-            assert myoder.try_find(mypage.Myorder.cz_order_loc) is True
+            assert my_oder.try_find(mypage.MyOrder.cz_order_loc) is True
             logging.info('找到充值订单')
         except:
             logging.warning("找不到充值订单")
-            myoder.get_screenshot("找不到充值订单")
+            my_oder.get_screenshot("找不到充值订单")
             raise
 
-    def test_shangpin(self):  # 能否找到商品订单
-        myoder = mypage.Myorder(driver)
+    def test_sp_order(self):  # 能否找到商品订单
+        my_oder = mypage.MyOrder(driver)
         try:
-            assert myoder.try_find(mypage.Myorder.sp_order_loc) is True
+            assert my_oder.try_find(mypage.MyOrder.sp_order_loc) is True
             logging.info('找不到商品订单')
         except:
             logging.warning("找不到商品订单")
-            myoder.get_screenshot("找不到商品订单")
+            my_oder.get_screenshot("找不到商品订单")
             raise
 
     @pytest.mark.skip(reason="5.7版本未配置分享订单")
-    def test_fenxiang(self):  # 能否分享订单
-        myoder = mypage.Myorder(driver)
-        myoder.fenxiang()
-        myoder.fenxiangdao()
+    def test_share(self):  # 能否分享订单
+        my_oder = mypage.MyOrder(driver)
+        my_oder.share()
+        my_oder.share_to()
         try:
-            assert myoder.try_find(myoder.fenxiang_pan_loc) is True
+            assert my_oder.try_find(my_oder.share_pan_loc) is True
             logging.info('进入分享二维码页面')
         except:
             logging.warning("无法进入分享二维码页面")
-            myoder.get_screenshot("无法进入分享二维码页面")
+            my_oder.get_screenshot("无法进入分享二维码页面")
             raise
         finally:
-            myoder.back()
+            my_oder.back()
 
-class TestZhangdan():
+class TestMyBill():
     def setup(self):  # ，每次进入我的账单
-        zhangdan = mypage.Zhangdan(driver)
-        zhangdan.my_zhangdan()
+        zhangdan = mypage.MyBill(driver)
+        zhangdan.my_bill()
         logging.info("进入我的账单")
 
     def teardown(self):  # 每次返回
-        zhangdan = mypage.Zhangdan(driver)
+        zhangdan = mypage.MyBill(driver)
         zhangdan.back()
         logging.info("返回")
 
-    def test_zhangdan(self):  # 能否进入我的账单页面
-        zhangdan = mypage.Zhangdan(driver)
+    def test_Bill(self):  # 能否进入我的账单页面
+        zhangdan = mypage.MyBill(driver)
         try:
-            assert zhangdan.try_find(mypage.Zhangdan.zhangdan_zonge_loc) is True
+            assert zhangdan.try_find(mypage.MyBill.totalBill_loc) is True
             logging.info('进入我的账单')
         except:
             logging.warning("无法进入我的账单")
             zhangdan.get_screenshot("无法进入我的账单")
             raise
 
-    def test_fenxiang(self):  # 能否进入分享页面
-        zhangdan = mypage.Zhangdan(driver)
-        zhangdan.zhanndan_fenxiang()
+    def test_share(self):  # 能否进入分享页面
+        zhangdan = mypage.MyBill(driver)
+        zhangdan.shareBill()
         try:
-            assert zhangdan.try_find(mypage.Zhangdan.fenxiang_panding_loc) is True
+            assert zhangdan.try_find(mypage.MyBill.share_pan_loc) is True
             logging.info('无法进入分享页面')
         except:
             logging.warning("无法进入分享页面")
             zhangdan.get_screenshot("无法进入分享页面")
             raise
         finally:
-            zhangdan.quxiao()
+            zhangdan.cancelShare()
 
 class TestVoucher():
     def setup(self):  # ，每次进入我的卡劵
@@ -471,7 +483,7 @@ class TestVoucher():
         kajuan = mypage.My_voucher(driver)
         time.sleep(6)
         try:
-            assert kajuan.try_find(mypage.My_voucher.no_shiyongxuan_loc) is True
+            assert kajuan.try_find(mypage.My_voucher.notUsed_loc) is True
             logging.info("找到未使用页签")
         except:
             logging.warning("找不到未使用页签")
@@ -480,9 +492,9 @@ class TestVoucher():
 
     def test_yiguoqi(self):  # 能否找到“已过期”标签
         kajuan = mypage.My_voucher(driver)
-        kajuan.kajuan_lishi()
+        kajuan.cardHistory()
         try:
-            assert kajuan.try_find(mypage.My_voucher.yiguoqi_loc) is True
+            assert kajuan.try_find(mypage.My_voucher.guoQi_loc) is True
             logging.info("找到已过期页签")
         except:
             logging.warning("找不到已过期页签")
@@ -491,30 +503,30 @@ class TestVoucher():
 
     def test_yishiyong(self):  # 能否找到“已使用”标签
         kajuan = mypage.My_voucher(driver)
-        kajuan.kajuan_lishi()
+        kajuan.cardHistory()
         try:
-            assert kajuan.try_find(mypage.My_voucher.yiguoqi_loc) is True
+            assert kajuan.try_find(mypage.My_voucher.alreadyUsed_loc) is True
             logging.info("找到已使用页签")
         except:
             logging.warning("找不到已使用页签")
             kajuan.get_screenshot("找不到已使用页签")
             raise
 
-class TestGeren():
+class TestMyInfo():
     def setup(self):  # ，每次进入个人信息
-        geren = mypage.Geren(driver)
-        geren.imglogin()
+        geren = mypage.MyInfo(driver)
+        geren.myInfo()
         logging.info('-------进入个人信息----------')
 
     def teardown(self):  # 每次返回
-        geren = mypage.Geren(driver)
+        geren = mypage.MyInfo(driver)
         geren.back()
         logging.info('-------返回----------')
 
     def test_bianji(self):  # 能否找到编辑按钮
-        geren = mypage.Geren(driver)
+        geren = mypage.MyInfo(driver)
         try:
-            assert geren.try_find(mypage.Geren.bianji_loc) is True
+            assert geren.try_find(mypage.MyInfo.edit_loc) is True
             logging.info('找到编辑按钮')
         except:
             logging.warning("找不到编辑按钮")
