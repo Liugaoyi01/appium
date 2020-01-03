@@ -1,17 +1,18 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 from selenium.webdriver.common.by import By
-from auto_test_client.public.desired_caps import appium_desired
-from auto_test_client.baseView.basepage import Base
+from PO.desired_caps import appium_desired
+from PO.basepage import Base
 import time
 import yaml
+from PO.basepage import Base
 import logging
-from auto_test_client.utils import getLoger, openYaml
-import os
 
-path = os.path.dirname(os.getcwd())
-login_path = path + "/data/login.yaml"
-data = openYaml.get_yaml_data(login_path)
+
+# with open('C:\\ClientTest\Yaml\login.yaml', 'r', encoding='utf-8') as file:
+#     data = yaml.load(file)
+with open('..\Yaml\login.yaml', 'r', encoding='utf-8') as file:
+    data = yaml.load(file,Loader=yaml.FullLoader)
 
 
 class Login(Base):  # 无法查询到登录界面的UI

@@ -4,14 +4,13 @@ import os
 
 sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))))
 import yaml
-from auto_test_client.businessView import setting
-from auto_test_client.baseView import basepage
-from auto_test_client.public.desired_caps import appium_desired
+from PO import setting
+from PO import basepage
+from PO.desired_caps import appium_desired
 import time
 import logging
-from auto_test_client.testCase.denglu_test import driver
 
-# driver = appium_desired()
+driver = appium_desired()
 import pytest
 
 
@@ -46,7 +45,7 @@ class TestLogin():
                 raise
 
 
-    def test_loginsetting(self): # 设置页面登录设置跳转正常
+    def test_loginsetting(self): 设置页面登录设置跳转正常
         shezhi = setting.Settings(driver)
         shezhi.settinga()
         try:

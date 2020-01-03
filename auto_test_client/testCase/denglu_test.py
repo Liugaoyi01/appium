@@ -4,21 +4,19 @@ import os
 
 sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))))
 import yaml
-from auto_test_client.businessView import loginpage
-from auto_test_client.baseView import basepage
-from auto_test_client.public.desired_caps import appium_desired
+from PO import loginpage
+from PO import basepage
+from PO.desired_caps import appium_desired
 import time
 import logging
-from auto_test_client.public.startFunction import start_index
+
+driver = appium_desired()
 import pytest
 
 
-driver = appium_desired("a50a6522",4723)
-
-
 def setup_module():
-    # base = loginpage.Login(driver)
-    start_index(driver)
+    base = loginpage.Login(driver)
+    base.start()
 
 
 def teardown_module():
