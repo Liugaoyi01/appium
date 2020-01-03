@@ -745,14 +745,14 @@ class TestFaPiao():
         logging.info("返回成功")
 
 
-    def test_huafei(self):  # 进入话费充值发票是否正常
+    def test_HuaFei(self):  # 进入话费充值发票是否正常
         fapiao = mypage.FaPiao(driver)
         fapiao.swipe_up(t=1000,n=1)
         logging.info("上滑成功")
         time.sleep(5)
         fapiao.fapiao()
         time.sleep(5)
-        fapiao.huafei()
+        fapiao.HuaFei()
         try:
             assert fapiao.try_find(mypage.FaPiao.pan_huafei_loc) is True
             logging.info('成功进入话费充值')
@@ -761,10 +761,9 @@ class TestFaPiao():
             fapiao.get_screenshot("找不到话费充值")
             raise
 
-
-    def test_liuliang(self):  # 进入流量直充发票是否正常
+    def test_LiuLiang(self):  # 进入流量直充发票是否正常
         fapiao = mypage.FaPiao(driver)
-        fapiao.liuliang()
+        fapiao.LiuLiang()
         try:
             assert fapiao.try_find(mypage.FaPiao.pan_liuliang_loc) is True
             logging.info("成功进入流量直充")
@@ -773,9 +772,9 @@ class TestFaPiao():
             fapiao.get_screenshot("找不到流量直充")
             raise
 
-    def test_kuandai(self):  # 进入宽带发票是否正常
+    def test_KuanDai(self):  # 进入宽带发票是否正常
         fapiao = mypage.FaPiao(driver)
-        fapiao.kuandai()
+        fapiao.KuanDai()
         try:
             assert fapiao.try_find(mypage.FaPiao.pan_kuandai_loc) is True
             logging.info("成功进入宽带发票")
@@ -784,9 +783,9 @@ class TestFaPiao():
             fapiao.get_screenshot("找不到宽带发票")
             raise
 
-    def test_yuejie(self):  # 进入月结发票是否正常
+    def test_YueJie(self):  # 进入月结发票是否正常
         fapiao = mypage.FaPiao(driver)
-        fapiao.yuejie()
+        fapiao.YueJie()
         try:
             assert fapiao.try_find(mypage.FaPiao.pan_yuejie_loc) is True
             logging.info("成功进入月结发票")
@@ -795,9 +794,9 @@ class TestFaPiao():
             fapiao.get_screenshot("找不到月结发票")
             raise
 
-    def test_taitou(self):  # 进入发票抬头是否正常
+    def test_TaiTou(self):  # 进入发票抬头是否正常
         fapiao = mypage.FaPiao(driver)
-        fapiao.taitou()
+        fapiao.TaiTou()
         try:
             assert fapiao.try_find(mypage.FaPiao.pan_taitou_loc) is True
             logging.info("成功进入发票抬头")
@@ -806,10 +805,10 @@ class TestFaPiao():
             fapiao.get_screenshot("找不到发票抬头")
             raise
 
-    def test_jinruxinzeng(self):  # 进入新增发票是否正常
+    def test_XinZengTaiTou(self):  # 进入发票抬头是否正常
         fapiao = mypage.FaPiao(driver)
-        fapiao.taitou()
-        fapiao.xinzeng()
+        fapiao.TaiTou()
+        fapiao.XinZeng()
         try:
             assert fapiao.try_find(mypage.FaPiao.pan_xinzeng_loc) is True
             logging.info("成功进入新增发票")
@@ -819,15 +818,15 @@ class TestFaPiao():
             raise
 
 
-    def test_xinzengfapiao(self):  # 新增发票
+    def test_XinZengFaPiao(self):  # 新增发票
         fapiao = mypage.FaPiao(driver)
-        fapiao.xinzeng()
-        fapiao.riseinput("cddrsd")
-        fapiao.shibiehao("530369868209019")
-        fapiao.moren()
-        fapiao.baocun()
+        fapiao.XinZeng()
+        fapiao.RiseInput("cddast")
+        fapiao.ShiBieHao("530369868208019")
+        fapiao.MoRen()
+        fapiao.BaoCun()
         fapiao.close()
-        fapiao.taitou()
+        fapiao.TaiTou()
 
         try:
             assert fapiao.try_find(mypage.FaPiao.danwei_loc) is True
@@ -838,9 +837,9 @@ class TestFaPiao():
             raise
 
 
-    def test_mail(self):  # 进入邮箱推送是否正常
+    def test_YouTui(self):  # 修改邮箱推送是否正常
         fapiao = mypage.FaPiao(driver)
-        fapiao.youtui()
+        fapiao.YouTui()
         try:
             assert fapiao.try_find(mypage.FaPiao.pan_tuisong_loc) is True
             logging.info("进入邮箱推送")
@@ -849,9 +848,9 @@ class TestFaPiao():
             fapiao.get_screenshot("找不到邮箱推送")
             raise
 
-    def test_xiugai_mail(self):  # 修改邮箱推送是否正常
+    def test_Mail_TuiSong(self):  # 进入邮箱推送是否正常
         fapiao = mypage.FaPiao(driver)
-        fapiao.youtui()
+        fapiao.YouTui()
         fapiao.mail("2418261328@qq.com")
         fapiao.save()
         try:
@@ -861,15 +860,13 @@ class TestFaPiao():
             logging.warning("修改失败")
             fapiao.get_screenshot("修改失败")
             raise
-        finally:
-            fapiao.close()
 
-    def test_kaijufapiao(self):
+    def test_TingKai(self):
         fapiao = mypage.FaPiao(driver)
         logging.info("上滑成功")
-        fapiao.yuejie()
-        fapiao.kaiju()
-        fapiao.tingkai()
+        fapiao.YueJie()
+        fapiao.KaiJu()
+        fapiao.TingKai()
         try:
             assert fapiao.try_find(mypage.FaPiao.kaiju_loc) is True
             logging.info("停止开具")
@@ -895,7 +892,7 @@ class TestQinmifu():
         logging.info('返回')
 
 
-    def test_001(self):  # 能否进入亲密付页面
+    def test_QMF(self):  # 能否进入亲密付页面
         qmf = mypage.Qinmifu(driver)
         time.sleep(20)
         qmf.swipe_up(t=1000, n=2)
@@ -909,11 +906,11 @@ class TestQinmifu():
             raise
 
 
-    def test_002(self): #进入亲密付充值订单正常
+    def test_ChongZhiDingDan(self): #进入亲密付充值订单正常
         qmf = mypage.Qinmifu(driver)
         time.sleep(5)
-        qmf.chongzhijilu()
-        qmf.chongzhi()
+        qmf.ChongZhiJiLu()
+        qmf.ChongZhi()
         try:
             assert qmf.try_find(mypage.Qinmifu.chongzhi_pan_loc) is True
             logging.info("进入亲密付充值订单")
@@ -922,12 +919,12 @@ class TestQinmifu():
             qmf.get_screenshot("无法进入亲密付充值订单")
             raise
 
-    def test_003(self): #进入亲密付流量订单正常
+    def test_LiuLiangDingDan(self): #进入亲密付流量订单正常
         qmf = mypage.Qinmifu(driver)
         qmf.qinmifu()
         time.sleep(5)
-        qmf.chongzhijilu()
-        qmf.liuliang()
+        qmf.ChongZhiJiLu()
+        qmf.LiuLiang()
         try:
             assert qmf.try_find(mypage.Qinmifu.liuliang_pan_loc) is True
             logging.info("进入亲密付流量订单")
@@ -1042,6 +1039,7 @@ class TestQinmifu():
 class TestShiMing():  # 每次进入实名登记
     def setup(self):
         shi_ming = mypage.ShiMing(driver)
+
         shi_ming.shiming()
         logging.info('进入实名登记')
 
@@ -1050,7 +1048,7 @@ class TestShiMing():  # 每次进入实名登记
         shi_ming.back()
         logging.info('返回')
 
-    def test_shiming(self):  # 是否成功进入实名登记
+    def test_ShiMing(self):  # 是否成功进入实名登记
         shi_ming = mypage.ShiMing(driver)
         try:
             assert shi_ming.try_find(mypage.ShiMing.pan_shiming_loc) is True
@@ -1059,6 +1057,7 @@ class TestShiMing():  # 每次进入实名登记
             logging.warning("进入实名登记不正常")
             shi_ming.get_screenshot("进入实名登记不正常")
             raise
+
 
 class TestHeDuoHao():
     def setup(self):  #每次进入和多号
@@ -1071,7 +1070,7 @@ class TestHeDuoHao():
         hdh.back()
         logging.info('返回')
 
-    def test_heduohao(self):  # 是否成功进入和多号
+    def test_HeDuoHao(self):  # 是否成功进入和多号
         hdh = mypage.HeDuoHao(driver)
         try:
             assert hdh.try_find(mypage.HeDuoHao.pan_heduohao_loc) is True
@@ -1091,7 +1090,7 @@ class TestZhiNeng():
     #     zhineng = mypage.ZhiNeng(driver)
     #     zhineng.back()
     #     logging.info('返回')
-    def test_zhinengjiaju(self):  # 是否成功进入智能家居
+    def test_ZhiNengJiaJu(self):  # 是否成功进入智能家居
         zhineng = mypage.ZhiNeng(driver)
         # zhineng.swipe_up()
         zhineng.zhineng()
@@ -1103,9 +1102,10 @@ class TestZhiNeng():
             zhineng.get_screenshot("进入智能家居不正常")
             raise
 
-    def test_wangguan(self):  #是否成功进入网关管理
+    def test_WangGua(self):  #是否成功进入网关管理
         zhineng = mypage.ZhiNeng(driver)
-        zhineng.wangguan()
+        zhineng.WangGuan()
+        time.sleep(10)
         try:
             assert zhineng.try_find(mypage.ZhiNeng.pan_wangguan_loc) is True
             logging.info('进入网关管理正常')
@@ -1114,11 +1114,11 @@ class TestZhiNeng():
             zhineng.get_screenshot("进入网关管理不正常")
             raise
         finally:
-            zhineng.wangguan_back()
+            zhineng.WangGuan_back()
 
-    def test_shebei(self):  #是否成功进入设备管理
+    def test_SheBei(self):  #是否成功进入设备管理
         zhineng = mypage.ZhiNeng(driver)
-        zhineng.shebei()
+        zhineng.SheBei()
         try:
             assert zhineng.try_find(mypage.ZhiNeng.pan_shebei_loc) is True
             logging.info('进入设备管理正常')
@@ -1127,10 +1127,10 @@ class TestZhiNeng():
             zhineng.get_screenshot("进入设备管理不正常")
             raise
         finally:
-            zhineng.shebei_back()
-    def test_baokuan(self):  # 是否成功进入爆款商品
+            zhineng.SheBei_back()
+    def test_BaoKuan(self):  # 是否成功进入爆款商品
         zhineng = mypage.ZhiNeng(driver)
-        zhineng.baokuan()
+        zhineng.BaoKuan()
         try:
             assert zhineng.try_find(mypage.ZhiNeng.pan_baokuan_loc) is True
             logging.info('进入爆款商品正常')
@@ -1154,7 +1154,7 @@ class TestChaJian():
         chajian.back()
         logging.info('返回')
 
-    def test_chajian(self):  # 是否成功进入插件中心
+    def test_ChaJianZhongXin(self):  # 是否成功进入插件中心
         chajian = mypage.ChaJian(driver)
         try:
             assert chajian.try_find(mypage.ChaJian.pan_chajian_loc) is True
@@ -1165,9 +1165,9 @@ class TestChaJian():
             raise
 
 
-    def test_fenxiang(self):  # 是否成功进入分享页面
+    def test_FenXiang(self):  # 是否成功进入分享页面
         chajian = mypage.ChaJian(driver)
-        chajian.fenxiang()
+        chajian.FenXiang()
         try:
             assert chajian.try_find(mypage.ChaJian.pan_fenxiang_loc) is True
             logging.info('进入分享正常')
@@ -1176,7 +1176,9 @@ class TestChaJian():
             chajian.get_screenshot("进入分享不正常")
             raise
         finally:
-            chajian.quxiao()
+            chajian.QuXiao()
+
+
 
 if __name__ == '__main__':
     driver = appium_desired()

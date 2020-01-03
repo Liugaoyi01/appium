@@ -579,87 +579,91 @@ class Payhistory(My):
 #李纯代码
 class Qinmifu(My):    #亲密付
     #权限元素
-    qmf_dingdan_pan_loc = eval(data['Qinmifu']['qmf_dingdan_pan_loc'])  #判定，亲密付订单
-    qmf_jilu_pan_loc = eval(data['Qinmifu']['qmf_jilu_pan_loc'])  #判定，添加记录
-    qmf_tianjia_pan_loc = eval(data['Qinmifu']['qmf_tianjia_pan_loc'])  #判定，添加号码
-    liuliang_pan_loc = eval(data['Qinmifu']['liuliang_pan_loc'])  #判定，亲密付流量订单
-    chongzhi_pan_loc = eval(data['Qinmifu']['chongzhi_pan_loc'])  #判定，亲密付充值订单
-    chongzhi_loc = eval(data['Qinmifu']['chongzhi_loc'])  #充值订单
-    liuliang_loc = eval(data['Qinmifu']['liuliang_loc'])   #流量订单
-    chongliuliang_loc = eval(data['Qinmifu']['chongliuliang_loc'])  #冲流量
-    chonghuafei_loc = eval(data['Qinmifu']['chonghuafei_loc'])  #充话费
-    lijichong_loc = eval(data['Qinmifu']['lijichong_loc'])  #立即充值
-    queren_loc = eval(data['Qinmifu']['queren_loc'])  #确认支付
-    close_anniu_loc = eval(data['Qinmifu']['close_anniu_loc'])  #关闭支付页面
-    querenpay_loc = eval(data['Qinmifu']['querenpay_loc'])  #确认支付完成
-    close_zhifu_loc = eval(data['Qinmifu']['close_zhifu_loc'])  #关闭支付页面
-    tianjiajilu_loc = eval(data['Qinmifu']['tianjiajilu_loc'])  #添加记录
-    beitianjiajilu_loc = eval(data['Qinmifu']['beitianjiajilu_loc'])  #被添加记录
-    pan_tianjiajilu_loc = eval(data['Qinmifu']['pan_tianjiajilu_loc'])  #判定，添加记录
-    pan_beitianjiajilu_loc = eval(data['Qinmifu']['pan_beitianjiajilu_loc'])  #判定，被添加记录
-    pan_chaoshijilu_loc = eval(data['Qinmifu']['pan_chaoshijilu_loc'])  #判定，超时未回复
-    pan_qinmifu_loc = eval(data['Qinmifu']['pan_qinmifu_loc'])  #判定亲密付
-    pan_liuliang_loc =  eval(data['Qinmifu']['pan_liuliang_loc'])  #判定充流量页面
-    pan_huafei_loc =  eval(data['Qinmifu']['pan_huafei_loc'])  #判定充话费页面
-    back_loc = eval(data['Qinmifu']['back_loc'])  #返回_
-    chongzhijilu_loc = eval(data['Qinmifu']['chongzhijilu_loc'])  #充值记录
-    tianjiahaoma_loc = eval(data['Qinmifu']['tianjiahaoma_loc']) # 添加号码
-    haomashurulan_loc = eval(data['Qinmifu']['haomashurulan_loc'])  # 号码输入栏
-    shurunicheng_loc = eval(data['Qinmifu']['shurunicheng_loc'])  # 输入昵称栏
-    quxiao_loc = eval(data['Qinmifu']['quxiao_loc']) # 取消
-    pan_quxiao_loc = eval(data['Qinmifu']['pan_quxiao_loc']) # 判定取消
-    lijitianjia_loc = eval(data['Qinmifu']['lijitianjia_loc']) # 立即添加
-    pan_lijitianjia_loc = eval(data['Qinmifu']['pan_lijitianjia_loc']) # 判定 立即添加
-    guanli_loc = eval(data['Qinmifu']['guanli_loc'])  # 管理成员
-    pan_guanli_loc = eval(data['Qinmifu']['pan_guanli_loc'])  # 判定 管理成员
-    def tianjiahaoma(self):  #添加号码
+    qmf_dingdan_pan_loc = (By.ID, '亲密付订单')  #判定，亲密付订单
+    qmf_jilu_pan_loc = (By.ID, '添加记录')  #判定，添加记录
+    qmf_tianjia_pan_loc = (By.ID, '添加号码')  #判定，添加号码
+    liuliang_pan_loc = (By.ID, '您当前没有亲密付流量订单')  #判定，亲密付流量订单
+    chongzhi_pan_loc = (By.ID, '¥9.98删除订单再充一笔')  #判定，亲密付充值订单
+    chongzhi_loc = (By.ID, '亲密付充值订单')  #充值订单
+    liuliang_loc = (By.ID, '亲密付流量订单')   #流量订单
+    chongliuliang_loc = (By.ID, '充流量')  #冲流量
+    chonghuafei_loc = (By.ID, '充话费')  #充话费
+    lijichongzhi_loc = (By.ID, '立即充值')  #立即充值
+    queren_loc = (By.XPATH, "//*[contains(@text,'确认支付 ¥5.00')]")  #确认支付
+    close_anniu_loc = (By.XPATH, "//*[contains(@text,'关闭')]")  #关闭支付页面
+    querenpay_loc = (By.XPATH, "//*[contains(@text,'确认支付 ¥5.00')]")  #确认支付完成
+    close_zhifu_loc = (By.XPATH, "//*[@resource-id='title_close_btn']")  #关闭支付页面
+    tianjiajilu_loc = (By.XPATH, "//*[contains(@text,'添加记录')]")  #添加记录
+    beitianjiajilu_loc = (By.ID, '被绑定记录')  #被添加记录
+    pan_tianjiajilu_loc = (By.ID, '绑定记录')  #判定，添加记录
+    pan_beitianjiajilu_loc = (By.ID, '超时未回复你追一')   #判定，被添加记录
+    pan_chaoshijilu_loc = (By.XPATH, "//*[contains(@text,'超时未回复')]")  #判定，超时未回复
+    pan_qinmifu_loc = (By.XPATH, "//*[contains(@text,'家庭成员管理')]")  #判定亲密付
+    pan_liuliang_loc =  (By.XPATH, "//*[contains(@text,'流量直充')]")  #判定充流量页面
+    pan_huafei_loc =  (By.XPATH, "//*[contains(@text,'充值交费')]")  #判定充话费页面
+    back_loc = (By.ID, 'title_back_btn')  #返回_
+    chongzhijilu_loc = (By.XPATH, "//*[contains(@text,'充值记录')]")  #充值记录
+    tianjiahaoma_loc = (By.ID, '添加号码') # 添加号码
+    haomashurulan_loc = (By.XPATH, '//android.webkit.WebView[@content-desc="家庭成员管理"]'
+                                   '/android.widget.EditText[1]')  # 号码输入栏
+    shurunicheng_loc = (By.XPATH, '//android.webkit.WebView[@content-desc="家庭成员管理"]'
+                                  '/android.widget.EditText[2]')  # 输入昵称栏
+    quxiao_loc = (By.ID, '取消') # 取消
+    pan_quxiao_loc = (By.ID, '添加号码') # 判定取消
+    lijitianjia_loc = (By.ID, '立即添加') # 立即添加
+    pan_lijitianjia_loc = (By.ID, 'cheshi') # 判定 立即添加
+    guanli_loc = (By.XPATH, "//*[contains(@text,'管理成员')]")  # 管理成员
+    pan_guanli_loc = (By.ID, '成员管理')  # 判定 管理成员
+
+
+    def TianJiaHaoMa(self):  #添加号码
         self.click_button(self.tianjiahaoma_loc)
         logging.info("添加号码")
-    def haomashurulan(self,value1):   #号码输入栏
+    def HaoMaShuRuLan(self,value1):   #号码输入栏
         self.send_keys(self.haomashurulan_loc,value1)
         logging.info("号码输入栏")
-    def shurunicheng(self,value2):  #昵称输入栏
+    def ShuRuNiCheng(self,value2):  #昵称输入栏
         self.send_keys(self.shurunicheng_loc, value2)
         logging.info("昵称输入")
-    def quxiao(self):  #取消
+    def QuXiao(self):  #取消
         self.click_button(self.quxiao_loc)
         logging.info("取消")
-    def lijitianjia(self):   #立即添加
+    def LiJiTianJia(self):   #立即添加
         self.click_button(self.lijitianjia_loc)
         logging.info("立即添加")
-    def guanli(self):   #管理成员
+    def GuanLi(self):   #管理成员
         self.tap(635.7, 237.1)
         self.click_button(self.guanli_loc)
         logging.info("管理成员")
-    def chongzhi(self):  #亲密付充值订单
+    def ChongZhi(self):  #亲密付充值订单
         self.click_button(self.chongzhi_loc)
         logging.info("点击亲密付充值订单")
-    def liuliang(self):  #亲密付流量订单
+    def LiuLiang(self):  #亲密付流量订单
         self.click_button(self.liuliang_loc)
         logging.info("点击亲密付流量订单")
-    def chongliuliang(self):  #冲流量
+    def ChongLiuLiang(self):  #冲流量
         self.click_button(self.chongliuliang_loc)
         logging.info("点击充流量")
-    def chonghuafei(self):  #充话费
+    def ChongHuaFei(self):  #充话费
         self.click_button(self.chonghuafei_loc)
         logging.info("点击充话费")
-    def lijichong(self):  #立即充值
-        self.click_button(self.lijichong_loc)
+    def LiJiChongZhi(self):  #立即充值
+        self.click_button(self.lijichongzhi_loc)
         logging.info("点击立即充值")
-    def queren(self):  #确认支付
+    def QueRen(self):  #确认支付
         self.click_button(self.queren_loc)
         logging.info("点击确认支付")
     def close_zhifu(self):  #关闭支付页面
         self.click_button(self.close_zhifu_loc)
         logging.info("点击关闭支付")
-    def tianjiajilu(self):  #添加记录
+    def TianJiaJiLu(self):  #添加记录
         self.tap(635.7, 237.1)
         self.click_button(self.tianjiajilu_loc)
         logging.info("点击添加记录")
-    def beitianjiajilu(self):  #被添加记录
+    def BeiTianJiaJiLu(self):  #被添加记录
         self.click_button(self.beitianjiajilu_loc)
         logging.info("点击被添加记录")
-    def chongzhijilu(self):
+    def ChongZhiJiLu(self):
         self.tap(635.7, 237.1)
         self.click_button(self.chongzhijilu_loc)
         logging.info("点击充值记录")
@@ -667,23 +671,23 @@ class Qinmifu(My):    #亲密付
         self.click_button(self.back_loc)
         logging.info("点击返回")
 
-    def tianhaoquxiao(self): #添加号码时取消
-        self.tianjiahaoma()
+    def TianHaoQuXiao(self): #添加号码时取消
+        self.TianJiaHaoMa()
         logging.info("点击添加号码")
-        self.haomashurulan("18723240750")
+        self.HaoMaShuRuLan("18723240750")
         logging.info("点击号码输入栏")
-        self.shurunicheng("cheshi")
+        self.ShuRuNiCheng("cheshi")
         logging.info("点击昵称输入栏")
-        self.quxiao()
+        self.QuXiao()
         logging.info("点击取消")
-    def tianhao(self):  #添加号码
-        self.tianjiahaoma()
+    def TianHao(self):  #添加号码
+        self.TianJiaHaoMa()
         logging.info("点击添加号码")
-        self.haomashurulan("18723240750")
+        self.HaoMaShuRuLan("18723240750")
         logging.info("点击号码输入栏")
-        self.shurunicheng("cheshi")
+        self.ShuRuNiCheng("cheshi")
         logging.info("点击昵称输入栏")
-        self.lijitianjia()
+        self.LiJiTianJia()
         logging.info("点击立即添加")
 
 
@@ -691,103 +695,103 @@ class Qinmifu(My):    #亲密付
 
 class FaPiao(My):
     # 话费充值发票入口
-    huafei_loc = eval(data['FaPiao']['huafei_loc'])
+    huafei_loc =(By.ID,'话费充值发票')
     # 流量直充发票入口
-    liuliang_loc = eval(data['FaPiao']['liuliang_loc'])
+    liuliang_loc = (By.ID,'流量直充发票')
     # 宽带发票入口
-    kuandai_loc = eval(data['FaPiao']['kuandai_loc'])
+    kuandai_loc = (By.ID,'宽带发票')
     # 月结发票入口
-    yuejie_loc = eval(data['FaPiao']['yuejie_loc'])
+    yuejie_loc = (By.ID,'月结发票')
     # 发票抬头入口
-    taitou_loc = eval(data['FaPiao']['taitou_loc'])
+    taitou_loc = (By.ID,'发票抬头')
     # 点击新增发票
-    xinzeng_loc = eval(data['FaPiao']['xinzeng_loc'])
+    xinzeng_loc = (By.ID,'新增发票')
     # 点击发票抬头输入栏
-    riseinput_loc = eval(data['FaPiao']['riseinput_loc'])
+    riseinput_loc = (By.XPATH,'//android.webkit.WebView[@content-desc="新增发票"]/android.widget.EditText[1]')
     # 点击纳税人识别号输入栏
-    shibiehao_loc = eval(data['FaPiao']['shibiehao_loc'])
+    shibiehao_loc = (By.XPATH,'//android.webkit.WebView[@content-desc="新增发票"]/android.widget.EditText[2]')
     #设为默认按钮
-    moren_loc = eval(data['FaPiao']['moren_loc'])
+    moren_loc = (By.XPATH,'//android.webkit.WebView[@content-desc="新增发票"]/android.view.View[4]/android.widget.CheckBox')
     #点击保存按钮
-    baocun_loc = eval(data['FaPiao']['baocun_loc'])
+    baocun_loc = (By.ID,'保存')
     #邮件推送入口
-    youtui_loc = eval(data['FaPiao']['youtui_loc'])
+    youtui_loc = (By.ID,'邮件推送')
     #点击常用邮箱输入栏
-    mail_loc = eval(data['FaPiao']['mail_loc'])
+    mail_loc = (By.XPATH,'//android.webkit.WebView[@content-desc="推送设置"]/android.widget.EditText')
     #点击保存按钮
-    save_loc = eval(data['FaPiao']['save_loc'])
+    save_loc = (By.ID,'保存')
     #知道了按钮
-    zhidaole_loc = eval(data['FaPiao']['zhidaole_loc'])
+    zhidaole_loc = (By.ID,'知道了')
     # 返回按钮
-    back_loc = eval(data['FaPiao']['back_loc'])
+    back_loc = (By.ID,'title_back_btn')
     # 关闭按钮
-    close_loc = eval(data['FaPiao']['close_loc'])
+    close_loc = (By.ID,'title_close_btn')
     # 点击开具按钮
-    kaiju_loc = eval(data['FaPiao']['kaiju_loc'])
+    kaiju_loc = (By.ID,'开具')
     # 停止开具按钮
-    tingkai_loc = eval(data['FaPiao']['tingkai_loc'])
+    tingkai_loc = (By.ID,'停止开具')
     # 确认开具按钮
-    quekai_loc = eval(data['FaPiao']['quekai_loc'])
+    quekai_loc = (By.ID,'确认开具')
     # 判定话费充值发票页面
-    pan_huafei_loc = eval(data['FaPiao']['pan_huafei_loc'])
+    pan_huafei_loc = (By.XPATH,'//*[contains(@text,"话费充值发票")]')
     # 判定流量直充发票页面
-    pan_liuliang_loc = eval(data['FaPiao']['pan_liuliang_loc'])
+    pan_liuliang_loc = (By.XPATH,'//*[contains(@text,"流量直充发票")]')
     # 判定宽带发票页面
-    pan_kuandai_loc = eval(data['FaPiao']['pan_kuandai_loc'])
+    pan_kuandai_loc = (By.XPATH,'//*[contains(@text,"宽带发票")]')
     # 判定月结发票页面
-    pan_yuejie_loc = eval(data['FaPiao']['pan_yuejie_loc'])
+    pan_yuejie_loc = (By.XPATH,'//*[contains(@text,"月结发票")]')
     # 判定发票抬头页面
-    pan_taitou_loc = eval(data['FaPiao']['pan_taitou_loc'])
+    pan_taitou_loc = (By.XPATH,'//*[contains(@text,"发票管理")]')
     # 判定新增发票页面
-    pan_xinzeng_loc = eval(data['FaPiao']['pan_xinzeng_loc'])
+    pan_xinzeng_loc = (By.XPATH,'//*[contains(@text,"新增发票")]')
     # 判定已成功新增发票
-    danwei_loc = eval(data['FaPiao']['danwei_loc'])
+    danwei_loc = (By.ID,'单位')
     # 判定推送邮箱
-    pan_tuisong_loc = eval(data['FaPiao']['pan_tuisong_loc'])
+    pan_tuisong_loc = (By.XPATH,'//*[contains(@text,"推送设置")]')
     # 判定邮箱保存
-    pan_youxiang_loc = eval(data['FaPiao']['pan_youxiang_loc'])
-    # 判定停止开具
+    pan_youxiang_loc = (By.XPATH,'//android.widget.EditText[@content-desc="2418261328@qq.com"]')
+
 
 
 
         #点击话费充值发票
-    def huafei(self):
+    def HuaFei(self):
         self.click_button(self.huafei_loc)
         logging.info("点击话费充值发票")
         #点击流量直充发票
-    def liuliang(self):
+    def LiuLiang(self):
         self.click_button(self.liuliang_loc)
         logging.info("点击流量直充发票")
         #点击宽带发票
-    def kuandai(self):
+    def KuanDai(self):
         self.click_button(self.kuandai_loc)
         logging.info("点击宽带发票")
         #点击月结发票
-    def yuejie(self):
+    def YueJie(self):
         self.click_button(self.yuejie_loc)
         logging.info("点击月结发票")
         #点击发票抬头
-    def taitou(self):
+    def TaiTou(self):
         self.click_button(self.taitou_loc)
         logging.info("点击发票抬头")
         # 点击新增发票
-    def xinzeng(self):
+    def XinZeng(self):
         self.click_button(self.xinzeng_loc)
         logging.info("点击新增发票")
         # 点击抬头输入栏
-    def riseinput(self,value1):
+    def RiseInput(self,value1):
         self.send_keys(self.riseinput_loc, value1)
         logging.info("点击发票抬头输入栏")
         #点击识别号输入栏
-    def shibiehao(self,value2):
+    def ShiBieHao(self,value2):
         self.send_keys(self.shibiehao_loc, value2)
         logging.info("点击纳税人识别号输入栏")
         # 点击默认
-    def moren(self):
+    def MoRen(self):
         self.click_button(self.moren_loc)
         logging.info("点击默认")
         # 点击保存
-    def baocun(self):
+    def BaoCun(self):
         self.click_button(self.baocun_loc)
         logging.info("点击保存")
         # 点击返回
@@ -799,20 +803,20 @@ class FaPiao(My):
         self.click_button(self.close_loc)
         logging.info("点击关闭")
         # 点击开具
-    def kaiju(self):
+    def KaiJu(self):
         self.click_button(self.kaiju_loc)
         logging.info("点击开具")
 
         #  点击停止开具
-    def tingkai(self):
+    def TingKai(self):
         self.click_button(self.tingkai_loc)
         logging.info("点击停止开具")
         # 点击确认开具
-    def quekai(self):
+    def QueKai(self):
         self.click_button(self.quekai_loc)
         logging.info("点击确认开具")
         # 点击邮箱推送
-    def youtui(self):
+    def YouTui(self):
         self.click_button(self.youtui_loc)
         logging.info("点击邮箱推送")
         #输入邮箱号
@@ -827,26 +831,26 @@ class FaPiao(My):
         self.click_button(self.save_loc)
         logging.info("点击保存")
 
-    def xinfapiao(self,value1,value2):   #新增一个发票
+    def XinFaPiao(self,value1,value2):   #新增一个发票
         self.fapiao()
         logging.info("进入电子发票")
-        self.taitou()
+        self.TaiTou()
         logging.info("进入发票抬头")
-        self.xinzeng()
+        self.XinZeng()
         logging.info("新增发票")
-        self.riseinput(value1)
+        self.RiseInput(value1)
         logging.info("抬头栏输入")
         #点击纳税人识别号输入栏输入内容
-        self.shibiehao(value2)
+        self.ShiBieHao(value2)
         logging.info("识别栏输入")
         #点击默认，点击保存
-        self.moren()
-        self.baocun()
+        self.MoRen()
+        self.BaoCun()
         self.back()
 
 class ShiMing(My):
-    pan_shiming_loc = eval(data['ShiMing']['pan_shiming_loc'])  #判实名登记
-    back_loc = eval(data['ShiMing']['back_loc'])  #返回
+    pan_shiming_loc = (By.XPATH,'//*[contains(@text,"实名补登记")]')   #判定进入实名登记页面
+    back_loc = (By.ID,'title_back_btn')  #返回按钮
 
     #返回
     def back(self):
@@ -854,35 +858,38 @@ class ShiMing(My):
         logging.info("点击返回")
 
 class HeDuoHao(My):
-    pan_heduohao_loc = eval(data['HeDuoHao']['pan_heduohao_loc']) #判和多号
-    back_loc = eval(data['ShiMing']['back_loc'])  # 返回
+    pan_heduohao_loc = (By.XPATH,'//*[contains(@text,"副号")]') #判定进入和多号页面
+    back_loc = (By.ID,'title_back_btn')  #返回按钮
     #点击返回
     def back(self):
         self.click_button(self.back_loc)
         logging.info("点击返回")
 
 class ZhiNeng(My):
-    wangguan_loc = eval(data['ZhiNeng']['wangguan_loc'])   #网关管理
-    shebei_loc = eval(data['ZhiNeng']['shebei_loc'])   #设备管理
-    baokuan_loc = eval(data['ZhiNeng']['baokuan_loc'])  #爆款商品
-    pan_zhineng_loc = eval(data['ZhiNeng']['pan_zhineng_loc'])  #判定智能家居
-    pan_wangguan_loc = eval(data['ZhiNeng']['pan_wangguan_loc'])  #判定网关管理
-    pan_shebei_loc = eval(data['ZhiNeng']['pan_shebei_loc'])  #判定设备管理
-    pan_baokuan_loc = eval(data['ZhiNeng']['pan_baokuan_loc'])  #判定爆款商品
-    back_loc = eval(data['ZhiNeng']['back_loc']) #返回
-    wangguan_back_loc = eval(data['ZhiNeng']['wangguan_back_loc']) #网关管理页面返回
-    shebei_back_loc = eval(data['ZhiNeng']['shebei_back_loc'])  # 设备管理页面返
-    close_loc = eval(data['ZhiNeng']['close_loc'])  #关闭
+    wangguan_loc = (By.XPATH, '//android.webkit.WebView[@content-desc="智能家居"]'
+                              '/android.widget.ListView[2]/android.view.View[1]')  # 网关管理
+    shebei_loc = (By.XPATH, '//android.webkit.WebView[@content-desc="智能家居"]/'
+                            'android.widget.ListView[2]/android.view.View[2]')  # 设备管理
+    baokuan_loc = (By.XPATH, '//android.webkit.WebView[@content-desc="智能家居"]/'
+                             'android.widget.ListView[4]/android.view.View[1]')  # 爆款商品
+    pan_zhineng_loc = (By.XPATH, '//*[contains(@text,"智能家居")]')  # 判定进入智能家居
+    pan_wangguan_loc = (By.XPATH, '//*[contains(@text,"网络管理")]')  # 判定进入网关管理
+    pan_shebei_loc = (By.XPATH, '//*[contains(@text,"添加智能设备")]')  # 判定进入设备管理
+    pan_baokuan_loc = (By.XPATH, '//*[contains(@text,"商品详情")]')  # 判定进入爆款商品详情页
+    back_loc = (By.ID, 'title_back_btn')  # 返回按钮
+    wangguan_back_loc = (By.ID, 'ivBack')  # 网关管理页面的返回按钮
+    shebei_back_loc = (By.ID, 'sm_main_back_white_iv')  # 设备管理页面的返回按钮
+    close_loc = (By.ID, 'title_close_btn')  # 关闭
     #点击网关管理
-    def wangguan(self):
+    def WangGuan(self):
         self.click_button(self.wangguan_loc)
         logging.info("点击网关管理")
     #点击设备管理
-    def shebei(self):
+    def SheBei(self):
         self.click_button(self.shebei_loc)
         logging.info("点击设备管理")
     #点击爆款商品
-    def baokuan(self):
+    def BaoKuan(self):
         self.click_button(self.baokuan_loc)
         logging.info("点击爆款商品")
     #点击返回
@@ -890,11 +897,11 @@ class ZhiNeng(My):
         self.click_button(self.back_loc)
         logging.info("点击返回")
     #点击网关管理返回
-    def wangguan_back(self):
+    def WangGuan_back(self):
         self.click_button(self.wangguan_back_loc)
         logging.info("点击网关管理返回")
     #点击设备管理返回
-    def shebei_back(self):
+    def SheBei_back(self):
         self.click_button(self.shebei_back_loc)
         logging.info("点击设备管理返回")
     #点击关闭
@@ -903,17 +910,17 @@ class ZhiNeng(My):
         logging.info("点击关闭")
 
 class ChaJian(My):
-    pan_chajian_loc = eval(data['ChaJian']['pan_chajian_loc']) # 判定插件中心
-    fenxiang_loc = eval(data['ChaJian']['fenxiang_loc'])  # 分享按钮
-    pan_fenxiang_loc = eval(data['ChaJian']['pan_fenxiang_loc']) # 判定分享
-    quxiao_loc = eval(data['ChaJian']['quxiao_loc']) # 取消按钮
-    back_loc = eval(data['ChaJian']['back_loc'])  # 返回
+    pan_chajian_loc = (By.XPATH, '//*[contains(@text,"插件中心")]')  # 判定插件中心
+    fenxiang_loc =  (By.ID, 'title_share_btn')  # 分享按钮
+    pan_fenxiang_loc =  (By.XPATH, '//*[contains(@text,"微信朋友圈")]')  # 判定分享
+    quxiao_loc = (By.XPATH, '//*[contains(@text,"取消")]')  # 取消按钮
+    back_loc = (By.ID, 'title_back_btn')  # 返回按钮
     #点击分享
-    def fenxiang(self):
+    def FenXiang(self):
         self.click_button(self.fenxiang_loc)
         logging.info("点击进入分享")
     #点击取消
-    def quxiao(self):
+    def QuXiao(self):
         self.click_button(self.quxiao_loc)
         logging.info("点击取消")
     #点击返回
