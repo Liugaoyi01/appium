@@ -52,6 +52,7 @@ class Shouye(Base):  # 首页元素
     denglu_loc = (By.ID, 'tv_title')  # 拉起登录  # 拉起登录
     fanhui_loc = (By.ID, 'login_close')  # 返回
 
+
     # 点击首页入口
     def shouye(self):
         self.click_button(self.home_loc)
