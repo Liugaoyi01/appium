@@ -1,35 +1,34 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 from selenium.webdriver.common.by import By
-from PO.desired_caps import appium_desired
-from PO.basepage import Base
+from auto_test_client.public.desired_caps import appium_desired
+from auto_test_client.baseView.basepage import Base
 import time
 import yaml
-from PO.basepage import Base
 import logging
+from auto_test_client.utils import getLoger, openYaml
+import os
 
-
-# with open('C:\\ClientTest\Yaml\login.yaml', 'r', encoding='utf-8') as file:
-#     data = yaml.load(file)
-with open('..\Yaml\login.yaml', 'r', encoding='utf-8') as file:
-    data = yaml.load(file,Loader=yaml.FullLoader)
+path = os.path.dirname(os.getcwd())
+login_path = path + "/data/login.yaml"
+data = openYaml.get_yaml_data(login_path)
 
 
 class Login(Base):  # 无法查询到登录界面的UI
-    wode_loc = eval(data['Login']['wode_loc'])  # 我的页面
-    denglu_loc = eval(data['Login']['denglu_loc'])  # 登录按钮
-    zhanghao_loc = eval(data['Login']['zhanghao_loc'])  # 账号输入框
-    yanzheng_loc = eval(data['Login']['yanzheng_loc'])  # 验证码按钮
-    shuru_loc = eval(data['Login']['shuru_loc'])  # 输入验证码框
-    denglu2_loc = eval(data['Login']['denglu2_loc'])  # 登录按钮
-    next_loc = eval(data['Login']['next_loc'])  # 下次再说
-    title_loc = eval(data['Login']['title_loc'])  # 登录页面标题
-    l_close_loc = eval(data['Login']['l_close_loc'])  # 登录页返回关闭
-    zddl_loc = eval(data['Login']['zddl_loc'])  # 自动登录
-    scan_loc = eval(data['Login']['scan_loc'])  # 删除按钮
-    lxr_loc = eval(data['Login']['scan_loc'])  # 联系人
-    search_loc = eval(data['Login']['search_loc'])  # 联系人搜索
-    L_back_loc = eval(data['Login']['L_back_loc'])  # 联系人返回
+    wode_loc =  (By.XPATH,"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.widget.LinearLayout/android.widget.RelativeLayout[5]/android.widget.ImageView") # 我的页面
+    denglu_loc = (By.ID,'mine_login_btn') # 登录按钮
+    account_number_loc = (By.ID,'user_phoneno_edt')  # 账号输入框
+    captcha_loc = (By.ID,'com.greenpoint.android.mc10086.activity:id/login_checksms_btn')  # 验证码按钮
+    my_vCode_loc = (By.ID,'user_login_smspassword_edt')  # 输入验证码框
+    login_button_loc = (By.ID,'one_key_login_btn')  # 登录按钮
+    nextld_loc = (By.ID,'dialog_btn1')  # 下次再说
+    set_title_loc = (By.ID,'tv_title')  # 登录页面标题
+    shutdown_loc = (By.ID,'login_close')  # 登录页返回关闭
+    setlogin_loc = (By.ID,'autologin_btn')  # 自动登录
+    delete_button_loc = (By.ID,'com.greenpoint.android.mc10086.activity:id/clear_phone_num_img') # 删除按钮
+    contact_loc = (By.ID,'com.greenpoint.android.mc10086.activity:id/get_contacts_img')  # 联系人
+    search_loc = (By.XPATH,'//android.widget.TextView[@content-desc="搜索"]')  # 联系人搜索
+    L_back_loc = (By.XPATH,'//android.widget.ImageButton[@content-desc="向上导航"]') # 联系人返回
 
     # 定位我的页面进入我的页面
     def wode(self):
@@ -43,29 +42,29 @@ class Login(Base):  # 无法查询到登录界面的UI
 
     # 定位输入框，输入账号
     def zhanghao(self, num):
-        self.send_keys(self.zhanghao_loc, num)
+        self.send_keys(self.account_number_loc, num)
         logging.info('输入账号')
 
     # 点击验证码
     def yanzheng(self):
-        self.click_button(self.yanzheng_loc)
+        self.click_button(self.captcha_loc)
         logging.info('点击验证码')
 
     # 输入验证码
     def shuru(self, yanzhengma):
         self.yanzhengma = yanzhengma
-        self.send_keys(self.shuru_loc, yanzhengma)
+        self.send_keys(self. my_vCode_loc, yanzhengma)
         logging.info('输入验证码')
 
     # 点击登录按钮
     def chick_login(self):
-        self.click_button(self.denglu2_loc)
+        self.click_button(self.login_button_loc)
         logging.info('点击登录按钮')
 
     # 手势登录下次再说
     def next(self):
         try:
-            self.click_button(self.next_loc)
+            self.click_button(self. nextld_loc)
             logging.info("点击下次再说")
         except:
             pass
@@ -86,13 +85,13 @@ class Login(Base):  # 无法查询到登录界面的UI
 
     def close(self):  # 登录页返回关闭
         try:
-            self.click_button(self.l_close_loc)
+            self.click_button(self. shutdown_loc)
             logging.info('关闭登录页面')
         except:
             pass
 
     def lxr(self):
-        self.click_button(self.lxr_loc)
+        self.click_button(self.contact_loc)
         logging.info('点击联系人')
 
     def L_back(self):
@@ -106,4 +105,4 @@ if __name__ == '__main__':
     ba.start()
     ba.wode()
     ba.denglu()
-    ba.login('13715307043')
+    ba.login('15012761017')

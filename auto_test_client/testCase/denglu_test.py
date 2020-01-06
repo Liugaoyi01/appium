@@ -3,20 +3,21 @@ import sys
 import os
 
 sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))))
-import yaml
-from PO import loginpage
-from PO import basepage
-from PO.desired_caps import appium_desired
+from auto_test_client.businessView import loginpage
+from auto_test_client.baseView import basepage
+from auto_test_client.public.desired_caps import appium_desired
 import time
 import logging
-
-driver = appium_desired()
+from auto_test_client.public.startFunction import start_index
 import pytest
 
 
+driver = appium_desired("a50a6522",4723)
+
+
 def setup_module():
-    base = loginpage.Login(driver)
-    base.start()
+    # base = loginpage.Login(driver)
+    start_index(driver)
 
 
 def teardown_module():
@@ -44,7 +45,7 @@ class TestLogin():
         login = loginpage.Login(driver)
         login.denglu()
         try:
-            assert login.try_find(loginpage.Login.zddl_loc) is True
+            assert login.try_find(loginpage.Login.setlogin_loc) is True
             logging.info("自动登录")
         except:
             logging.warning("未找到自动登录按钮")
@@ -55,7 +56,7 @@ class TestLogin():
         login = loginpage.Login(driver)
         login.denglu()
         try:
-            assert login.try_find(loginpage.Login.lxr_loc) is True
+            assert login.try_find(loginpage.Login.contact_loc) is True
             logging.info("联系人")
         except:
             logging.warning("未找到联系人按钮")
@@ -67,7 +68,7 @@ class TestLogin():
         login.denglu()
         login.zhanghao('13715307043')
         try:
-            assert login.try_find(loginpage.Login.scan_loc) is True
+            assert login.try_find(loginpage.Login.delete_button_loc) is True
             logging.info("删除按钮")
         except:
             logging.warning("未找到删除按钮")
@@ -79,7 +80,7 @@ class TestLogin():
         login.denglu()
         login.zhanghao("13715307043")
         try:
-            assert login.try_find(loginpage.Login.yanzheng_loc) is True
+            assert login.try_find(loginpage.Login. captcha_loc) is True
             logging.info("不能输入验证码")
         except:
             logging.warning("不能输入验证码")

@@ -4,13 +4,14 @@ import os
 
 sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))))
 import yaml
-from PO import setting
-from PO import basepage
-from PO.desired_caps import appium_desired
+from auto_test_client.businessView import setting
+from auto_test_client.baseView import basepage
+from auto_test_client.public.desired_caps import appium_desired
 import time
 import logging
+from auto_test_client.testCase.denglu_test import driver
 
-driver = appium_desired()
+# driver = appium_desired()
 import pytest
 
 
@@ -45,11 +46,11 @@ class TestLogin():
                 raise
 
 
-    def test_loginsetting(self): 设置页面登录设置跳转正常
+    def test_loginsetting(self): # 设置页面登录设置跳转正常
         shezhi = setting.Settings(driver)
         shezhi.settinga()
         try:
-            assert shezhi.try_find(setting.Settings.zddl_loc) is True
+            assert shezhi.try_find(setting.Settings.automatic_loc) is True
             logging.info("登录设置")
         except:
             logging.warning("未找到登录设置")
@@ -63,7 +64,7 @@ class TestLogin():
         shezhi = setting.Settings(driver)
         shezhi.settingb()
         try:
-            assert shezhi.try_find(setting.Settings.xxtz_loc) is True
+            assert shezhi.try_find(setting.Settings.pushed_loc) is True
             logging.info("消息推送")
         except:
             logging.warning("未找到消息推送")
@@ -76,7 +77,7 @@ class TestLogin():
         shezhi = setting.Settings(driver)
         shezhi.settingc()
         try:
-            assert shezhi.try_find(setting.Settings.kaiguan_loc) is True
+            assert shezhi.try_find(setting.Settings.switch_loc) is True
             logging.info("常驻通知栏")
         except:
             logging.warning("未找到常驻通知栏")
@@ -89,7 +90,7 @@ class TestLogin():
         shezhi = setting.Settings(driver)
         shezhi.settingd()
         try:
-            assert shezhi.try_find(setting.Settings.toubu_loc) is True
+            assert shezhi.try_find(setting.Settings.head_loc) is True
             logging.info("wlan设置")
         except:
             logging.warning("未找到WLAN设置")
@@ -115,7 +116,7 @@ class TestLogin():
         shezhi = setting.Settings(driver)
         shezhi.settingf()
         try:
-            assert shezhi.try_find(setting.Settings.baocun_loc) is True
+            assert shezhi.try_find(setting.Settings. save_button_loc) is True
             logging.info("绑定联系人")
         except:
             logging.warning("未找到联系人")
@@ -127,7 +128,7 @@ class TestLogin():
     def test_cache(self):  # 设置页面清除缓存跳转正常
         shezhi = setting.Settings(driver)
         try:
-            assert shezhi.try_find(setting.Settings.qchc_loc) is True
+            assert shezhi.try_find(setting.Settings. remove_loc) is True
             logging.info("清除缓存")
         except:
             logging.warning("未找到清除缓存")
@@ -153,7 +154,7 @@ class TestLogin():
         shezhi = setting.Settings(driver)
         shezhi.settingi()
         try:
-            assert shezhi.try_find(setting.Settings.gr_loc) is True
+            assert shezhi.try_find(setting.Settings.personal_inf_loc) is True
             logging.info("个人信息")
         except:
             logging.warning("未找到个人信息保护")
@@ -166,7 +167,7 @@ class TestLogin():
         shezhi = setting.Settings(driver)
         shezhi.settingj()
         try:
-            assert shezhi.try_find(setting.Settings.he_loc) is True
+            assert shezhi.try_find(setting.Settings.help_internal_loc) is True
             logging.info("帮助中心")
         except:
             logging.warning("未找到帮助中心")
@@ -181,7 +182,7 @@ class TestLogin():
         logging.info("向上滑动")
         shezhi.settingk()
         try:
-            assert shezhi.try_find(setting.Settings.gy_loc) is True
+            assert shezhi.try_find(setting.Settings.about_who_loc) is True
             logging.info("关于我们")
         except:
             logging.warning("未找到关于我们")
