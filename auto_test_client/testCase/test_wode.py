@@ -12,12 +12,12 @@ import yaml
 from auto_test_client.businessView.loginpage import Login
 from auto_test_client.public.desired_caps import appium_desired
 import logging
-from auto_test_client.testCase.denglu_test import driver
-# driver = appium_desired()
+#from auto_test_client.testCase.denglu_test import driver
+driver = appium_desired('emulator-5554', 4723)
 
 def setup_module():  # 整个.py模块启动一次客户端,进入我的页面
     base = Login(driver)
-    base.start()
+ #   base.start()
     time.sleep(3)
     base.wode()
 #    base.tap(970,1850)
@@ -35,7 +35,7 @@ def teardown_module():  # 整个.py模块退出客户端
 #         biaoshi = mypage.My(driver)
 #         biaoshi.xjbs()
 #         try:
-#             assert biaoshi.try_find(mypage.My.touxiang_loc) is True
+#             assert biaoshi.try_find(mypage.My.myInfo_loc) is True
 #             logging.info("星级标识")
 #         except:
 #             logging.warning("找不到标识")
@@ -44,9 +44,9 @@ def teardown_module():  # 整个.py模块退出客户端
 #         finally:
 #             biaoshi.back()
 
-#张云龙代码
+# 张云龙代码
 
-#此模块的返回按钮暂时定位不到，模块无法测试
+# 此模块的返回按钮暂时定位不到，模块无法测试
 class TestFlow_wallet():
     def setup(self):  # ，每次进入流量钱包
         qianBao = mypage.Flow_wallet(driver)
@@ -80,7 +80,8 @@ class TestFlow_wallet():
             logging.warning("找不到流量钱包的账户余额")
             qianBao.get_screenshot("找不到流量钱包的账户余额")
             raise
-    def test_mingXi(self):     #能否进入到流量明细页面
+
+    def test_mingXi(self):  # 能否进入到流量明细页面
         qianBao = mypage.Flow_wallet(driver)
         qianBao.flowDetails()
         try:
@@ -92,7 +93,8 @@ class TestFlow_wallet():
             raise
         finally:
             qianBao.back()
-    def test_rechargeRecord(self):     #能否进入到充值记录页面
+
+    def test_rechargeRecord(self):  # 能否进入到充值记录页面
         qianBao = mypage.Flow_wallet(driver)
         qianBao.rechargeRecord()
         try:
@@ -104,7 +106,8 @@ class TestFlow_wallet():
             raise
         finally:
             qianBao.back()
-    def test_tiQu_jiLu(self):     #能否进入到提取记录页面
+
+    def test_tiQu_jiLu(self):  # 能否进入到提取记录页面
         qianBao = mypage.Flow_wallet(driver)
         qianBao.tiQu_jiLu()
         try:
@@ -116,7 +119,8 @@ class TestFlow_wallet():
             raise
         finally:
             qianBao.back()
-    def test_redPacketRecords(self):     #能否进入到红包记录页面
+
+    def test_redPacketRecords(self):  # 能否进入到红包记录页面
         qianBao = mypage.Flow_wallet(driver)
         qianBao.redPacketRecords()
         try:
@@ -131,34 +135,36 @@ class TestFlow_wallet():
 
 class TestTaocan_xq():
     def test_Flow_wallet(self):  # 是否进入流量钱包页面
-        taocan = mypage.Taocan_xq(driver)
-        taocan.qianBao()
+        taoCan = mypage.TaoCan_xq(driver)
+        taoCan.wallet()
         try:
-            assert taocan.try_find(mypage.Taocan_xq.qianBao_pan_loc) is True
+            assert taoCan.try_find(mypage.TaoCan_xq.wallet_pan_loc) is True
             logging.info("进入流量钱包页面")
         except:
             logging.warning("无法进入流量钱包页面")
-            taocan.get_screenshot("无法进入流量钱包页面")
+            taoCan.get_screenshot("无法进入流量钱包页面")
             raise
         finally:
-            taocan.back()
-    def test_kajuan(self):  # 是否进入卡劵页面
-        taocan = mypage.Taocan_xq(driver)
-        taocan.kajuan()
+            taoCan.back()
+
+    def test_cardCoupon(self):  # 是否进入卡劵页面
+        taoCan = mypage.TaoCan_xq(driver)
+        taoCan.cardCoupon()
         try:
-            assert taocan.try_find(mypage.Taocan_xq.kajuan_pan_loc) is True
+            assert taoCan.try_find(mypage.TaoCan_xq.cardCoupon_loc) is True
             logging.info("进入卡劵页面")
         except:
             logging.warning("无法进入卡劵页面")
-            taocan.get_screenshot("无法进入卡劵页面")
+            taoCan.get_screenshot("无法进入卡劵页面")
             raise
         finally:
-            taocan.close()
-    def test_jifen(self):  # 是否进入积分页面
-        taocan = mypage.Taocan_xq(driver)
-        taocan.jifen()
+            taoCan.close()
+
+    def test_jiFen(self):  # 是否进入积分页面
+        taocan = mypage.TaoCan_xq(driver)
+        taocan.jiFen()
         try:
-            assert taocan.try_find(mypage.Taocan_xq.jifen_pan_loc) is True
+            assert taocan.try_find(mypage.TaoCan_xq.jiFen_pan_loc) is True
             logging.info("进入积分页面")
         except:
             logging.warning("无法进入积分页面")
@@ -166,11 +172,12 @@ class TestTaocan_xq():
             raise
         finally:
             taocan.back()
-    def test_quanyi(self):  # 是否进入我的权益页面
-        taocan = mypage.Taocan_xq(driver)
-        taocan.quanyi()
+
+    def test_quanYi(self):  # 是否进入我的权益页面
+        taocan = mypage.TaoCan_xq(driver)
+        taocan.quanYi()
         try:
-            assert taocan.try_find(mypage.Taocan_xq.quanyi_pan_loc) is True
+            assert taocan.try_find(mypage.TaoCan_xq.quanYi_pan_loc) is True
             logging.info("进入我的权益页面")
         except:
             logging.warning("无法进入我的权益页面")
@@ -178,7 +185,7 @@ class TestTaocan_xq():
             raise
         finally:
             taocan.close()
-
+# 此模块已通
 class TestBalance():
     def setup(self):  # 每次进入话费余额
         yue = mypage.Balance(driver)
@@ -191,6 +198,7 @@ class TestBalance():
         yue.balance_back()
         logging.info('-------返回----------')
         #       logging.info("返回")
+
     @pytest.mark.skip(reason="5.7版本未配置充值交费")
     def test_chongzhi_jiaofei(self):  # 是否进入充值交费
         yue = mypage.Balance(driver)
@@ -204,6 +212,7 @@ class TestBalance():
             raise
         finally:
             yue.back()
+
     @pytest.mark.skip(reason="5.7版本未配置套餐余量")
     def test_taocan_yuliang(self):  # 是否进入套餐余量
         yue = mypage.Balance(driver)
@@ -217,6 +226,7 @@ class TestBalance():
             raise
         finally:
             yue.yuliang_back()
+
     @pytest.mark.skip(reason="5.7版本未配置套餐办理")
     def test_taocan_banli(self):  # 是否进入套餐办理
         yue = mypage.Balance(driver)
@@ -230,6 +240,7 @@ class TestBalance():
             raise
         finally:
             yue.back()
+
     @pytest.mark.skip(reason="5.7版本未配置我的账单")
     def test_zhangdan(self):  # 能否进入我的账单
         yue = mypage.Balance(driver)
@@ -276,7 +287,7 @@ class TestBalance():
             raise
         finally:
             yue.back()
-#此模块已通
+# 此模块已通
 class TestYiDing():
     def setup(self):  # 每次进入已订业务
         yi_ding = mypage.YiDing(driver)
@@ -359,6 +370,7 @@ class TestYiDing():
         finally:
             yi_ding.share_cancel()
             logging.info("取消分享")
+
     def test_tuiding_anniu(self):  # 验证退订按钮是否可用
         yi_ding = mypage.YiDing(driver)
         yi_ding.basics_pan()
@@ -375,7 +387,7 @@ class TestYiDing():
         finally:
             yi_ding.cancel()
             logging.info("点击取消")
-
+# 此模块已通
 class TestMyOrder():
     def setup(self):  # 每次进入我的订单
         my_oder = mypage.MyOrder(driver)
@@ -431,7 +443,7 @@ class TestMyOrder():
             raise
         finally:
             my_oder.back()
-
+# 此模块已通
 class TestMyBill():
     def setup(self):  # ，每次进入我的账单
         zhangdan = mypage.MyBill(driver)
@@ -465,91 +477,92 @@ class TestMyBill():
             raise
         finally:
             zhangdan.cancelShare()
-
+# 此模块已通
 class TestVoucher():
     def setup(self):  # ，每次进入我的卡劵
-        kajuan = mypage.My_voucher(driver)
- #       kajuan.swipe_up()
+        voucher = mypage.My_voucher(driver)
+        #       Voucher.swipe_up()
         logging.info("上滑成功")
-        kajuan.my_voucher()
+        voucher.my_voucher()
         logging.info("进入我的卡劵")
 
     def teardown(self):  # 每次返回
-        kajuan = mypage.My_voucher(driver)
-        kajuan.close()
+        voucher = mypage.My_voucher(driver)
+        voucher.close()
         logging.info("返回")
 
-    def test_weishiyong(self):  # 能否找到“未使用”标签
-        kajuan = mypage.My_voucher(driver)
+    def test_kaJuan(self):  # 是否存在卡劵信息
+        voucher = mypage.My_voucher(driver)
         time.sleep(6)
         try:
-            assert kajuan.try_find(mypage.My_voucher.notUsed_loc) is True
+            assert voucher.try_find(mypage.My_voucher.notUsed_loc) is True
             logging.info("找到未使用页签")
         except:
             logging.warning("找不到未使用页签")
-            kajuan.get_screenshot("找不到未使用页签")
+            voucher.get_screenshot("找不到未使用页签")
             raise
 
-    def test_yiguoqi(self):  # 能否找到“已过期”标签
-        kajuan = mypage.My_voucher(driver)
-        kajuan.cardHistory()
+    def test_guoQi(self):  # 能否找到“已过期”标签
+        voucher = mypage.My_voucher(driver)
+        voucher.cardHistory()
         try:
-            assert kajuan.try_find(mypage.My_voucher.guoQi_loc) is True
+            assert voucher.try_find(mypage.My_voucher.guoQi_loc) is True
             logging.info("找到已过期页签")
         except:
             logging.warning("找不到已过期页签")
-            kajuan.get_screenshot("找不到已过期页签")
+            voucher.get_screenshot("找不到已过期页签")
             raise
 
-    def test_yishiyong(self):  # 能否找到“已使用”标签
-        kajuan = mypage.My_voucher(driver)
-        kajuan.cardHistory()
+    def test_yiShiYong(self):  # 能否找到“已使用”标签
+        voucher = mypage.My_voucher(driver)
+        voucher.cardHistory()
         try:
-            assert kajuan.try_find(mypage.My_voucher.alreadyUsed_loc) is True
+            assert voucher.try_find(mypage.My_voucher.alreadyUsed_loc) is True
             logging.info("找到已使用页签")
         except:
             logging.warning("找不到已使用页签")
-            kajuan.get_screenshot("找不到已使用页签")
+            voucher.get_screenshot("找不到已使用页签")
             raise
 
 class TestMyInfo():
     def setup(self):  # ，每次进入个人信息
-        geren = mypage.MyInfo(driver)
-        geren.myInfo()
+        geRen = mypage.MyInfo(driver)
+        geRen.myInfo()
         logging.info('-------进入个人信息----------')
 
     def teardown(self):  # 每次返回
-        geren = mypage.MyInfo(driver)
-        geren.back()
+        geRen = mypage.MyInfo(driver)
+        geRen.back()
         logging.info('-------返回----------')
 
     def test_bianji(self):  # 能否找到编辑按钮
-        geren = mypage.MyInfo(driver)
+        geRen = mypage.MyInfo(driver)
         try:
-            assert geren.try_find(mypage.MyInfo.edit_loc) is True
+            assert geRen.try_find(mypage.MyInfo.edit_loc) is True
             logging.info('找到编辑按钮')
         except:
             logging.warning("找不到编辑按钮")
-            geren.get_screenshot("找不到编辑按钮")
+            geRen.get_screenshot("找不到编辑按钮")
             raise
 
 # 交费历史icon在我的页面暂无入口，搜索寻找
 time.sleep(10)
-class TestPayhistory():
+
+class TestPayHistory():
     def setup(self):  # 每次进入交费历史
         jiaofei = mypage.Payhistory(driver)
         jiaofei.payhistory()
         logging.info("进入交费历史")
 
     def teardown(self):  # 每次返回
-        jiaofei = mypage.Payhistory(driver)
+        jiaofei = mypage.PayHistory(driver)
         jiaofei.back()
         logging.info("返回")
 
     def test_jiaofei_lishi(self):  # 是否进入交费历史页面
-        jiaofei = mypage.Payhistory(driver)
+        jiaofei = mypage.PayHistory(driver)
         try:
-            assert jiaofei.try_find(mypage.Payhistory.jiaofei_pan_loc) is True
+            assert jiaofei.try_find(mypage.PayHistory.pay_pan_loc) is True
             logging.info('交费历史页面找到充值交费')
         except:
             logging.warning("交费历史页面找不到充值交费")
@@ -557,10 +570,10 @@ class TestPayhistory():
             raise
 
     def test_chongzhi(self):  # 是否进入充值中心
-        jiaofei = mypage.Payhistory(driver)
-        jiaofei.jiaofei()
+        jiaofei = mypage.PayHistory(driver)
+        jiaofei.pay_pan()
         try:
-            assert jiaofei.try_find(mypage.Payhistory.chongzhi_pan_loc) is True
+            assert jiaofei.try_find(mypage.PayHistory.recharge_pan_loc) is True
             logging.info('进入充值中心')
         except:
             logging.warning("能否进入充值中心")
@@ -570,59 +583,60 @@ class TestPayhistory():
             jiaofei.back()
 
     def test_fenxiang(self):  # 是否进入分享页面
-        jiaofei = mypage.Payhistory(driver)
-        jiaofei.fenxiang()
+        jiaofei = mypage.PayHistory(driver)
+        jiaofei.share()
         try:
-            assert jiaofei.try_find(mypage.Payhistory.pengyouquan_loc) is True
+            assert jiaofei.try_find(mypage.PayHistory.circleOfFriends_loc) is True
             logging.info('能否进入分享页面')
         except:
             logging.warning("能否进入分享页面")
             jiaofei.get_screenshot("能否进入分享页面")
             raise
         finally:
-            jiaofei.erweima()
+            jiaofei.QRcode()
             jiaofei.back()
 
     def test_shuaixuan(self):  # 筛选是否可用
-        jiaofei = mypage.Payhistory(driver)
-        jiaofei.shaixuan()
+        jiaofei = mypage.PayHistory(driver)
+        jiaofei.choice()
         try:
-            assert jiaofei.try_find(mypage.Payhistory.siyue_loc) is True
+            assert jiaofei.try_find(mypage.PayHistory.april_loc) is True
             logging.info("能否选择筛选的月份")
         except:
             logging.warning("能否选择筛选的月份")
             jiaofei.get_screenshot("能否选择筛选的月份")
             raise
         finally:
-            jiaofei.siyue()
+            jiaofei.april()
 
-#流量管家icon在我的页面暂无入口，搜索寻找
+# 流量管家icon在我的页面暂无入口，搜索寻找
 
-class Testsearch_Guanjia():  # 搜索出流量管家的icon
+class Testsearch_GuanJia():  # 搜索出流量管家的icon
     def test_search(self):
         search = shouyepage.Search(driver)
         search.chazhao("流量管家")
         time.sleep(6)
-class TestGuanjia():  # 每次进入流量管家
+
+class TestGuanJia():  # 每次进入流量管家
     def setup(self):
 
-        guan_jia = mypage.Guanjia(driver)
-        guan_jia.guanjia()
+        guan_jia = mypage.GuanJia(driver)
+        guan_jia.guanJia()
         #     logging.info("进入流量管家")
         logging.info('-------进入流量管家----------')
 
     def teardown(self):  # 每次返回一次
-        guan_jia = mypage.Guanjia(driver)
+        guan_jia = mypage.GuanJia(driver)
         guan_jia.back()
         #      logging.info("返回")
         logging.info('-------返回----------')
 
-    def test_liuliang(self):  # 是否存在流量订单
-        guan_jia = mypage.Guanjia(driver)
-        guan_jia.dingdan()
+    def test_flowOrder(self):  # 是否存在流量订单
+        guan_jia = mypage.GuanJia(driver)
+        guan_jia.flowOrder()
         logging.info('-------进入流量订单----------')
         try:
-            assert guan_jia.try_find(mypage.Guanjia.dingdan_pan_loc) is True
+            assert guan_jia.try_find(mypage.GuanJia.recharge_pan_loc) is True
             logging.info('流量订单正常')
         except:
             logging.warning("流量订单不正常")
@@ -631,12 +645,12 @@ class TestGuanjia():  # 每次进入流量管家
         finally:
             guan_jia.back()
 
-    def test_shangpin(self):  # 是否存在商品订单
-        guan_jia = mypage.Guanjia(driver)
-        guan_jia.shangpin()
+    def test_flowCommodity(self):  # 是否存在商品订单
+        guan_jia = mypage.GuanJia(driver)
+        guan_jia.flowCommodity()
         logging.info('-------进入商品订单----------')
         try:
-            assert guan_jia.try_find(mypage.Guanjia.shangpin_pan_loc) is True
+            assert guan_jia.try_find(mypage.GuanJia.mailList_loc) is True
             logging.info('商品订单正常')
         except:
             logging.warning("商品订单不正常")
@@ -645,29 +659,29 @@ class TestGuanjia():  # 每次进入流量管家
         finally:
             guan_jia.back()
 
-    def test_liuliang_xiangdan(self):  # 是否存在流量详单
-        guan_jia = mypage.Guanjia(driver)
-        guan_jia.xiangdan()
+    def test_xiangDan(self):  # 是否存在流量详单
+        guan_jia = mypage.GuanJia(driver)
+        guan_jia.xiangDan()
         logging.info("进入流量详单")
         try:
-            assert guan_jia.try_find(mypage.Guanjia.xiangdan_pan_loc) is True
+            assert guan_jia.try_find(mypage.GuanJia.xiangDan_pan_loc) is True
             logging.info('流量详单正常')
         except:
             logging.warning("流量详单不正常")
             guan_jia.get_screenshot("流量详单不正常")
             raise
         finally:
-            guan_jia.xiangdanback_pan()
+            guan_jia.xiangDanBack()
             logging.info("返回到我的页面")
 
-    def test_bannian_bao(self):  # 是否存在流量半年包
-        guan_jia = mypage.Guanjia(driver)
+    def test_halfYear(self):  # 是否存在流量半年包
+        guan_jia = mypage.GuanJia(driver)
         guan_jia.swipe_up()
         logging.info("向上滑动")
-        guan_jia.bannian()
+        guan_jia.halfYear()
         logging.info("点击流量半年包")
         try:
-            assert guan_jia.try_find(mypage.Guanjia.liuliang_pan_loc) is True
+            assert guan_jia.try_find(mypage.GuanJia.fiow_pan_loc) is True
             logging.info('无法进入半年包')
         except:
             logging.warning("无法进入半年包")
@@ -676,14 +690,14 @@ class TestGuanjia():  # 每次进入流量管家
         finally:
             guan_jia.back()
 
-    def test_jibao(self):  # 是否存在流量季包
-        guan_jia = mypage.Guanjia(driver)
+    def test_seasonFlow(self):  # 是否存在流量季包
+        guan_jia = mypage.GuanJia(driver)
         guan_jia.swipe_up()
         logging.info("向上滑动")
-        guan_jia.jibao()
+        guan_jia.seasonFlow()
         logging.info("点击流量季包")
         try:
-            assert guan_jia.try_find(mypage.Guanjia.liuliang_pan_loc) is True
+            assert guan_jia.try_find(mypage.GuanJia.fiow_pan_loc) is True
             logging.info('进入季包')
         except:
             logging.warning("无法进入季包")
@@ -692,12 +706,12 @@ class TestGuanjia():  # 每次进入流量管家
         finally:
             guan_jia.back()
 
-    def test_ribao(self):  # 是否存在流量日包
-        guan_jia = mypage.Guanjia(driver)
+    def test_dayFlow(self):  # 是否存在流量日包
+        guan_jia = mypage.GuanJia(driver)
         guan_jia.swipe_up()
-        guan_jia.ri_taocan()
+        guan_jia.dayFlow()
         try:
-            assert guan_jia.try_find(mypage.Guanjia.liuliang_pan_loc) is True
+            assert guan_jia.try_find(mypage.GuanJia.fiow_pan_loc) is True
             logging.info('无法进入流量日包')
         except:
             logging.warning("无法进入流量日包")
@@ -706,30 +720,31 @@ class TestGuanjia():  # 每次进入流量管家
         finally:
             guan_jia.back()
 
-#我的电影icon在我的页面暂无入口，搜索寻找
+# 我的电影icon在我的页面暂无入口，搜索寻找
 class Testsearch_movie():  # 搜索出流量管家的icon
     def test_search(self):
         search = shouyepage.Search(driver)
         search.chazhao("我的电影")
         time.sleep(6)
+
 class TestMy_movie():
     def setup(self):  # 每次进入我的电影
-        dianying = mypage.My_movie(driver)
-        dianying.my_movie()
+        movie = mypage.My_movie(driver)
+        movie.my_movie()
         logging.info('进入我的电影')
 
     #        logging.info("进入我的电影")
-    def test_taocan(self):  # 是否存在套餐业务
-        dianying = mypage.My_movie(driver)
+    def test_buyTickets(self):  # 是否存在购票按钮
+        movie = mypage.My_movie(driver)
         try:
-            assert dianying.try_find(mypage.My_movie.gou_piao_loc) is True
+            assert movie.try_find(mypage.My_movie.buyTickets_loc) is True
             logging.info('找到购票页面')
         except:
             logging.warning("找不到购票页面")
-            dianying.get_screenshot("找不到购票页面")
+            movie.get_screenshot("找不到购票页面")
             raise
         finally:
-            dianying.gou_piaoclose()
+            movie.ticketsClose()
 
 #李纯代码
 class TestFaPiao():
@@ -1181,9 +1196,10 @@ class TestChaJian():
 
 
 if __name__ == '__main__':
-    driver = appium_desired()
+#    driver = appium_desired()
+    driver = appium_desired('emulator-5554', 4723)
     ba = loginpage.Login(driver)
-    ba.start()
+#    ba.start()
     ba.login('13501585305')
     wodea = mypage.My(driver)
     wodea.wode()
